@@ -129,7 +129,7 @@ footer {
 
 /** easy page style**/
 .quiz-box{
-    border: 2px solid greenyellow;
+    border-top: 2px solid greenyellow;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
@@ -153,8 +153,10 @@ footer {
     height: auto;
     width: 90%;
     margin: 20px auto;
-    border: 2px solid white;
+    
     padding: 10px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .btn-answ {
@@ -165,6 +167,12 @@ footer {
     box-shadow: 0 0 10px white;
     max-width: 800px;
     
+}
+
+/**next button**/
+
+.hide {
+    display: none;
 }
 /**media query for screen wider than 600px **/
 @media screen and (min-width: 600px) {

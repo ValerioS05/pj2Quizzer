@@ -2,7 +2,9 @@
 // get the popup and change display style
 document.addEventListener("DOMContentLoaded", function () {
     let popUp = document.getElementById("popup");
-    popUp.style.display = "block"
+    popUp.style.display = "block";
+    const nextQuest = document.getElementById("next-quest");
+    nextQuest.classList.add("hide");
 
 //change display back to normal when press continue button
 
@@ -36,4 +38,8 @@ function startCount() {
     },1000)
 
 }
+
+// quiz function easy
+
+
 
