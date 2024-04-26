@@ -39,7 +39,7 @@ main {
 }
 
 .rules-container p {
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 20px 0;
     line-height: 30px;
     color: greenyellow;
@@ -51,7 +51,7 @@ main {
     width:100px;
     height: 70px;
     border-radius: 50px;
-    margin: 40px auto;
+    margin: 30px auto;
     color: greenyellow;
     background-color: rgb(176, 84, 4);
     box-shadow: 0px 0px 20px;
@@ -79,18 +79,18 @@ footer {
     background-color: rgb(0, 0, 0);
     height: 60px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 /** easy page style**/
-#quiz-container {
+.quiz-box{
     border: 2px solid greenyellow;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
 }
 
-#question {
+.quest {
     font-size: 18px;
     margin: 40px auto;
     width: 90%;
@@ -100,17 +100,18 @@ footer {
 .question-container {
     height: auto;
     width: 90%;
-    margin: 40px auto;
+    margin: 20px auto;
     border: 2px solid white;
     padding: 10px 0;
 }
 
 .btn-answ {
-    margin: 20px auto;
+    margin: 10px auto;
     height: 100px;
     width: 90%;
     border-radius: 7px;
     box-shadow: 0 0 10px white;
+    max-width: 800px;
     
 }
 /**media query for screen wider than 600px **/
@@ -118,6 +119,6 @@ footer {
     #image {
         width: 400px;
         max-width: 700px;
-        margin: 40px;
+        margin: 20px;
     }
 }
