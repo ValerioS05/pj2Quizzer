@@ -15,6 +15,9 @@
     <main>
         <div class="quiz-box" id="quiz-container">
             <p>Click on the answer that you think is correct to pass to the next question</p>
+            <div class="timer-container">
+                <span id="timer">60</span>
+            </div>
             <div class="question-container">
                 
                 <span id="question" class="quest">Question</span>
@@ -24,6 +27,22 @@
         </div>
         <div>
             <button class="btn"><a href="index.html">Quit</a></button>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="overlay-pop">
+                <div class="content-pop">
+                    <h2>Are you ready?</h2>
+                    <p>Press Continue to start the challenge or quit to return to homepage!
+                        <br>
+                        You have 1 minute to answer all the 5 questions!
+                        <br>
+                        Do your best!
+                    </p>
+                    <button class="btn continueBtn" id="continueBtn">Continue</button>
+                    
+                </div>
+            </div>
         </div>
     </main>
     <script src="assets/js/script.js"></script>
