@@ -18,6 +18,12 @@ header {
     
 }
 
+header h1{
+    color: greenyellow;
+    font-size:  72px;
+    text-shadow: 0px 5px 10px orangered;
+}
+
 main {
     display:block;
     align-items: center;
@@ -33,9 +39,11 @@ main {
 }
 
 .rules-container p {
-    margin: 20px 0;
+    margin: 20px auto;
     padding: 20px 0;
     line-height: 30px;
+    color: greenyellow;
+    width: 75%;
 }
 
 #play {
@@ -43,6 +51,16 @@ main {
     height: 70px;
     border-radius: 50px;
     margin-top: 40px;
+    color: greenyellow;
+    background-color: rgb(176, 84, 4);
+    box-shadow: 0px 0px 20px;
+    font-size: 30px;
+}
+
+#play:hover {
+    color: rgb(255, 127, 47);
+    background-color: rgb(5, 14, 1);
+    box-shadow: 0px 0px 20px;
 }
 
 footer {
