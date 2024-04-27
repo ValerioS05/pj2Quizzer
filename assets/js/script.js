@@ -1,57 +1,83 @@
-// wait until page is loaded
-// get the popup and change display style
-document.addEventListener("DOMContentLoaded", function () {
-    let popUp = document.getElementById("popup");
-    popUp.style.display = "block";
+function contentLoaded() {
+    const popup = document.getElementById("popup");
+    const nextQuest = document.getElementById("next-quest");
+    const continueBtn = document.getElementById("continueBtn");
+    popup.style.display = "block";
     nextQuest.classList.add("hide");
 
-    //change display back to normal when press continue button
+    // Change display back to normal when press popup`s continue button,
+    // and call countdown function.
 
-    let continueBtn = document.getElementById("continueBtn");
     continueBtn.addEventListener("click", function () {
-        popUp.style.display = "none";
+        popup.style.display = "none";
 
-        //call countdown function when page fully loaded
+        //calling functions to operate the quiz
+
         startCount();
-    })
-});
-//countdown function
+        
+    });
+}
+//make sure content is loaded and calls the popup
+document.addEventListener("DOMContentLoaded", contentLoaded);
+document.addEventListener("DOMContentLoaded", function (){
+    start();
+})
+
+
+//count down function
 function startCount() {
     let timer = document.getElementById("timer");
-    let minute = 60;
-
+    let minute = 60; // 60 seconds timer
     let count = setInterval(function () {
-        //when timer reach 0 reset to homepage after 3 sec delay 
+        // when reaches 0 comesback to homepage
         if (minute <= 0) {
             clearInterval(count);
-            timer.innerText = "You lost";
+            timer.innerText = "Time Out!"
             setTimeout(function () {
                 window.location.href = "index.html";
             }, 3000);
             return;
         }
-
+        // sets timer to 60 decreasing 1 every second
         timer.innerText = minute;
         minute--;
-        // decrease 1 every second
     }, 1000)
-
 }
 
-//declaring variables to use
+function start() {
+    const answGrid = document.getElementById("answ-grid");
+    answGrid.innerHTML = '';
+    //shuffle the array
+    //get random question displayed on page
+    let randomQuestion = questionEasy.sort(() => Math.random() - 0.5);
+    let currentQuestion = 0;
+    let questionBox = document.getElementById("questionBox");
+    let actualQuestion = randomQuestion[currentQuestion];
+    questionBox.innerText = actualQuestion.question;
 
-const questionContainer = document.getElementById("question-container");
-const question = document.getElementById("question");
-const answerButtons = document.getElementById("btn-answ");
-const nextQuest = document.getElementById("next-quest");
+    //get answers displayed on page
+
+    let actualAnswer = actualQuestion.answers.forEach(function (answer) {
+        const newButtons = document.createElement("button");
+        ;
+        newButtons.innerText = answer.text;
+        newButtons.classList.add("answ-btn");
+        
+        if (answer.correct) {
+            newButtons.dataset.correct = answer.correct;
+        } else {
+            newButtons.dataset.correct = false;
+        }
+        answGrid.appendChild(newButtons);
+    });
+}
 
 
 
 
 
 
-
-
+// 3 array for different levels
 
 
 // quiz array easy
@@ -97,7 +123,6 @@ const questionEasy = [
     }
 ];
 // quiz normal mode
-
 const questionNormal = [
     {
         question: "How many hearts does an octopus have?",
@@ -180,6 +205,5 @@ const questionHard = [
         ]
     }
 ];
-
 
 

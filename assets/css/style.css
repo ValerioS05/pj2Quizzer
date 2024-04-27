@@ -169,6 +169,15 @@ footer {
     
 }
 
+.answ-btn {
+    margin: 10px auto;
+    height: 100px;
+    width: 90%;
+    border-radius: 7px;
+    box-shadow: 0 0 10px white;
+    max-width: 800px;
+}
+
 /**next button**/
 
 .hide {
