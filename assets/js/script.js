@@ -3,7 +3,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     let popUp = document.getElementById("popup");
     popUp.style.display = "block";
-    const nextQuest = document.getElementById("next-quest");
     nextQuest.classList.add("hide");
 
     //change display back to normal when press continue button
@@ -38,6 +37,22 @@ function startCount() {
     }, 1000)
 
 }
+
+//declaring variables to use
+
+const questionContainer = document.getElementById("question-container");
+const question = document.getElementById("question");
+const answerButtons = document.getElementById("btn-answ");
+const nextQuest = document.getElementById("next-quest");
+
+
+
+
+
+
+
+
+
 
 // quiz array easy
 const questionEasy = [
@@ -80,45 +95,91 @@ const questionEasy = [
             { text: "15", correct: false }
         ]
     }
-]
+];
 // quiz normal mode
 
 const questionNormal = [
     {
-        question: "",
+        question: "How many hearts does an octopus have?",
         answers: [
-            { text: "", correct: true },
-            { text: "", correct: false },
-            { text: "", correct: false }
+            { text: "3", correct: true },
+            { text: "6", correct: false },
+            { text: "5", correct: false }
         ]
     },
 
     {
-        question: "",
+        question: "Which planet is closest to the Sun?",
         answers: [
-            { text: "", correct: true },
-            { text: "", correct: false },
-            { text: "", correct: false }
+            { text: "Mercury", correct: true },
+            { text: "Jupiter", correct: false },
+            { text: "Earth", correct: false }
         ]
     },
 
     {
-        question: "",
+        question: "Which planet in our solar system is the hottest?",
         answers: [
-            { text: "", correct: true },
-            { text: "", correct: false },
-            { text: "", correct: false }
+            { text: "Venus", correct: true },
+            { text: "Mars", correct: false },
+            { text: "Saturn", correct: false }
         ]
     },
 
     {
-        question: "",
+        question: "Kratos is the main character of which video game?",
         answers: [
-            { text: "", correct: true },
-            { text: "", correct: false },
-            { text: "", correct: false }
+            { text: "God Of War", correct: true },
+            { text: "Fallout", correct: false },
+            { text: "Last of Us", correct: false }
         ]
     }
-]
+];
+
+
+// quiz hard level
+
+const questionHard = [
+    {
+        question: "Where is the strongest human muscle located?",
+        answers: [
+            { text: "Jaw", correct: true },
+            { text: "Leg", correct: false },
+            { text: "Arm", correct: false },
+            { text: "Hand", correct: false }
+        ]
+    },
+
+    {
+        question: "What is the 4th letter of the Greek alphabet?",
+        answers: [
+            { text: "Delta", correct: true },
+            { text: "Gamma", correct: false },
+            { text: "Alpha", correct: false },
+            { text: "Beta", correct: false }
+        ]
+    },
+
+    {
+        question: "Which Renaissance artist is buried in Rome's Pantheon?",
+        answers: [
+            { text: "Raphael", correct: true },
+            { text: "Michelangelo", correct: false },
+            { text: "Donatello", correct: false },
+            { text: "Leonardo DaVinci", correct: false }
+        ]
+    },
+
+    {
+        question: "Who wrote the ballet Swan Lake?",
+        answers: [
+            { text: "Tchaikovsky", correct: true },
+            { text: "Mozart", correct: false },
+            { text: "Beethoven", correct: false },
+            { text: "Bach", correct: false }
+        ]
+    }
+];
+
 
 
