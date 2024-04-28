@@ -1,9 +1,11 @@
 function contentLoaded() {
     const popup = document.getElementById("popup");
-    const nextQuest = document.getElementById("next-quest");
-    const continueBtn = document.getElementById("continueBtn");
     popup.style.display = "block";
+    const nextQuest = document.getElementById("next-quest");
     nextQuest.classList.add("hide");
+
+    const continueBtn = document.getElementById("continueBtn");
+
 
     // Change display back to normal when press popup`s continue button,
     // and call countdown function.
@@ -14,12 +16,13 @@ function contentLoaded() {
         //calling functions to operate the quiz
 
         startCount();
-        
+
     });
 }
+
 //make sure content is loaded and calls the popup
 document.addEventListener("DOMContentLoaded", contentLoaded);
-document.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", function () {
     start();
 })
 
@@ -46,7 +49,15 @@ function startCount() {
 
 function start() {
     const answGrid = document.getElementById("answ-grid");
-    answGrid.innerHTML = '';
+
+    //removing answer buttons
+    const childrenRemove = Array.from(answGrid.children);
+    childrenRemove.forEach(child => {
+        if (child.classList.contains("btn-answ")) {
+            answGrid.removeChild(child);
+        }
+    });
+
     //shuffle the array
     //get random question displayed on page
     let randomQuestion = questionEasy.sort(() => Math.random() - 0.5);
@@ -56,27 +67,39 @@ function start() {
     questionBox.innerText = actualQuestion.question;
 
     //get answers displayed on page
-
-    let actualAnswer = actualQuestion.answers.forEach(function (answer) {
+    //set which answer is correct
+    actualQuestion.answers.forEach(function (answer) {
         const newButtons = document.createElement("button");
-        ;
         newButtons.innerText = answer.text;
         newButtons.classList.add("answ-btn");
-        
         if (answer.correct) {
             newButtons.dataset.correct = answer.correct;
         } else {
             newButtons.dataset.correct = false;
         }
+
+        newButtons.addEventListener("click", function () {
+            checkCorrectAnswer(newButtons);
+        })
         answGrid.appendChild(newButtons);
     });
 }
+//check correct answer
+function checkCorrectAnswer(clickedButton) {
+    const answCorrect = clickedButton.dataset.correct === "true";
+    const answFeedback = document.getElementById("answ-feedback");
+    const nextQuest = document.getElementById("next-quest");
+    if (answCorrect) {
+        answFeedback.innerText = "Correct!"
+        nextQuest.classList.remove("hide");
+        console.log("correct");
 
-
-
-
-
-
+    } else {
+        answFeedback.innerText = "Wrong!"
+        console.log("wrong");
+        nextQuest.classList.remove("hide");
+    }
+}
 // 3 array for different levels
 
 

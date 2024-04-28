@@ -168,7 +168,7 @@ footer {
     max-width: 800px;
     
 }
-
+/** created btns from script.js**/
 .answ-btn {
     margin: 10px auto;
     height: 100px;
@@ -178,10 +178,30 @@ footer {
     max-width: 800px;
 }
 
+.answ-btn:hover {
+    background-color: rgb(236, 243, 237);
+    box-shadow: 0px 0px 20px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 89, 0);
+}
+
+.well-done{
+    background-color: greenyellow;
+}
+
+.wrong {
+    background-color: #FF4500;
+}
+
+
+#answ-feedback {
+    font-size: 30px;
+    margin: 20px auto;
+}
 /**next button**/
 
 .hide {
-    display: none;
+    visibility: hidden;
 }
 /**media query for screen wider than 600px **/
 @media screen and (min-width: 600px) {
