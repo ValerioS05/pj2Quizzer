@@ -1,11 +1,15 @@
+//make sure content is loaded and calls the popup
+document.addEventListener("DOMContentLoaded", function () {
+    contentLoaded();
+});
+
+
 function contentLoaded() {
     const popup = document.getElementById("popup");
     popup.style.display = "block";
     const nextQuest = document.getElementById("next-quest");
     nextQuest.classList.add("hide");
-
     const continueBtn = document.getElementById("continueBtn");
-
 
     // Change display back to normal when press popup`s continue button,
     // and call countdown function.
@@ -14,17 +18,16 @@ function contentLoaded() {
         popup.style.display = "none";
 
         //calling functions to operate the quiz
-
-        startCount();
         removeAndCreateChild();
+        startCount();
+
+
+        randomQuest(levels());
     });
 }
 
-//make sure content is loaded and calls the popup
-document.addEventListener("DOMContentLoaded", contentLoaded);
-document.addEventListener("DOMContentLoaded", function () {
-    start();
-})
+
+
 
 
 //count down function
@@ -57,23 +60,40 @@ function removeAndCreateChild() {
         if (child.classList.contains("btn-answ")) {
             answGrid.removeChild(child);
         }
-
-        randomQuest();
     });
 }
 
 //shuffle the array
-    //get random question displayed on page
-    function randomQuest() {
-    let randomQuestion = questionEasy.sort(() => Math.random() - 0.5);
-    let currentQuestion = 0;
-    let questionBox = document.getElementById("questionBox");
-    let actualQuestion = randomQuestion[currentQuestion];
-    questionBox.innerText = actualQuestion.question;
+//get random question displayed on page
+function levels() {
+    const page = window.location.pathname;
+    if (page.includes("easy.html")) {
+        return "easy";
+    } else if (page.includes("normal.html")) {
+        return "normal";
+    } else if (page.includes("hard.html")) {
+        return "hard";
+    } else {
+        alert("Page non reconized!!")
+    }
 }
 
 
 
+
+function randomQuest(level) {
+    let questions;
+    if (level === "easy") {
+        questions = questionEasy;
+    } else if (level === "normal") {
+        questions = questionNormal;
+    } else if (level === "hard") {
+        questions = questionHard;
+    }
+    let random = Math.floor(Math.random() * questions.length - 0.5);
+    let questionBox = document.getElementById("questionBox");
+    questionBox.innerText = questions[random].question;
+}
 
 // 3 array for different levels
 
