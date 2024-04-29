@@ -89,28 +89,39 @@ function randomQuest(level) {
     } else if (level === "hard") {
         questions = questionHard;
     }
-    //randomize questions
+    //randomize questions and display it + display relative answers
     const random = Math.floor(Math.random() * questions.length);
-    let questionBox = document.getElementById("questionBox");
-    let actualQuestion = questions[random];
-    questionBox.innerText = actualQuestion.question;
+    let questionBox = document.getElementById("questionBox"); // get element that we need to change
+    let actualQuestion = questions[random]; // gets the current question
+    questionBox.innerText = actualQuestion.question; // displays current question
 
-    // display answers
+    // display answers (looping through each of them) created by function as buttons
     actualQuestion.answers.forEach(function (answer) {
-        let newButtons = document.createElement("button");
-        newButtons.innerText = answer.text;
-        newButtons.classList.add("answ-btn");
+        let newButtons = document.createElement("button");  //new buttons
+        newButtons.innerText = answer.text; //displays its text
+        newButtons.classList.add("answ-btn"); //keep same class
+        //sets correct  and false answers
         if (answer.correct) {
             newButtons.dataset.correct = true;
         } else {
             newButtons.dataset.correct = false;
         }
+        
+        let answGrid = document.getElementById("answ-grid");
+        answGrid.appendChild(newButtons);
+
+
+        /* i need to create function to check the correct answer and increse score.
+        also i need to randomize the answers to dont get always the same order
+*/
+
+
+
+
 
         //newButtons.addEventListener("click" , function() {
            // checkCorrectAnswer(newButtons);
         //})
-        let answGrid = document.getElementById("answ-grid");
-        answGrid.appendChild(newButtons);
     })
 }
 
