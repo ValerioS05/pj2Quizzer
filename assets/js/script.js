@@ -49,7 +49,7 @@ function startCount() {
         minute--;
     }, 1000)
 }
-
+//function to remove the previous answ buttons
 function removeAndCreateChild() {
     const answGrid = document.getElementById("answ-grid");  // gets the actual answer buttons in the html 
 
@@ -63,8 +63,7 @@ function removeAndCreateChild() {
     });
 }
 
-//shuffle the array
-//get random question displayed on page
+//get the level that we choose
 function levels() {
     const page = window.location.pathname;
     if (page.includes("easy.html")) {
@@ -80,7 +79,7 @@ function levels() {
 
 
 
-
+//sets a random question depending on which level page we choose
 function randomQuest(level) {
     let questions;
     if (level === "easy") {
@@ -90,10 +89,31 @@ function randomQuest(level) {
     } else if (level === "hard") {
         questions = questionHard;
     }
-    let random = Math.floor(Math.random() * questions.length - 0.5);
+    //randomize questions
+    const random = Math.floor(Math.random() * questions.length);
     let questionBox = document.getElementById("questionBox");
-    questionBox.innerText = questions[random].question;
+    let actualQuestion = questions[random];
+    questionBox.innerText = actualQuestion.question;
+
+    // display answers
+    actualQuestion.answers.forEach(function (answer) {
+        let newButtons = document.createElement("button");
+        newButtons.innerText = answer.text;
+        newButtons.classList.add("answ-btn");
+        if (answer.correct) {
+            newButtons.dataset.correct = true;
+        } else {
+            newButtons.dataset.correct = false;
+        }
+
+        //newButtons.addEventListener("click" , function() {
+           // checkCorrectAnswer(newButtons);
+        //})
+        let answGrid = document.getElementById("answ-grid");
+        answGrid.appendChild(newButtons);
+    })
 }
+
 
 // 3 array for different levels
 
