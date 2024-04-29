@@ -16,7 +16,7 @@ function contentLoaded() {
         //calling functions to operate the quiz
 
         startCount();
-
+        removeAndCreateChild();
     });
 }
 
@@ -29,15 +29,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //count down function
 function startCount() {
-    let timer = document.getElementById("timer");
+    let timer = document.getElementById("timer"); // gets timer element
     let minute = 60; // 60 seconds timer
     let count = setInterval(function () {
         // when reaches 0 comesback to homepage
-        if (minute <= 0) {
-            clearInterval(count);
+        if (minute <= 0) {    // checks when minute reaches 0
+            clearInterval(count); // clear the count and set time out text in the time element
             timer.innerText = "Time Out!"
             setTimeout(function () {
-                window.location.href = "index.html";
+                window.location.href = "index.html"; // redirect to homepage after 3sec 
             }, 3000);
             return;
         }
@@ -47,69 +47,34 @@ function startCount() {
     }, 1000)
 }
 
-function start() {
-    const answGrid = document.getElementById("answ-grid");
+function removeAndCreateChild() {
+    const answGrid = document.getElementById("answ-grid");  // gets the actual answer buttons in the html 
 
     //removing answer buttons
-    const childrenRemove = Array.from(answGrid.children);
+    const childrenRemove = Array.from(answGrid.children); // gets the children array from the answer buttons grid
+    //function to remove the children
     childrenRemove.forEach(child => {
         if (child.classList.contains("btn-answ")) {
             answGrid.removeChild(child);
         }
-    });
 
-    //shuffle the array
+        randomQuest();
+    });
+}
+
+//shuffle the array
     //get random question displayed on page
+    function randomQuest() {
     let randomQuestion = questionEasy.sort(() => Math.random() - 0.5);
     let currentQuestion = 0;
     let questionBox = document.getElementById("questionBox");
     let actualQuestion = randomQuestion[currentQuestion];
     questionBox.innerText = actualQuestion.question;
-
-    //get answers displayed on page
-    //set which answer is correct
-    actualQuestion.answers.forEach(function (answer) {
-        const newButtons = document.createElement("button");
-        newButtons.innerText = answer.text;
-        newButtons.classList.add("answ-btn");
-        if (answer.correct) {
-            newButtons.dataset.correct = answer.correct;
-        } else {
-            newButtons.dataset.correct = false;
-        }
-
-        newButtons.addEventListener("click", function () {
-            checkCorrectAnswer(newButtons);
-        })
-        answGrid.appendChild(newButtons);
-    });
-}
-//check correct answer
-function checkCorrectAnswer(clickedButton) {
-    const answCorrect = clickedButton.dataset.correct === "true";
-    const answFeedback = document.getElementById("answ-feedback");
-    const nextQuest = document.getElementById("next-quest");
-    let score = parseInt(document.getElementById("score").innerHTML);
-    
-    if (answCorrect) {
-        answFeedback.innerText = "Correct!"
-        nextQuest.classList.remove("hide");
-        console.log("correct");
-        score += 100;
-    } else {
-        answFeedback.innerText = "Wrong!"
-        console.log("wrong");
-        nextQuest.classList.remove("hide");
-    }
-
-    document.getElementById("score").innerHTML = score;
 }
 
 
-/*
-    i need to make a score div and that the score increases 
-    when answer is correct then pass to next questions.
-*/
+
+
 // 3 array for different levels
 
 
