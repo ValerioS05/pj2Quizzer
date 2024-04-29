@@ -89,17 +89,27 @@ function checkCorrectAnswer(clickedButton) {
     const answCorrect = clickedButton.dataset.correct === "true";
     const answFeedback = document.getElementById("answ-feedback");
     const nextQuest = document.getElementById("next-quest");
+    let score = parseInt(document.getElementById("score").innerHTML);
+    
     if (answCorrect) {
         answFeedback.innerText = "Correct!"
         nextQuest.classList.remove("hide");
         console.log("correct");
-
+        score += 100;
     } else {
         answFeedback.innerText = "Wrong!"
         console.log("wrong");
         nextQuest.classList.remove("hide");
     }
+
+    document.getElementById("score").innerHTML = score;
 }
+
+
+/*
+    i need to make a score div and that the score increases 
+    when answer is correct then pass to next questions.
+*/
 // 3 array for different levels
 
 
@@ -181,6 +191,15 @@ const questionNormal = [
             { text: "Fallout", correct: false },
             { text: "Last of Us", correct: false }
         ]
+    },
+
+    {
+        question: "What was the birth name of boxing champion Muhammad Ali?",
+        answers: [
+            { text: "Cassius Clay", correct: true },
+            { text: "Classius Kay", correct: false },
+            { text: "Cashews Clame", correct: false }
+        ]
     }
 ];
 
@@ -225,6 +244,16 @@ const questionHard = [
             { text: "Mozart", correct: false },
             { text: "Beethoven", correct: false },
             { text: "Bach", correct: false }
+        ]
+    },
+
+    {
+        question: "When the Wow! Signal was detected?",
+        answers: [
+            { text: "1977", correct: true },
+            { text: "1877", correct: false },
+            { text: "1997", correct: false },
+            { text: "1987", correct: false }
         ]
     }
 ];
