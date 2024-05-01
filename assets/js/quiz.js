@@ -1,7 +1,14 @@
 //make sure content is loaded and calls the popup
-document.addEventListener("DOMContentLoaded", function () {
-    contentLoaded();
-});
+if (
+    window.location.pathname.includes("/easy.html") ||
+    window.location.pathname.includes("/normal.html") ||
+    window.location.pathname.includes("/hard.html")) {
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        contentLoaded();
+    });
+}
 
 //function called when document is loaded initializing rest of the functions
 function contentLoaded() {
@@ -23,7 +30,7 @@ function contentLoaded() {
 
 
         randomQuest(levels()); // levels: line 67   , randomQuest:line 83
-        nextButtonListener();
+        nextButtonListener(); // line 167
     });
 }
 
@@ -165,10 +172,12 @@ function checkCorrectAnswer(clicked) {
 
 // Add event listener to the next button 
 function nextButtonListener() {
+    const answFeedback = document.getElementById("answ-feedback");
     const nextQuest = document.getElementById("next-quest");
-    nextQuest.addEventListener("click", function() {
+    nextQuest.addEventListener("click", function () {
         const answGrid = document.getElementById("answ-grid");
         answGrid.innerHTML = "";
+        answFeedback.innerText = "";
         randomQuest(levels()); // Calls randomQuest again to display the next set of questions
     });
 }
