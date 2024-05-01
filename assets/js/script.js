@@ -3,12 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     contentLoaded();
 });
 
-
+//function called when document is loaded initializing rest of the functions
 function contentLoaded() {
     const popup = document.getElementById("popup");
     popup.style.display = "block";
     const nextQuest = document.getElementById("next-quest");
-    nextQuest.classList.add("hide");
+    nextQuest.classList.add("hide"); // hide next button
     const continueBtn = document.getElementById("continueBtn");
 
     // Change display back to normal when press popup`s continue button,
@@ -18,11 +18,12 @@ function contentLoaded() {
         popup.style.display = "none";
 
         //calling functions to operate the quiz
-        removeAndCreateChild();
-        startCount();
+        removeAndCreateChild(); // line 52
+        startCount(); //line 34
 
 
-        randomQuest(levels());
+        randomQuest(levels()); // levels: line 67   , randomQuest:line 83
+        nextButtonListener();
     });
 }
 
@@ -89,11 +90,27 @@ function randomQuest(level) {
     } else if (level === "hard") {
         questions = questionHard;
     }
+
+    let usedQuestions = questions.filter(question => !question.displayed);
+
+    console.log("Used Questions:", usedQuestions);
+
+    if (usedQuestions.length === 0) {
+        alert("finished");
+        return;
+    }
+
+
+
+
     //randomize questions and display it + display relative answers
-    const random = Math.floor(Math.random() * questions.length);
+    const random = Math.floor(Math.random() * usedQuestions.length);
     let questionBox = document.getElementById("questionBox"); // get element that we need to change
-    let actualQuestion = questions[random]; // gets the current question
+    let actualQuestion = usedQuestions[random]; // gets the current question
     questionBox.innerText = actualQuestion.question; // displays current question
+    actualQuestion.displayed = true;
+
+
     // randomize answer with fisher-yates, display answers (looping through each of them) created by function, as buttons
     for (let i = actualQuestion.answers.length - 1; i > 0; i--) {
         const rndm = Math.floor(Math.random() * (i + 1));
@@ -107,28 +124,82 @@ function randomQuest(level) {
         newButtons.classList.add("answ-btn"); //keep same class
         //sets correct  and false answers
         if (answer.correct) {
-            newButtons.dataset.correct = true;
+            newButtons.dataset.correct = "true";
+            newButtons.setAttribute("id", "correct"); // add id if correct answer
         } else {
-            newButtons.dataset.correct = false;
+            newButtons.dataset.correct = "false";
         }
 
         let answGrid = document.getElementById("answ-grid");
-        answGrid.appendChild(newButtons);
+        answGrid.appendChild(newButtons); // creates answer buttons
+        //listener to click on answer buttons calls function to check if answer is correct
+        newButtons.addEventListener("click", function () {
+            checkCorrectAnswer(this);
+        })
 
 
-        /* i need to create function to check the correct answer and increse score.
-        also i need to randomize the answers to dont get always the same order
-        */
-
-
-
-
-
-        //newButtons.addEventListener("click" , function() {
-        // checkCorrectAnswer(newButtons);
-        //})
     })
+
 }
+// checking correct answer 
+
+
+
+
+
+function checkCorrectAnswer(clicked) {
+    const nextQuest = document.getElementById("next-quest");
+    const answFeedback = document.getElementById("answ-feedback");
+    let score = parseInt(document.getElementById("score").innerHTML); //sets the score to a number
+    //checking the right answer, if answer right increase score giving feedbacks in any case
+    if (clicked.dataset.correct === "true") {
+        answFeedback.innerText = "Correct";
+        score += 100;
+    } else {
+        answFeedback.innerText = "Wrong"
+    }
+    document.getElementById("score").innerHTML = score; // setting the score
+    nextQuest.classList.remove("hide"); // showing the next button
+    correct.disabled = true; // disable correct answer button so cant increase score.
+}
+
+// Add event listener to the next button 
+function nextButtonListener() {
+    const nextQuest = document.getElementById("next-quest");
+    nextQuest.addEventListener("click", function() {
+        const answGrid = document.getElementById("answ-grid");
+        answGrid.innerHTML = "";
+        randomQuest(levels()); // Calls randomQuest again to display the next set of questions
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -143,7 +214,8 @@ const questionEasy = [
         answers: [
             { text: "365", correct: true },
             { text: "536", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -151,7 +223,8 @@ const questionEasy = [
         answers: [
             { text: "12", correct: false },
             { text: "7", correct: true }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -159,7 +232,8 @@ const questionEasy = [
         answers: [
             { text: "Leonardo DaVinci", correct: true },
             { text: "Leonardo DiCaprio", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -167,7 +241,8 @@ const questionEasy = [
         answers: [
             { text: "Everest", correct: true },
             { text: "Mt. Blanc", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -175,7 +250,8 @@ const questionEasy = [
         answers: [
             { text: "5", correct: true },
             { text: "15", correct: false }
-        ]
+        ],
+        displayed: false
     }
 ];
 // quiz normal mode
@@ -186,7 +262,8 @@ const questionNormal = [
             { text: "3", correct: true },
             { text: "6", correct: false },
             { text: "5", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -195,7 +272,8 @@ const questionNormal = [
             { text: "Mercury", correct: true },
             { text: "Jupiter", correct: false },
             { text: "Earth", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -204,7 +282,8 @@ const questionNormal = [
             { text: "Venus", correct: true },
             { text: "Mars", correct: false },
             { text: "Saturn", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -213,7 +292,8 @@ const questionNormal = [
             { text: "God Of War", correct: true },
             { text: "Fallout", correct: false },
             { text: "Last of Us", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -222,7 +302,8 @@ const questionNormal = [
             { text: "Cassius Clay", correct: true },
             { text: "Classius Kay", correct: false },
             { text: "Cashews Clame", correct: false }
-        ]
+        ],
+        displayed: false
     }
 ];
 
@@ -237,7 +318,8 @@ const questionHard = [
             { text: "Leg", correct: false },
             { text: "Arm", correct: false },
             { text: "Hand", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -247,7 +329,8 @@ const questionHard = [
             { text: "Gamma", correct: false },
             { text: "Alpha", correct: false },
             { text: "Beta", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -257,7 +340,8 @@ const questionHard = [
             { text: "Michelangelo", correct: false },
             { text: "Donatello", correct: false },
             { text: "Leonardo DaVinci", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -267,7 +351,8 @@ const questionHard = [
             { text: "Mozart", correct: false },
             { text: "Beethoven", correct: false },
             { text: "Bach", correct: false }
-        ]
+        ],
+        displayed: false
     },
 
     {
@@ -277,7 +362,8 @@ const questionHard = [
             { text: "1877", correct: false },
             { text: "1997", correct: false },
             { text: "1987", correct: false }
-        ]
+        ],
+        displayed: false
     }
 ];
 

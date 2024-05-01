@@ -202,6 +202,10 @@ footer {
     border: 2px solid rgb(255, 89, 0);
 }
 
+#next-quest {
+    margin: 0 auto;
+}
+
 .well-done{
     background-color: greenyellow;
 }
