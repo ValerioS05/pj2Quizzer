@@ -94,10 +94,15 @@ function randomQuest(level) {
     let questionBox = document.getElementById("questionBox"); // get element that we need to change
     let actualQuestion = questions[random]; // gets the current question
     questionBox.innerText = actualQuestion.question; // displays current question
+    // randomize answer with fisher-yates, display answers (looping through each of them) created by function, as buttons
+    for (let i = actualQuestion.answers.length - 1; i > 0; i--) {
+        const rndm = Math.floor(Math.random() * (i + 1));
+        [actualQuestion.answers[i], actualQuestion.answers[rndm]] = [actualQuestion.answers[rndm], actualQuestion.answers[i]];
+    }
 
-    // display answers (looping through each of them) created by function as buttons
     actualQuestion.answers.forEach(function (answer) {
         let newButtons = document.createElement("button");  //new buttons
+
         newButtons.innerText = answer.text; //displays its text
         newButtons.classList.add("answ-btn"); //keep same class
         //sets correct  and false answers
@@ -106,24 +111,26 @@ function randomQuest(level) {
         } else {
             newButtons.dataset.correct = false;
         }
-        
+
         let answGrid = document.getElementById("answ-grid");
         answGrid.appendChild(newButtons);
 
 
         /* i need to create function to check the correct answer and increse score.
         also i need to randomize the answers to dont get always the same order
-*/
+        */
 
 
 
 
 
         //newButtons.addEventListener("click" , function() {
-           // checkCorrectAnswer(newButtons);
+        // checkCorrectAnswer(newButtons);
         //})
     })
 }
+
+
 
 
 // 3 array for different levels
