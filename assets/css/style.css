@@ -21,7 +21,7 @@ header {
 
 header h1{
     color: greenyellow;
-    font-size:  72px;
+    font-size:  42px;
     text-shadow: 0px 5px 10px orangered;
 }
 
@@ -39,15 +39,43 @@ main {
     max-width: 250px;
 }
 
+#welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    color: greenyellow;
+}
+
+#welcome-container input {
+    margin: 20px auto;
+    height: 45px;
+    text-align: center;
+    font-size: 35px;
+    max-width: 300px;
+    background-color: #000000;
+    color: greenyellow;
+    border: 2px solid greenyellow;
+}
+
+#welcome-container input:active {
+    color: greenyellow;
+}
+
+
+
+
 .rules-container p {
-    margin: 10px auto;
-    padding: 20px 0;
-    line-height: 30px;
+    margin: 5px auto;
+    padding: 10px 0;
+    line-height: 25px;
     color: greenyellow;
     width: 75%;
 }
 
-/**popup style**/
+
+/** quiz popup style**/
 .popup {
     
     position: fixed;
@@ -57,7 +85,7 @@ main {
     width: 100vw;
     height: 100vh;
     background: rgba(5, 0, 0, 0.85);
-    display: none;
+    /**display: none;**/
 }
 
 .overlay-pop{
@@ -70,6 +98,43 @@ main {
     height: auto;
     z-index: 2;
 }
+
+.content-home-pop {
+    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color:#f1f9f9;
+    width:75%;
+    height:500px;
+    z-index: 2;
+    border-radius: 10px;
+    box-shadow:  0 0 30px rgba(2, 245, 75, 0.97);
+    color:#000000;
+    font-size: 20px;
+}
+
+.content-home-pop p {
+    margin: 50px auto;
+    font-size: 60px;
+}
+
+.content-home-pop label {
+    font-size: 30px;
+}
+
+.content-home-pop input {
+    height:60px;
+    text-align: center;
+    font-size: 28px;
+    max-width: 170px;
+    margin: 20px auto;
+    border-radius: 10px;
+    border:5px solid green;
+}
+
+
 
 .content-pop {
     position: absolute;
@@ -110,9 +175,9 @@ main {
 /** change pointer and colors when hovered **/
 .btn {
     width:100px;
-    height: 70px;
+    height: 60px;
     border-radius: 50px;
-    margin: 30px ;
+    margin: 25px ;
     color: rgb(9, 10, 6);
     background-color: #20cf10;
     box-shadow: 0px 0px 20px;
@@ -155,6 +220,7 @@ footer {
     height: 60px;
     text-align: center;
     padding-top: 10px;
+    color: greenyellow;
 }
 
 /** easy page style**/
@@ -237,6 +303,8 @@ footer {
 .hide {
     visibility: hidden;
 }
+
+
 /**media query for screen wider than 600px **/
 @media screen and (min-width: 600px) {
     #image {

@@ -1,4 +1,4 @@
-//make sure content is loaded and calls the popup
+//make sure content is loaded and calls contentLoaded function when dom is loaded in quiz pages
 if (
     window.location.pathname.includes("/easy.html") ||
     window.location.pathname.includes("/normal.html") ||
@@ -15,22 +15,20 @@ function contentLoaded() {
     const popup = document.getElementById("popup");
     popup.style.display = "block";
     const nextQuest = document.getElementById("next-quest");
-    nextQuest.classList.add("hide"); // hide next button
+    nextQuest.classList.add("hide");                                     // hide next button
     const continueBtn = document.getElementById("continueBtn");
 
     // Change display back to normal when press popup`s continue button,
-    // and call countdown function.
+    // call countdown function.
 
-    continueBtn.addEventListener("click", function () {
+    continueBtn.addEventListener("click", function () {                 // event listener on popup button
         popup.style.display = "none";
 
         //calling functions to operate the quiz
-        removeAndCreateChild(); // line 52
-        startCount(); //line 34
-
-
-        randomQuest(levels()); // levels: line 67   , randomQuest:line 83
-        nextButtonListener(); // line 167
+        removeAndCreateChild();                                         // line 52
+        startCount();                                                   // line 34
+        randomQuest(levels());                                          // levels: line 67   , randomQuest:line 83
+        nextButtonListener();                                           // line 167
     });
 }
 
@@ -40,29 +38,27 @@ function contentLoaded() {
 
 //count down function
 function startCount() {
-    let timer = document.getElementById("timer"); // gets timer element
-    let minute = 60; // 60 seconds timer
+    let timer = document.getElementById("timer");                       // gets timer element
+    let minute = 60;                                                    // 60 seconds timer
     let count = setInterval(function () {
         // when reaches 0 comesback to homepage
-        if (minute <= 0) {    // checks when minute reaches 0
-            clearInterval(count); // clear the count and set time out text in the time element
+        if (minute <= 0) {                                              // checks when minute reaches 0
+            clearInterval(count);                                       // clear the count  
             timer.innerText = "Time Out!"
-            setTimeout(function () {
-                window.location.href = "index.html"; // redirect to homepage after 3sec 
+            setTimeout(function () {                                    // set time out text in the time element
+                window.location.href = "index.html";                    // redirect to homepage after 3sec 
             }, 3000);
             return;
-        }
-        // sets timer to 60 decreasing 1 every second
-        timer.innerText = minute;
+        } timer.innerText = minute;                                       // sets timer to 60 decreasing 1 every second
         minute--;
     }, 1000)
 }
 //function to remove the previous answ buttons
 function removeAndCreateChild() {
-    const answGrid = document.getElementById("answ-grid");  // gets the actual answer buttons in the html 
+    const answGrid = document.getElementById("answ-grid");              // gets the actual answer buttons in the html 
 
     //removing answer buttons
-    const childrenRemove = Array.from(answGrid.children); // gets the children array from the answer buttons grid
+    const childrenRemove = Array.from(answGrid.children);               // gets the children array from the answer buttons grid
     //function to remove the children
     childrenRemove.forEach(child => {
         if (child.classList.contains("btn-answ")) {
@@ -73,15 +69,15 @@ function removeAndCreateChild() {
 
 //get the level that we choose
 function levels() {
-    const page = window.location.pathname;
-    if (page.includes("easy.html")) {
-        return "easy";
+    const page = window.location.pathname;                              // get the page location
+    if (page.includes("easy.html")) {                                   // checks if the path name includes parameter x3 times
+        return "easy";                                                  // returns a value x3 times
     } else if (page.includes("normal.html")) {
         return "normal";
     } else if (page.includes("hard.html")) {
         return "hard";
     } else {
-        alert("Page non reconized!!")
+        alert("Page non reconized!!")                                   // if path is not recognized
     }
 }
 
@@ -89,20 +85,18 @@ function levels() {
 
 //sets a random question depending on which level page we choose
 function randomQuest(level) {
-    let questions;
+    let questions;                                                      // variable to store results
     if (level === "easy") {
-        questions = questionEasy;
+        questions = questionEasy;                                       // setting questions to easy/normal/hard mode array
     } else if (level === "normal") {
         questions = questionNormal;
     } else if (level === "hard") {
         questions = questionHard;
     }
-
-    let usedQuestions = questions.filter(question => !question.displayed);
-
+    //filters the questions that are already been used 
+    let usedQuestions = questions.filter(question => !question.displayed); //checks if questions are not displayed
     console.log("Used Questions:", usedQuestions);
-
-    if (usedQuestions.length === 0) {
+    if (usedQuestions.length === 0) {                                   // if the index of the usedQuestions goes to zero the quiz finish
         alert("finished");
         return;
     }
@@ -112,10 +106,10 @@ function randomQuest(level) {
 
     //randomize questions and display it + display relative answers
     const random = Math.floor(Math.random() * usedQuestions.length);
-    let questionBox = document.getElementById("questionBox"); // get element that we need to change
-    let actualQuestion = usedQuestions[random]; // gets the current question
-    questionBox.innerText = actualQuestion.question; // displays current question
-    actualQuestion.displayed = true;
+    let questionBox = document.getElementById("questionBox");           // get element that we need to change
+    let actualQuestion = usedQuestions[random];                         // gets the current question
+    questionBox.innerText = actualQuestion.question;                    // displays current question
+    actualQuestion.displayed = true;                                    // changes the display value from false to true when question is displayed 
 
 
     // randomize answer with fisher-yates, display answers (looping through each of them) created by function, as buttons
@@ -124,24 +118,24 @@ function randomQuest(level) {
         [actualQuestion.answers[i], actualQuestion.answers[rndm]] = [actualQuestion.answers[rndm], actualQuestion.answers[i]];
     }
 
-    actualQuestion.answers.forEach(function (answer) {
-        let newButtons = document.createElement("button");  //new buttons
+    actualQuestion.answers.forEach(function (answer) {                  //function for each answer in the actual question
+        let newButtons = document.createElement("button");              //new answer buttons
 
-        newButtons.innerText = answer.text; //displays its text
-        newButtons.classList.add("answ-btn"); //keep same class
+        newButtons.innerText = answer.text;                             //displays its text
+        newButtons.classList.add("answ-btn");                           //give a class
         //sets correct  and false answers
-        if (answer.correct) {
+        if (answer.correct) {                                           // answer is correct
             newButtons.dataset.correct = "true";
-            newButtons.setAttribute("id", "correct"); // add id if correct answer
+            newButtons.setAttribute("id", "correct");                   // add id if correct answer
         } else {
-            newButtons.dataset.correct = "false";
+            newButtons.dataset.correct = "false";                       // answer is wrong
         }
-
+        // answ-grid is the container of our answer buttons
         let answGrid = document.getElementById("answ-grid");
-        answGrid.appendChild(newButtons); // creates answer buttons
+        answGrid.appendChild(newButtons);                               // creates answer buttons
         //listener to click on answer buttons calls function to check if answer is correct
         newButtons.addEventListener("click", function () {
-            checkCorrectAnswer(this);
+            checkCorrectAnswer(this);                                   // this new buttons
         })
 
 
@@ -149,71 +143,44 @@ function randomQuest(level) {
 
 }
 // checking correct answer 
-
-
-
-
-
 function checkCorrectAnswer(clicked) {
-    const nextQuest = document.getElementById("next-quest");
-    const answFeedback = document.getElementById("answ-feedback");
-    let score = parseInt(document.getElementById("score").innerHTML); //sets the score to a number
+    const nextQuest = document.getElementById("next-quest");            // next button
+    const answFeedback = document.getElementById("answ-feedback");      // feedback element
+    let score = parseInt(document.getElementById("score").innerHTML);   //sets the score to a number
     //checking the right answer, if answer right increase score giving feedbacks in any case
-    if (clicked.dataset.correct === "true") {
-        answFeedback.innerText = "Correct";
-        score += 100;
+    if (clicked.dataset.correct === "true") {                           //if answer correct checks boolean
+        answFeedback.innerText = "Correct";                             // giving feeback in feedback container if correct
+        score += 100;                                                   //increase score by 100
     } else {
-        answFeedback.innerText = "Wrong"
+        answFeedback.innerText = "Wrong"                                //giving feedback in feedback container if wrong
     }
-    document.getElementById("score").innerHTML = score; // setting the score
-    nextQuest.classList.remove("hide"); // showing the next button
-    correct.disabled = true; // disable correct answer button so cant increase score.
+    document.getElementById("score").innerHTML = score;                 // setting the score
+    nextQuest.classList.remove("hide");                                 // showing the next button
+    correct.disabled = true;                                            // disable correct answer button so cant increase score.
 }
 
 // Add event listener to the next button 
 function nextButtonListener() {
-    const answFeedback = document.getElementById("answ-feedback");
-    const nextQuest = document.getElementById("next-quest");
+    const answFeedback = document.getElementById("answ-feedback");      // gets the feedback container
+    const nextQuest = document.getElementById("next-quest");            //gets next button
     nextQuest.addEventListener("click", function () {
-        const answGrid = document.getElementById("answ-grid");
-        answGrid.innerHTML = "";
-        answFeedback.innerText = "";
-        randomQuest(levels()); // Calls randomQuest again to display the next set of questions
+        const answGrid = document.getElementById("answ-grid");          // answers container
+        answGrid.innerHTML = "";                                        // resets answer container
+        answFeedback.innerText = "";                                    // resets feedback container
+        randomQuest(levels());                                          // Calls randomQuest again to display the next set of questions
     });
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 3 array for different levels
+/**3 array for different levels 
+ * 
+ * the question easy contains relatively easy questions with 2 answers 
+ * 
+ * the question normal constains still simple questions with 3 answers giving the user less chances to random pick the correct answer
+ * 
+ * the question hard contains harder questions with 4 answers with low chances to random pick the right answer
+ * 
+ * */ 
 
 
 // quiz array easy
