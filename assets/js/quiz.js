@@ -12,11 +12,15 @@ if (
 
 //function called when document is loaded initializing rest of the functions
 function contentLoaded() {
+    let name = localStorage.getItem("name");
+    let player = document.getElementById("got-name");
+    player.innerText = name;
     const popup = document.getElementById("popup");
     popup.style.display = "block";
     const nextQuest = document.getElementById("next-quest");
     nextQuest.classList.add("hide");                                     // hide next button
     const continueBtn = document.getElementById("continueBtn");
+    
 
     // Change display back to normal when press popup`s continue button,
     // call countdown function.
