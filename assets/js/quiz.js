@@ -20,7 +20,7 @@ function contentLoaded() {
     const nextQuest = document.getElementById("next-quest");
     nextQuest.classList.add("hide");                                     // hide next button
     const continueBtn = document.getElementById("continueBtn");
-    
+
 
     // Change display back to normal when press popup`s continue button,
     // call countdown function.
@@ -100,51 +100,51 @@ function randomQuest(level) {
     //filters the questions that are already been used 
     let usedQuestions = questions.filter(question => !question.displayed); //checks if questions are not displayed
     console.log("Used Questions:", usedQuestions);
-    if (usedQuestions.length === 0) {                                   // if the index of the usedQuestions goes to zero the quiz finish
-        alert("finished");
-        return;
-    }
+    
 
 
 
 
     //randomize questions and display it + display relative answers
-    const random = Math.floor(Math.random() * usedQuestions.length);
-    let questionBox = document.getElementById("questionBox");           // get element that we need to change
-    let actualQuestion = usedQuestions[random];                         // gets the current question
-    questionBox.innerText = actualQuestion.question;                    // displays current question
-    actualQuestion.displayed = true;                                    // changes the display value from false to true when question is displayed 
+    if (usedQuestions.length > 0) {
+        const random = Math.floor(Math.random() * usedQuestions.length);
+        let questionBox = document.getElementById("question-box");           // get element that we need to change
+        let actualQuestion = usedQuestions[random];                         // gets the current question
+        questionBox.innerText = actualQuestion.question;                    // displays current question
+        actualQuestion.displayed = true;                                    // changes the display value from false to true when question is displayed 
 
 
-    // randomize answer with fisher-yates, display answers (looping through each of them) created by function, as buttons
-    for (let i = actualQuestion.answers.length - 1; i > 0; i--) {
-        const rndm = Math.floor(Math.random() * (i + 1));
-        [actualQuestion.answers[i], actualQuestion.answers[rndm]] = [actualQuestion.answers[rndm], actualQuestion.answers[i]];
-    }
-
-    actualQuestion.answers.forEach(function (answer) {                  //function for each answer in the actual question
-        let newButtons = document.createElement("button");              //new answer buttons
-
-        newButtons.innerText = answer.text;                             //displays its text
-        newButtons.classList.add("answ-btn");                           //give a class
-        //sets correct  and false answers
-        if (answer.correct) {                                           // answer is correct
-            newButtons.dataset.correct = "true";
-            newButtons.setAttribute("id", "correct");                   // add id if correct answer
-        } else {
-            newButtons.dataset.correct = "false";                       // answer is wrong
+        // randomize answer with fisher-yates, display answers (looping through each of them) created by function, as buttons
+        for (let i = actualQuestion.answers.length - 1; i > 0; i--) {
+            const rndm = Math.floor(Math.random() * (i + 1));
+            [actualQuestion.answers[i], actualQuestion.answers[rndm]] = [actualQuestion.answers[rndm], actualQuestion.answers[i]];
         }
-        // answ-grid is the container of our answer buttons
-        let answGrid = document.getElementById("answ-grid");
-        answGrid.appendChild(newButtons);                               // creates answer buttons
-        //listener to click on answer buttons calls function to check if answer is correct
-        newButtons.addEventListener("click", function () {
-            checkCorrectAnswer(this);                                   // this new buttons
+
+        actualQuestion.answers.forEach(function (answer) {                  //function for each answer in the actual question
+            let newButtons = document.createElement("button");              //new answer buttons
+
+            newButtons.innerText = answer.text;                             //displays its text
+            newButtons.classList.add("answ-btn");                           //give a class
+            //sets correct  and false answers
+            if (answer.correct) {                                           // answer is correct
+                newButtons.dataset.correct = "true";
+                newButtons.setAttribute("id", "correct");                   // add id if correct answer
+            } else {
+                newButtons.dataset.correct = "false";                       // answer is wrong
+            }
+            // answ-grid is the container of our answer buttons
+            let answGrid = document.getElementById("answ-grid");
+            answGrid.appendChild(newButtons);                               // creates answer buttons
+            //listener to click on answer buttons calls function to check if answer is correct
+            newButtons.addEventListener("click", function () {
+                checkCorrectAnswer(this);                                   // this new buttons
+            })
         })
 
-
-    })
-
+    } else {
+        let questionBox = document.getElementById("question-box");
+        questionBox.innerText = "";
+    }
 }
 // checking correct answer 
 function checkCorrectAnswer(clicked) {
@@ -171,9 +171,15 @@ function nextButtonListener() {
         const answGrid = document.getElementById("answ-grid");          // answers container
         answGrid.innerHTML = "";                                        // resets answer container
         answFeedback.innerText = "";                                    // resets feedback container
+        nextQuest.classList.add("hide");
         randomQuest(levels());                                          // Calls randomQuest again to display the next set of questions
+
     });
 }
+
+//function resultPopup() {
+
+//}
 
 
 /**3 array for different levels 
@@ -184,7 +190,7 @@ function nextButtonListener() {
  * 
  * the question hard contains harder questions with 4 answers with low chances to random pick the right answer
  * 
- * */ 
+ * */
 
 
 // quiz array easy
