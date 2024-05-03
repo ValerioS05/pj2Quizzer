@@ -20,7 +20,8 @@ function contentLoaded() {
     const nextQuest = document.getElementById("next-quest");
     nextQuest.classList.add("hide");                                     // hide next button
     const continueBtn = document.getElementById("continueBtn");
-
+    const resultContainer = document.getElementById("result-container");
+    resultContainer.classList.add("hide");
 
     // Change display back to normal when press popup`s continue button,
     // call countdown function.
@@ -43,10 +44,10 @@ function contentLoaded() {
 //count down function
 function startCount() {
     let countFunction;                                                 // empty container for the function
-
+    let initialCount = 60;
     function startCount() {                 
         let timer = document.getElementById("timer");                   // select the timer box
-        let minute = 60;                                                // assigning value 
+        let minute = initialCount;                                                // assigning value 
         countFunction = setInterval(function () {
             if (minute <= 0) {                                          // setting a limit
                 clearInterval(countFunction);                           // stops timer
@@ -63,6 +64,7 @@ function startCount() {
     // function to stop the timer
     function stopCount() {
         clearInterval(countFunction);                                   //stops the timer
+        return initialCount;
     }
 
     startCount();                                                       // Start the timer
@@ -154,8 +156,11 @@ function randomQuest(level) {
 
     } else {
         let questionBox = document.getElementById("question-box");
+        const resultContainer = document.getElementById("result-container");
+        resultContainer.classList.remove("hide");
         questionBox.innerText = "";
-        stopCount();                                                        //timer stops when questions are finished
+        stopCount();                                                      //timer stops when questions are finished
+        
         quizResult();                                                       // show results of the quiz
     }
 }
@@ -178,9 +183,9 @@ function checkCorrectAnswer(clicked) {
     document.getElementById("score").innerHTML = score;                     // setting the score
     nextQuest.classList.remove("hide");                                     // showing the next button
     for (let i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].disabled = true;
-    }                                            // disable answer buttons so cant increase score.
+        answerButtons[i].disabled = true;                                   // disable answer buttons so cant increase score.
 }
+    }                                            
 
 // Add event listener to the next button 
 function nextButtonListener() {
@@ -197,9 +202,23 @@ function nextButtonListener() {
 }
 //creare una funzione per la fine del quiz dando il risultato e un pulsante per tornare indietro.
 //create contenitore sotto il popup nella pagina easy
-//function quizResult() {
-
-//}
+function quizResult() {
+ const score = document.getElementById("score");                            // get the element where the score is stored 
+ const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
+ scoreResult.innerText = score.innerText;                                   // sets the same text to the element
+ const name = document.getElementById("got-name");                          // element where name is stored
+ const nameResult = document.getElementById("got-name-result");             // empty element to store the name
+ nameResult.innerText = name.innerText;                                     // sets same text to the element
+ const initialCount = window.stopCount();                                   // set the initial count to stopCount
+ const timeResult = document.getElementById("time-used");                   // get the element where to store the time result
+ const time = document.getElementById("timer").innerText;                   // get the timer text
+ timeResult.innerText = initialCount - parseInt(time);                      // set the calculate value of the initial time minus the time left
+ let comeback = document.getElementById("comeback");                        // get the button in the result container
+ comeback.addEventListener("click" , function() {                           // adding click listener to the button 
+    window.location.href = "index.html";                                    // relocating to home page when button is clicked
+ })
+ 
+}
 
 
 /**3 array for different levels 

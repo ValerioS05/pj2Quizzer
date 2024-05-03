@@ -9,20 +9,24 @@
 </head>
 
 <body>
+    <!-- easy mode main content-->
     <header>
         <h1>Easy Mode</h1>
         <a href="index.html"><button class="btn">Quit</button></a>
     </header>
     <main>
+        <!-- quiz container-->
         <div class="quiz-box" id="quiz-container">
             <div class="timer-container">
                 <span id="timer">Start!</span>
             </div>
+            <!--score section-->
             <div class="question-container">
                 <div id="score-container">
                 <span> Score:</span>
                 <span id="score">0</span>
             </div>
+            <!-- question and answers  -->
                 <span id="question-box" class="quest"></span>
                 <div id="answ-grid">
                     <button class="btn-answ">Answer 1</button>
@@ -33,14 +37,15 @@
                 <span id="answ-feedback"></span>
             </div>
         </div>
-
+        <!-- end of quiz container-->
+        <!--pop up container-->
         <div id="popup" class="popup">
             <div class="overlay-pop">
                 <div class="content-pop">
-                    <h2>Are you ready <span id="got-name"></span>?</h2>
-                    <p>Press Continue to start the challenge
-                        <br>
-                        You have 1 minute to answer all the 5 questions!
+                    <h2>Are you ready <span id="got-name" class="got-name"></span>?</h2>
+                    <p>
+                        
+                        You have 1 minute to answer all the questions!
                         <br>
                         Do your best!
                     </p>
@@ -48,6 +53,18 @@
 
                 </div>
             </div>
+        </div>
+        <!-- end of popup container-->
+        <!-- result container -->
+        <div id="result-container">
+            <h2>Hey <span id="got-name-result"></span>!</h2>
+            <p>Well done on reaching the end!
+                <br>
+                You scored: <span id="score-result"></span>!
+                <br>
+                Within <span id="time-used"></span> seconds!
+            </p>
+            <button id="comeback">Home</button>
         </div>
     </main>
     <script src="assets/js/quiz.js"></script>
