@@ -196,6 +196,7 @@ function nextButtonListener() {
     });
 }
 //creare una funzione per la fine del quiz dando il risultato e un pulsante per tornare indietro.
+//create contenitore sotto il popup nella pagina easy
 //function quizResult() {
 
 //}
