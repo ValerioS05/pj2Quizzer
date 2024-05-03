@@ -144,6 +144,7 @@ function randomQuest(level) {
     } else {
         let questionBox = document.getElementById("question-box");
         questionBox.innerText = "";
+        quizResult();
     }
 }
 // checking correct answer 
@@ -151,16 +152,22 @@ function checkCorrectAnswer(clicked) {
     const nextQuest = document.getElementById("next-quest");            // next button
     const answFeedback = document.getElementById("answ-feedback");      // feedback element
     let score = parseInt(document.getElementById("score").innerHTML);   //sets the score to a number
+    const answerButtons = document.getElementsByClassName("answ-btn");
+    
     //checking the right answer, if answer right increase score giving feedbacks in any case
     if (clicked.dataset.correct === "true") {                           //if answer correct checks boolean
         answFeedback.innerText = "Correct";                             // giving feeback in feedback container if correct
         score += 100;                                                   //increase score by 100
+        
     } else {
         answFeedback.innerText = "Wrong"                                //giving feedback in feedback container if wrong
+                                       
     }
     document.getElementById("score").innerHTML = score;                 // setting the score
     nextQuest.classList.remove("hide");                                 // showing the next button
-    correct.disabled = true;                                            // disable correct answer button so cant increase score.
+    for (let i = 0 ; i < answerButtons.length; i++) {
+        answerButtons[i].disabled = true;
+    }                                            // disable answer buttons so cant increase score.
 }
 
 // Add event listener to the next button 
@@ -176,8 +183,8 @@ function nextButtonListener() {
 
     });
 }
-
-//function resultPopup() {
+//creare una funzione per la fine del quiz dando il risultato e un pulsante per tornare indietro.
+//function quizResult() {
 
 //}
 
