@@ -42,20 +42,31 @@ function contentLoaded() {
 
 //count down function
 function startCount() {
-    let timer = document.getElementById("timer");                       // gets timer element
-    let minute = 60;                                                    // 60 seconds timer
-    let count = setInterval(function () {
-        // when reaches 0 comesback to homepage
-        if (minute <= 0) {                                              // checks when minute reaches 0
-            clearInterval(count);                                       // clear the count  
-            timer.innerText = "Time Out!"
-            setTimeout(function () {                                    // set time out text in the time element
-                window.location.href = "index.html";                    // redirect to homepage after 3sec 
-            }, 3000);
-            return;
-        } timer.innerText = minute;                                       // sets timer to 60 decreasing 1 every second
-        minute--;
-    }, 1000)
+    let countFunction;                                                 // empty container for the function
+
+    function startCount() {                 
+        let timer = document.getElementById("timer");                   // select the timer box
+        let minute = 60;                                                // assigning value 
+        countFunction = setInterval(function () {
+            if (minute <= 0) {                                          // setting a limit
+                clearInterval(countFunction);                           // stops timer
+                timer.innerText = "Time Out!";                          
+                setTimeout(function () {
+                    window.location.href = "index.html";                //send back the user to home page when timer finishes
+                }, 3000);                                               // 3 seconds wait 
+                return;
+            }
+            timer.innerText = minute;                                   // set the timer value
+            minute--;                                                   // decreasing the timer by 1 
+        }, 1000);                                                       // interval to decrease to 1 second
+    }
+    // function to stop the timer
+    function stopCount() {
+        clearInterval(countFunction);                                   //stops the timer
+    }
+
+    startCount();                                                       // Start the timer
+    window.stopCount = stopCount;                                       // access the stop count globally
 }
 //function to remove the previous answ buttons
 function removeAndCreateChild() {
@@ -65,8 +76,8 @@ function removeAndCreateChild() {
     const childrenRemove = Array.from(answGrid.children);               // gets the children array from the answer buttons grid
     //function to remove the children
     childrenRemove.forEach(child => {
-        if (child.classList.contains("btn-answ")) {
-            answGrid.removeChild(child);
+        if (child.classList.contains("btn-answ")) {                     // checks which button contains that class
+            answGrid.removeChild(child);                                // if yes remove buttons from the grid
         }
     });
 }
@@ -100,7 +111,7 @@ function randomQuest(level) {
     //filters the questions that are already been used 
     let usedQuestions = questions.filter(question => !question.displayed); //checks if questions are not displayed
     console.log("Used Questions:", usedQuestions);
-    
+
 
 
 
@@ -144,42 +155,43 @@ function randomQuest(level) {
     } else {
         let questionBox = document.getElementById("question-box");
         questionBox.innerText = "";
-        quizResult();
+        stopCount();                                                        //timer stops when questions are finished
+        quizResult();                                                       // show results of the quiz
     }
 }
 // checking correct answer 
 function checkCorrectAnswer(clicked) {
-    const nextQuest = document.getElementById("next-quest");            // next button
-    const answFeedback = document.getElementById("answ-feedback");      // feedback element
-    let score = parseInt(document.getElementById("score").innerHTML);   //sets the score to a number
+    const nextQuest = document.getElementById("next-quest");                // next button
+    const answFeedback = document.getElementById("answ-feedback");          // feedback element
+    let score = parseInt(document.getElementById("score").innerHTML);       //sets the score to a number
     const answerButtons = document.getElementsByClassName("answ-btn");
-    
+
     //checking the right answer, if answer right increase score giving feedbacks in any case
-    if (clicked.dataset.correct === "true") {                           //if answer correct checks boolean
-        answFeedback.innerText = "Correct";                             // giving feeback in feedback container if correct
-        score += 100;                                                   //increase score by 100
-        
+    if (clicked.dataset.correct === "true") {                               //if answer correct checks boolean
+        answFeedback.innerText = "Correct";                                 // giving feeback in feedback container if correct
+        score += 100;                                                       //increase score by 100
+
     } else {
-        answFeedback.innerText = "Wrong"                                //giving feedback in feedback container if wrong
-                                       
+        answFeedback.innerText = "Wrong"                                    //giving feedback in feedback container if wrong
+
     }
-    document.getElementById("score").innerHTML = score;                 // setting the score
-    nextQuest.classList.remove("hide");                                 // showing the next button
-    for (let i = 0 ; i < answerButtons.length; i++) {
+    document.getElementById("score").innerHTML = score;                     // setting the score
+    nextQuest.classList.remove("hide");                                     // showing the next button
+    for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].disabled = true;
     }                                            // disable answer buttons so cant increase score.
 }
 
 // Add event listener to the next button 
 function nextButtonListener() {
-    const answFeedback = document.getElementById("answ-feedback");      // gets the feedback container
-    const nextQuest = document.getElementById("next-quest");            //gets next button
+    const answFeedback = document.getElementById("answ-feedback");          // gets the feedback container
+    const nextQuest = document.getElementById("next-quest");                //gets next button
     nextQuest.addEventListener("click", function () {
-        const answGrid = document.getElementById("answ-grid");          // answers container
-        answGrid.innerHTML = "";                                        // resets answer container
-        answFeedback.innerText = "";                                    // resets feedback container
+        const answGrid = document.getElementById("answ-grid");              // answers container
+        answGrid.innerHTML = "";                                            // resets answer container
+        answFeedback.innerText = "";                                        // resets feedback container
         nextQuest.classList.add("hide");
-        randomQuest(levels());                                          // Calls randomQuest again to display the next set of questions
+        randomQuest(levels());                                              // Calls randomQuest again to display the next set of questions
 
     });
 }
