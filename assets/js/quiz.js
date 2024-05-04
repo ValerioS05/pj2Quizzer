@@ -17,8 +17,7 @@ function contentLoaded() {
     player.innerText = name;
     const popup = document.getElementById("popup");
     popup.style.display = "block";
-    const nextQuest = document.getElementById("next-quest");
-    nextQuest.classList.add("hide");                                     // hide next button
+    const nextQuest = document.getElementById("next-quest");                                     // hide next button
     const continueBtn = document.getElementById("continueBtn");
     const resultContainer = document.getElementById("result-container");
     resultContainer.classList.add("hide");
@@ -33,7 +32,6 @@ function contentLoaded() {
         removeAndCreateChild();                                         // line 52
         startCount();                                                   // line 34
         randomQuest(levels());                                          // levels: line 67   , randomQuest:line 83
-        nextButtonListener();                                           // line 167
     });
 }
 
@@ -43,15 +41,15 @@ function contentLoaded() {
 
 //count down function
 function startCount() {
-    let countFunction;                                                 // empty container for the function
+    let countFunction;                                                  // empty container for the function
     let initialCount = 60;
-    function startCount() {                 
+    function startCount() {
         let timer = document.getElementById("timer");                   // select the timer box
-        let minute = initialCount;                                                // assigning value 
+        let minute = initialCount;                                      // assigning value 
         countFunction = setInterval(function () {
             if (minute <= 0) {                                          // setting a limit
                 clearInterval(countFunction);                           // stops timer
-                timer.innerText = "Time Out!";                          
+                timer.innerText = "Time Out!";
                 setTimeout(function () {
                     window.location.href = "index.html";                //send back the user to home page when timer finishes
                 }, 3000);                                               // 3 seconds wait 
@@ -102,9 +100,9 @@ function levels() {
 
 //sets a random question depending on which level page we choose
 function randomQuest(level) {
-    let questions;                                                      // variable to store results
+    let questions;                                                        // variable to store results
     if (level === "easy") {
-        questions = questionEasy;                                       // setting questions to easy/normal/hard mode array
+        questions = questionEasy;                                         // setting questions to easy/normal/hard mode array
     } else if (level === "normal") {
         questions = questionNormal;
     } else if (level === "hard") {
@@ -114,6 +112,8 @@ function randomQuest(level) {
     let usedQuestions = questions.filter(question => !question.displayed); //checks if questions are not displayed
     console.log("Used Questions:", usedQuestions);
 
+    
+
 
 
 
@@ -121,7 +121,7 @@ function randomQuest(level) {
     //randomize questions and display it + display relative answers
     if (usedQuestions.length > 0) {
         const random = Math.floor(Math.random() * usedQuestions.length);
-        let questionBox = document.getElementById("question-box");           // get element that we need to change
+        let questionBox = document.getElementById("question-box");          // get element that we need to change
         let actualQuestion = usedQuestions[random];                         // gets the current question
         questionBox.innerText = actualQuestion.question;                    // displays current question
         actualQuestion.displayed = true;                                    // changes the display value from false to true when question is displayed 
@@ -151,6 +151,7 @@ function randomQuest(level) {
             //listener to click on answer buttons calls function to check if answer is correct
             newButtons.addEventListener("click", function () {
                 checkCorrectAnswer(this);                                   // this new buttons
+
             })
         })
 
@@ -159,8 +160,8 @@ function randomQuest(level) {
         const resultContainer = document.getElementById("result-container");
         resultContainer.classList.remove("hide");
         questionBox.innerText = "";
-        stopCount();                                                      //timer stops when questions are finished
-        
+        stopCount();                                                        //timer stops when questions are finished
+
         quizResult();                                                       // show results of the quiz
     }
 }
@@ -170,7 +171,7 @@ function checkCorrectAnswer(clicked) {
     const answFeedback = document.getElementById("answ-feedback");          // feedback element
     let score = parseInt(document.getElementById("score").innerHTML);       //sets the score to a number
     const answerButtons = document.getElementsByClassName("answ-btn");
-
+    const answGrid = document.getElementById("answ-grid");
     //checking the right answer, if answer right increase score giving feedbacks in any case
     if (clicked.dataset.correct === "true") {                               //if answer correct checks boolean
         answFeedback.innerText = "Correct";                                 // giving feeback in feedback container if correct
@@ -181,43 +182,37 @@ function checkCorrectAnswer(clicked) {
 
     }
     document.getElementById("score").innerHTML = score;                     // setting the score
-    nextQuest.classList.remove("hide");                                     // showing the next button
+                                         
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].disabled = true;                                   // disable answer buttons so cant increase score.
+    }
+    setTimeout(function() {
+    answGrid.innerHTML = "";
+    answFeedback.innerHTML = "";
+    //nextQuest.classList.remove("hide");                                     // showing the next button
+    randomQuest(levels());
+}, 1000);
 }
-    }                                            
 
-// Add event listener to the next button 
-function nextButtonListener() {
-    const answFeedback = document.getElementById("answ-feedback");          // gets the feedback container
-    const nextQuest = document.getElementById("next-quest");                //gets next button
-    nextQuest.addEventListener("click", function () {
-        const answGrid = document.getElementById("answ-grid");              // answers container
-        answGrid.innerHTML = "";                                            // resets answer container
-        answFeedback.innerText = "";                                        // resets feedback container
-        nextQuest.classList.add("hide");
-        randomQuest(levels());                                              // Calls randomQuest again to display the next set of questions
 
-    });
-}
 //creare una funzione per la fine del quiz dando il risultato e un pulsante per tornare indietro.
 //create contenitore sotto il popup nella pagina easy
 function quizResult() {
- const score = document.getElementById("score");                            // get the element where the score is stored 
- const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
- scoreResult.innerText = score.innerText;                                   // sets the same text to the element
- const name = document.getElementById("got-name");                          // element where name is stored
- const nameResult = document.getElementById("got-name-result");             // empty element to store the name
- nameResult.innerText = name.innerText;                                     // sets same text to the element
- const initialCount = window.stopCount();                                   // set the initial count to stopCount
- const timeResult = document.getElementById("time-used");                   // get the element where to store the time result
- const time = document.getElementById("timer").innerText;                   // get the timer text
- timeResult.innerText = initialCount - parseInt(time);                      // set the calculate value of the initial time minus the time left
- let comeback = document.getElementById("comeback");                        // get the button in the result container
- comeback.addEventListener("click" , function() {                           // adding click listener to the button 
-    window.location.href = "index.html";                                    // relocating to home page when button is clicked
- })
- 
+    const score = document.getElementById("score");                            // get the element where the score is stored 
+    const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
+    scoreResult.innerText = score.innerText;                                   // sets the same text to the element
+    const name = document.getElementById("got-name");                          // element where name is stored
+    const nameResult = document.getElementById("got-name-result");             // empty element to store the name
+    nameResult.innerText = name.innerText;                                     // sets same text to the element
+    const initialCount = window.stopCount();                                   // set the initial count to stopCount
+    const timeResult = document.getElementById("time-used");                   // get the element where to store the time result
+    const time = document.getElementById("timer").innerText;                   // get the timer text
+    timeResult.innerText = initialCount - parseInt(time);                      // set the calculate value of the initial time minus the time left
+    let comeback = document.getElementById("comeback");                        // get the button in the result container
+    comeback.addEventListener("click", function () {                           // adding click listener to the button 
+        window.location.href = "index.html";                                   // relocating to home page when button is clicked
+    })
+
 }
 
 
