@@ -3,49 +3,56 @@ document.addEventListener("DOMContentLoaded", function () {
     getName();
 });
 function loadContent() {
-    const popup = document.getElementById("popup");
-    popup.classList.add("hide");
+    const popup = document.getElementById("popup");                                 // get popup
+    popup.classList.add("hide");                                                    // hid the popup
 }
 // getting the username before starting
 function getName() {
-    let letSGo = document.getElementById("get-username");           // get the lets go button
-    let username = document.getElementById("username");             // input field 
-    const levelButton = document.getElementById("button-div");      // level buttons
-    // hiding the level buttons
-    letSGo.classList.add("hide");                                   // hiding the lets go button
-                                                     
-    //adding event listener to check if input field is populated 
-    username.addEventListener("input", function () {
-        if (username.value.trim() !== "") {                         // check that input filed is not empty trim white spaces
-            letSGo.classList.remove("hide");                      // showing the lets go button
-        } else {
-            letSGo.classList.add("hide");                           // if not empty shows the lets go button
-        }
-    })
-    letSGo.addEventListener("click", function () {
+    let letSGo = document.getElementById("get-username");                           // get the lets go button
+    let username = document.getElementById("username");                             // input field 
+    const levelButton = document.getElementById("button-div");                      // level buttons
 
-        popup.classList.remove("hide");                             // remove hide class to show popup
-        let gotName = document.getElementById("got-name");          // get unique span in the popup
-        gotName.innerText = username.value;                         // sets the text of the span
-        let name = username.value;
-        localStorage.setItem("name", name);
-    })
-    const popup = document.getElementById("popup")
-    username.addEventListener("keypress", function (press) {
-        if (press.key === "Enter" && username.value.trim() !== "") {
-            popup.classList.remove("hide")                      // showing the popup
-            let gotName = document.getElementById("got-name");  // getting the span that will store the username
-            gotName.innerText = username.value;                 // insert username inside the span 
-            let name = username.value;
-            localStorage.setItem("name", name);
-        } else {
-            popup.classList.add("hide");                           // if not empty shows the popup
+    // hiding the level buttons
+    letSGo.classList.add("hide");                                                   // hiding the lets go button
+
+    // Function to check user input and remove special characters
+    function validateInput() {
+        let input = username.value.trim();                                          // Get the trimmed value
+        let newInput = input.replace(/[^A-Za-z0-9]/g, '');                          // accept only numbers or letters
+        if (input !== newInput) {                                                   //
+            username.value = newInput;                                              // Update the input value
         }
-    })
-    const quitPopup = document.getElementById("quit-popup");    // get the button at the bottom of the popup
-    quitPopup.addEventListener("click", function (clicked) {     // adding listener to button when clicked
+        // Enable or disable the "Lets Go" button based on input
+        if (newInput !== "") {
+            letSGo.classList.remove("hide");
+        } else {
+            letSGo.classList.add("hide");
+        }
+    }
+
+    // Event listener for the input event on the username input field
+    username.addEventListener("input", function () {
+        validateInput();
+    });
+    username.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            letSGo.click(); // Trigger the "Let's Go" button click
+        }
+    });
+    // Event listener for the "Let's Go" button click
+    letSGo.addEventListener("click", function () {
+        const popup = document.getElementById("popup");
+        popup.classList.remove("hide");
+        let gotName = document.getElementById("got-name");
+        gotName.innerText = username.value.trim();
+        localStorage.setItem("name", username.value.trim());
+    });
+    
+    const quitPopup = document.getElementById("quit-popup");                        // get the button at the bottom of the popup
+    quitPopup.addEventListener("click", function (clicked) {                        // adding listener to button when clicked
         if (clicked) {
-            popup.classList.add("hide");                        // adding hide class to remove popup
+            popup.classList.add("hide");                                            // adding hide class to remove popup
 
         }
     })

@@ -17,10 +17,9 @@ function contentLoaded() {
     player.innerText = name;
     const popup = document.getElementById("popup");
     popup.style.display = "block";
-    const nextQuest = document.getElementById("next-quest");                                     // hide next button
     const continueBtn = document.getElementById("continueBtn");
     const resultContainer = document.getElementById("result-container");
-    resultContainer.classList.add("hide");
+    resultContainer.style.display = "none";
 
     // Change display back to normal when press popup`s continue button,
     // call countdown function.
@@ -42,7 +41,7 @@ function contentLoaded() {
 //count down function
 function startCount() {
     let countFunction;                                                  // empty container for the function
-    let initialCount = 60;
+    let initialCount = 120;
     function startCount() {
         let timer = document.getElementById("timer");                   // select the timer box
         let minute = initialCount;                                      // assigning value 
@@ -112,7 +111,7 @@ function randomQuest(level) {
     let usedQuestions = questions.filter(question => !question.displayed); //checks if questions are not displayed
     console.log("Used Questions:", usedQuestions);
 
-    
+
 
 
 
@@ -142,6 +141,7 @@ function randomQuest(level) {
             if (answer.correct) {                                           // answer is correct
                 newButtons.dataset.correct = "true";
                 newButtons.setAttribute("id", "correct");                   // add id if correct answer
+
             } else {
                 newButtons.dataset.correct = "false";                       // answer is wrong
             }
@@ -156,10 +156,8 @@ function randomQuest(level) {
         })
 
     } else {
-        let questionBox = document.getElementById("question-box");
-        const resultContainer = document.getElementById("result-container");
-        resultContainer.classList.remove("hide");
-        questionBox.innerText = "";
+        let questionBox = document.getElementById("question-box");          // gets the question container
+        questionBox.innerText = "";                                         // clears the question box
         stopCount();                                                        //timer stops when questions are finished
 
         quizResult();                                                       // show results of the quiz
@@ -167,37 +165,41 @@ function randomQuest(level) {
 }
 // checking correct answer 
 function checkCorrectAnswer(clicked) {
-    const nextQuest = document.getElementById("next-quest");                // next button
+    let thumbUp = document.getElementById("thumb-up");
+    let thumbDown = document.getElementById("thumb-down");
     const answFeedback = document.getElementById("answ-feedback");          // feedback element
-    let score = parseInt(document.getElementById("score").innerHTML);       //sets the score to a number
-    const answerButtons = document.getElementsByClassName("answ-btn");
-    const answGrid = document.getElementById("answ-grid");
+    let score = parseInt(document.getElementById("score").innerHTML);       // sets the score to a number
+    const answerButtons = document.getElementsByClassName("answ-btn");      // getting answer buttons
+    const answGrid = document.getElementById("answ-grid");                  // getting answer container
     //checking the right answer, if answer right increase score giving feedbacks in any case
-    if (clicked.dataset.correct === "true") {                               //if answer correct checks boolean
+    if (clicked.dataset.correct === "true") {                               // if answer correct checks boolean
         answFeedback.innerText = "Correct";                                 // giving feeback in feedback container if correct
-        score += 100;                                                       //increase score by 100
-
+        score += 100;                                                       // increase score by 100
+        thumbUp.classList.remove("hide");                                   // shows relative img
     } else {
-        answFeedback.innerText = "Wrong"                                    //giving feedback in feedback container if wrong
-
+        answFeedback.innerText = "Wrong"                                    // giving feedback in feedback container if wrong
+        thumbDown.classList.remove("hide");                                 // shows relative image
     }
     document.getElementById("score").innerHTML = score;                     // setting the score
-                                         
+
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].disabled = true;                                   // disable answer buttons so cant increase score.
     }
-    setTimeout(function() {
-    answGrid.innerHTML = "";
-    answFeedback.innerHTML = "";
-    //nextQuest.classList.remove("hide");                                     // showing the next button
-    randomQuest(levels());
-}, 1000);
+    setTimeout(function () {                                                
+        answGrid.innerHTML = "";                                            // clear the answer buttons
+        answFeedback.innerHTML = "";                                        // clear the written feedback (Corret/Wrong)
+        thumbDown.classList.add("hide");                                    // hide the img relative to correct or wrong answer
+        thumbUp.classList.add("hide");                                      
+        randomQuest(levels());                                              // restart function
+    }, 1000);                                                               // interval of 1 sec between user answering and next question
 }
 
 
 //creare una funzione per la fine del quiz dando il risultato e un pulsante per tornare indietro.
 //create contenitore sotto il popup nella pagina easy
 function quizResult() {
+    const resultContainer = document.getElementById("result-container");       // result container
+    resultContainer.style.display = "block";                                   // gives visibility to the container that was set to display "none"
     const score = document.getElementById("score");                            // get the element where the score is stored 
     const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
     scoreResult.innerText = score.innerText;                                   // sets the same text to the element
@@ -209,6 +211,8 @@ function quizResult() {
     const time = document.getElementById("timer").innerText;                   // get the timer text
     timeResult.innerText = initialCount - parseInt(time);                      // set the calculate value of the initial time minus the time left
     let comeback = document.getElementById("comeback");                        // get the button in the result container
+    let quizBox = document.getElementById("quiz-container");                   // get quiz container
+    quizBox.style.display ="none";                                             // clear the container from view
     comeback.addEventListener("click", function () {                           // adding click listener to the button 
         window.location.href = "index.html";                                   // relocating to home page when button is clicked
     })
