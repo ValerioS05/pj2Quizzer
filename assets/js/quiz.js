@@ -28,9 +28,9 @@ function contentLoaded() {
         popup.style.display = "none";
 
         //calling functions to operate the quiz
-        removeAndCreateChild();                                         // line 52
-        startCount();                                                   // line 34
-        randomQuest(levels());                                          // levels: line 67   , randomQuest:line 83
+        removeAndCreateChild();                                         
+        startCount();                                                   
+        randomQuest(levels());                                          
     });
 }
 
