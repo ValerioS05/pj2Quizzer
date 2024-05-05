@@ -15,10 +15,10 @@ body {
 }
 
 header {
-    text-align: center;
     padding: 20px 0;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
 header h1{
@@ -66,8 +66,15 @@ main {
     color: greenyellow;
 }
 
-
-
+#get-username {
+    width: 100px;
+    height:30px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px greenyellow;
+    background-color: black;
+    color: greenyellow;
+}
 
 .rules-container p {
     margin: 5px auto;
@@ -108,13 +115,13 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    background-color:#f1f9f9;
+    background-color:black;
     width:75%;
     height:auto;
     z-index: 2;
     border-radius: 10px;
     box-shadow:  0 0 30px rgba(2, 245, 75, 0.97);
-    color:#000000;
+    color:greenyellow;
     font-size: 20px;
 }
 
@@ -124,21 +131,22 @@ main {
 }
 
 #quit-popup {
-    margin: 40px auto;
+    margin: 30px auto;
     width: 140px;
     height: 50px;
     background-color: black;
     color: greenyellow;
     border-radius: 10px;
-    box-shadow:  0 0 10px  rgb(8, 205, 41);
+    box-shadow:  0 0 10px 5px greenyellow;
 }
 
-
-
-
-
-
-
+#quit-popup:hover {
+    background-color: green;
+    color: greenyellow;
+    box-shadow: 0px 0px 20px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+}
 
 .content-pop {
     position: absolute;
@@ -146,13 +154,13 @@ main {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    background-color:#f1f9f9;
+    background-color:black;
     width:75%;
     height:auto;
     z-index: 2;
     border-radius: 10px;
     box-shadow:  0 0 30px rgba(2, 245, 75, 0.97);
-    color:#000000;
+    color:greenyellow;
     font-size: 20px;
 }
 
@@ -167,9 +175,13 @@ main {
 }
 
 .content-pop button {
-    margin-top: 20px;
-    width: 150px;
-    height: 120px
+    width: 100px;
+    height:30px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px greenyellow;
+    background-color: black;
+    color: greenyellow;
 }
 
 
@@ -178,28 +190,29 @@ main {
 /**buttons style with hover pseudo class **/
 /** change pointer and colors when hovered **/
 .btn {
-    width:100px;
-    height: 60px;
-    border-radius: 50px;
-    margin: 25px ;
-    color: rgb(9, 10, 6);
-    background-color: #20cf10;
-    box-shadow: 0px 0px 20px;
-    font-size: 25px;
-    font-weight: bold;
+    width: 100px;
+    height:30px;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px greenyellow;
+    background-color: black;
+    color: greenyellow;
+}
+
+.levelBtn {
+    margin: 30px;
 }
 
 .quit-btn {
-    width:100px;
-    height: 70px;
-    border-radius: 50px;
-    margin: 20px ;
-    color: rgb(9, 10, 6);
-    background-color: #20cf10;
-    box-shadow: 0px 0px 20px;
-    font-size: 25px;
-    font-weight: bold;
+    width: 100px;
+    height:30px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px greenyellow;
+    background-color: black;
+    color: greenyellow;
 }
+
 
 .btn a {
     text-decoration: none;
@@ -208,10 +221,11 @@ main {
 }
 
 .btn:hover {
-    background-color: rgb(0, 255, 38);
+    background-color: green;
+    color: greenyellow;
     box-shadow: 0px 0px 20px;
     cursor: pointer;
-    border: 2px solid rgb(193, 72, 8);
+    border: 2px solid rgb(255, 255, 255);
 }
 
 .btn a:hover {
@@ -237,52 +251,51 @@ footer {
 
 .timer-container {
     width: 50%;
-    margin: 10px auto;
+    margin: 0 auto;
     font-size: 30px;
-    border: 10px solid white;
+    border: 5px solid greenyellow;
+    box-shadow: 0 0 10px 5px greenyellow;
+    color: greenyellow;
 }
+
 
 .quest {
     font-size: 18px;
-    margin: 40px auto;
+    margin: 20px auto;
     width: 90%;
     text-align: center;
+    color: greenyellow;
 }
 
 .question-container {
     height: auto;
     width: 90%;
-    margin: 20px auto;
-    
+    margin: 10px auto;
+    color: greenyellow;
     padding: 10px 0;
     display: flex;
     flex-direction: column;
+    font-size: 30px;
 }
 
-.btn-answ {
-    margin: 10px auto;
-    height: 100px;
-    width: 90%;
-    border-radius: 7px;
-    box-shadow: 0 0 10px white;
-    max-width: 800px;
-    
-}
 /** created btns from script.js**/
 .answ-btn {
     margin: 10px auto;
-    height: 100px;
+    height: 60px;
     width: 90%;
     border-radius: 7px;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 10px 5px white;
     max-width: 800px;
+    color: greenyellow;
+    background-color: black;
+    font-size: 30px;
 }
 
 .answ-btn:hover {
-    background-color: rgb(236, 243, 237);
+    background-color: rgb(30, 29, 29) ;
     box-shadow: 0px 0px 20px;
     cursor: pointer;
-    border: 2px solid rgb(255, 89, 0);
+    border: 2px solid white;
 }
 
 .feedback-img {
@@ -319,6 +332,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 30px;
 }
 
 #result-container h2 {
@@ -343,7 +357,7 @@ footer {
 
 #comeback {
     background-color: black;
-    color: white;
+    color: greenyellow;
     width: 150px;
     height: 100px;
     border-radius: 10px;
@@ -353,8 +367,9 @@ footer {
 }
 
 #comeback:hover {
-    color: black;
-    background-color: white;
+    color: greenyellow;
+    background-color: green;
+    border: 2px solid white;
 }
 /**media query for screen wider than 600px **/
 @media screen and (min-width: 600px) {

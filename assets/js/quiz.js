@@ -212,7 +212,9 @@ function quizResult() {
     timeResult.innerText = initialCount - parseInt(time);                      // set the calculate value of the initial time minus the time left
     let comeback = document.getElementById("comeback");                        // get the button in the result container
     let quizBox = document.getElementById("quiz-container");                   // get quiz container
-    quizBox.style.display ="none";                                             // clear the container from view
+    quizBox.style.display ="none";
+    let header = document.getElementById("header");
+    header.style.display = "none";                                            // clear the container from view
     comeback.addEventListener("click", function () {                           // adding click listener to the button 
         window.location.href = "index.html";                                   // relocating to home page when button is clicked
     })
