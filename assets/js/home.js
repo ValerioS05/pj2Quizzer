@@ -48,14 +48,6 @@ function getName() {
         gotName.innerText = username.value.trim();
         localStorage.setItem("name", username.value.trim());
     });
-    
-    const quitPopup = document.getElementById("quit-popup");                        // get the button at the bottom of the popup
-    quitPopup.addEventListener("click", function (clicked) {                        // adding listener to button when clicked
-        if (clicked) {
-            popup.classList.add("hide");                                            // adding hide class to remove popup
-
-        }
-    })
 }
 
 
