@@ -10,7 +10,7 @@ if (
     });
 }
 
-//function called when document is loaded initializing rest of the functions
+//function called when document is loaded initializing rest of the file
 function contentLoaded() {
     let name = localStorage.getItem("name");
     let player = document.getElementById("got-name");

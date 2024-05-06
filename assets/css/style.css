@@ -319,11 +319,6 @@ footer {
 }
 
 
-#answ-feedback {
-    font-size: 30px;
-    margin: 20px auto;
-}
-
 
 #result-container {
     border: 10px white double;
@@ -375,8 +370,8 @@ footer {
     background-color: green;
     border: 2px solid white;
 }
-/**media query for screen wider than 600px **/
-@media screen and (min-width: 600px) {
+/**media query for screen wider than 700px **/
+@media screen and (min-width: 700px) {
     body{
         font-size: 50px;
     }
@@ -391,4 +386,93 @@ footer {
         max-width: 700px;
         margin: 0 auto;
     }
+
+    .content-home-pop {
+        height: 500px
+    }
+
+    .content-home-pop p {
+        font-size: 30px;
+    }
+
+    #button-div button {
+        height:50px;
+        font-size: 25px;
+    }
+
+    .timer-container {
+        margin-top: 20px;
+    }
+
+    .content-pop {
+        height: 400px;
+        font-size: 35px;
+    }
+
+    .content-pop p {
+        margin: 20px;
+        font-size: 35px;
+    }
+
+    #continueBtn {
+        height: 40px;
+        font-size: 25px ;
+    }
+
+    #question-box {
+        font-size: 35px;
+    }
+
+    .answ-btn {
+        margin: 20px auto;
+    }
+
+    .feedback-img {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0 0 10px 10px green;
+        background-color: rgba(2, 245, 75, 0.77);
+    }
+    
+    #result-container {
+        border: 15px white double;
+        max-width: 95%;
+        margin: 30px auto;
+        padding:10px;
+        box-shadow: 0 0 10px 5px white;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+    }
+    
+    #result-container h2 {
+        margin: 40px auto;
+        font-size: 60px;
+    }
+    
+    #result-container p {
+        margin: 50px auto;
+        line-height: 65px;
+    }
+    
+    #score-result, #time-used {
+        color: greenyellow;
+    }
+
+    #comeback {
+        margin-top: 180px;
+    }
+
+    #comeback:hover {
+        background-color: white;
+        color: black;
+    }
+
 }
