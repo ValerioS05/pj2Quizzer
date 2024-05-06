@@ -278,7 +278,49 @@ const questionEasy = [
             { text: "15", correct: false }
         ],
         displayed: false
+    },
+    {
+        question: "From which direction does the sun rise?",
+        answers: [
+            { text: "east", correct: true },
+            { text: "west", correct: false }
+        ],
+        displayed: false
+    },
+    {
+        question: "Which planet is known as the red planet?",
+        answers: [
+            { text: "Mars", correct: true },
+            { text: "Earth", correct: false }
+        ],
+        displayed: false
+    },
+    {
+        question: "Who wrote Romeo and Juliet?",
+        answers: [
+            { text: "William Shakespeare", correct: true },
+            { text: "Dante Alighieri", correct: false }
+        ],
+        displayed: false
+    },
+    {
+        question: "What is the main ingridient in guacamole?",
+        answers: [
+            { text: "avocado", correct: true },
+            { text: "pineapple", correct: false }
+        ],
+        displayed: false
+    },
+    {
+        question: "Who is known as the father of modern physics?",
+        answers: [
+            { text: "Isac Newton", correct: true },
+            { text: "Nikola Tesla", correct: false }
+        ],
+        displayed: false
     }
+
+
 ];
 // quiz normal mode
 const questionNormal = [
@@ -330,7 +372,57 @@ const questionNormal = [
             { text: "Cashews Clame", correct: false }
         ],
         displayed: false
+    },
+
+    {
+        question: "In which year did the Titanic sink?",
+        answers: [
+            { text: "1912", correct: true },
+            { text: "1908", correct: false },
+            { text: "1916", correct: false }
+        ],
+        displayed: false
+    },
+
+    {
+        question: "What is the chemical symbol for potassium?",
+        answers: [
+            { text: "K", correct: true },
+            { text: "Pt", correct: false },
+            { text: "P", correct: false }
+        ],
+        displayed: false
+    },
+    {
+        question: "Who was the first woman to win a Nobel Prize?",
+        answers: [
+            { text: "Marie Curie", correct: true },
+            { text: "Mother Teresa", correct: false },
+            { text: "Rosalind Franklin", correct: false }
+        ],
+        displayed: false
+    },
+    {
+        question: "Which animal is not a marsupial?",
+        answers: [
+            { text: "Kangaroo", correct: false },
+            { text: "Koala", correct: false },
+            { text: "Lemur", correct: true }
+        ],
+        displayed: false
+    },
+    {
+        question: "What is the largest mammal on Earth?",
+        answers: [
+            { text: "Elephant", correct: false },
+            { text: "Blue Whale", correct: true },
+            { text: "Giraffe", correct: false }
+        ],
+        displayed: false
     }
+
+
+    
 ];
 
 
@@ -388,6 +480,56 @@ const questionHard = [
             { text: "1877", correct: false },
             { text: "1997", correct: false },
             { text: "1987", correct: false }
+        ],
+        displayed: false
+    },
+    {
+        question: "What is the chemical symbol for silver?",
+        answers: [
+            { "text": "Ag", "correct": true },
+            { "text": "Si", "correct": false },
+            { "text": "Au", "correct": false },
+            { "text": "Pt", "correct": false }
+        ],
+        displayed: false
+    },
+    {
+        question: "Which chemical element has the highest melting point?",
+        answers: [
+            {text: "Carbon", correct: false},
+            {text: "Tungsten", correct: true},
+            {text: "Titanium", correct: false},
+            {text: "Platinum", correct: false}
+        ],
+        displayed: false
+    },
+    {
+        question: "Which country is known as the Land of the Rising Sun?",
+        answers: [
+            {text: "China", correct: false},
+            {text: "Japan", correct: true},
+            {text: "South Korea", correct: false},
+            {text: "Vietnam", correct: false}
+        ],
+        displayed: false
+    },
+    {
+        question: "What is the largest organ in the human body?",
+        answers: [
+            {text: "Brain", correct: false},
+            {text: "Skin", correct: true},
+            {text: "Liver", correct: false},
+            {text: "Heart", correct: false}
+        ],
+        displayed: false
+    },
+    {
+        question: "What is the smallest bone in the human body?",
+        answers: [
+            {text: "Stapes", correct: true},
+            {text: "Cochlea", correct: false},
+            {text: "Femur", correct: false},
+            {text: "Metacarpal", correct: false}
         ],
         displayed: false
     }
