@@ -167,17 +167,17 @@ function randomQuest(level) {
 function checkCorrectAnswer(clicked) {
     let thumbUp = document.getElementById("thumb-up");
     let thumbDown = document.getElementById("thumb-down");
-    const answFeedback = document.getElementById("answ-feedback");          // feedback element
+    
     let score = parseInt(document.getElementById("score").innerHTML);       // sets the score to a number
     const answerButtons = document.getElementsByClassName("answ-btn");      // getting answer buttons
     const answGrid = document.getElementById("answ-grid");                  // getting answer container
     //checking the right answer, if answer right increase score giving feedbacks in any case
     if (clicked.dataset.correct === "true") {                               // if answer correct checks boolean
-        answFeedback.innerText = "Correct";                                 // giving feeback in feedback container if correct
+                                         
         score += 100;                                                       // increase score by 100
         thumbUp.classList.remove("hide");                                   // shows relative img
     } else {
-        answFeedback.innerText = "Wrong"                                    // giving feedback in feedback container if wrong
+                                           
         thumbDown.classList.remove("hide");                                 // shows relative image
     }
     document.getElementById("score").innerHTML = score;                     // setting the score
@@ -187,7 +187,7 @@ function checkCorrectAnswer(clicked) {
     }
     setTimeout(function () {                                                
         answGrid.innerHTML = "";                                            // clear the answer buttons
-        answFeedback.innerHTML = "";                                        // clear the written feedback (Corret/Wrong)
+                                               
         thumbDown.classList.add("hide");                                    // hide the img relative to correct or wrong answer
         thumbUp.classList.add("hide");                                      
         randomQuest(levels());                                              // restart function

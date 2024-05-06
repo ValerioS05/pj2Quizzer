@@ -24,7 +24,7 @@ header {
 header h1{
     color: greenyellow;
     font-size:  42px;
-    text-shadow: 0px 5px 10px orangered;
+    text-shadow: 0px 5px 10px rgb(0, 255, 47);
     margin:auto;
 }
 
