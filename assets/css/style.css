@@ -1,10 +1,10 @@
+/**general for all pages**/
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /**general style for all pages**/
 }
-
+/**body general **/
 body {
     width: 100vw;
     height: 100vh;
@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     font-family: "Dangrek", sans-serif;
 }
-
+/** header general **/
 header {
     padding: 5px 0;
     display: flex;
@@ -29,7 +29,7 @@ header h1 {
     text-shadow: 0px 5px 10px rgb(0, 255, 47);
     margin: auto;
 }
-
+/** main general **/
 main {
 
     align-items: center;
@@ -39,6 +39,17 @@ main {
 
 }
 
+/**footer**/
+footer {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    height: 60px;
+    text-align: center;
+    padding-top: 10px;
+    color: greenyellow;
+    font-family: sans-serif;
+}
+
 /**logo in index page**/
 #image {
     margin-top: 40px;
@@ -46,6 +57,8 @@ main {
     max-width: 300px;
 }
 
+/** constins paragraph input field **/
+/** contaier **/
 #welcome-container {
     display: flex;
     flex-direction: column;
@@ -56,6 +69,7 @@ main {
     margin-top: 30px;
 }
 
+/** input field**/
 #welcome-container input {
     margin: 20px auto;
     height: 45px;
@@ -67,10 +81,12 @@ main {
     border: 2px solid greenyellow;
 }
 
+/** when selected **/
 #welcome-container input:active {
     color: greenyellow;
 }
 
+/** button **/
 #get-username {
     width: 100px;
     height: 30px;
@@ -82,8 +98,8 @@ main {
 }
 
 /** quiz popup style**/
+/** general pop up**/
 .popup {
-
     position: fixed;
     left: 0;
     top: 0;
@@ -94,6 +110,7 @@ main {
     display: hide;
 }
 
+/** over layer **/
 .overlay-pop {
     position: absolute;
     text-align: center;
@@ -105,8 +122,8 @@ main {
     z-index: 2;
 }
 
+/** actual popup container **/
 .content-home-pop {
-
     position: absolute;
     left: 50%;
     top: 50%;
@@ -122,29 +139,36 @@ main {
     font-family: "Dangrek", sans-serif;
 }
 
+/** paragraph  **/
 .content-home-pop p {
     margin: 30px auto;
     font-size: 25px;
 }
 
-#quit-popup {
-    margin: 30px auto;
-    width: 140px;
-    height: 50px;
-    background-color: black;
-    color: greenyellow;
+/** Level container and links inside popup**/
+#levels-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/** links style **/
+.level-links {
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 0 10px;
     border-radius: 10px;
-    box-shadow: 0 0 10px 5px greenyellow;
-}
-
-#quit-popup:hover {
-    background-color: green;
+    background-color: #000000;
     color: greenyellow;
-    box-shadow: 0px 0px 20px;
-    cursor: pointer;
-    border: 2px solid rgb(255, 255, 255);
-}
+    box-shadow: 0 0 10px 5px greenyellow;
+    width: 40%;
+    margin: 10px auto;
 
+}
+/** level pages style **/
+
+
+/** popup in level pages **/
+/** container **/
 .content-pop {
     position: absolute;
     text-align: center;
@@ -162,15 +186,18 @@ main {
 
 }
 
+/** heading **/
 .content-pop h2 {
     padding: 10px;
     margin: 20px auto;
 }
 
+/** paragraph **/
 .content-pop p {
     font-size: 28px;
 }
 
+/** button**/
 .content-pop button {
     width: 100px;
     height: 30px;
@@ -181,33 +208,7 @@ main {
     color: greenyellow;
 }
 
-
-
-
-/**buttons style with hover pseudo class **/
-/** change pointer and colors when hovered **/
-#levels-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.level-links {
-    text-decoration: none;
-    border: 2px solid white;
-    padding: 0 10px;
-    border-radius: 10px;
-    background-color: #000000;
-    color: greenyellow;
-    box-shadow: 0 0 10px 5px greenyellow;
-    width: 40%;
-    margin: 10px auto;
-
-}
-
-
-
-
-
+/** quit button in level pages **/
 .quit {
     text-decoration: none;
     border: 2px solid white;
@@ -220,37 +221,28 @@ main {
     height: 30px;
     padding: 5px;
 }
-
+/** button hovered **/
 .quit-btn:hover {
     background-color: red;
     color: black;
     box-shadow: 0 0 10px 5px red;
 }
 
-/**footer**/
-footer {
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-    height: 60px;
-    text-align: center;
-    padding-top: 10px;
-    color: greenyellow;
-    font-family: sans-serif;
-}
 
-/** easy page style**/
+
+/** quiz container **/
 .quiz-box {
     border-top: 2px solid greenyellow;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
 }
-
+/** first container contains timer and answers counters **/
 #top-container {
     display: flex;
     align-items: center;
 }
-
+/** counters **/
 #correct-answers, #wrong-answers {
     margin: auto 2em;
     color: greenyellow;
@@ -264,7 +256,7 @@ footer {
     color: red;
     box-shadow: 0 0 10px 5px red;
 }
-
+/** timer **/
 .timer-container {
     width: 125px;
     height: 125px;
@@ -278,14 +270,7 @@ footer {
 }
 
 
-.quest {
-    font-size: 18px;
-    margin: 20px auto;
-    width: 90%;
-    text-align: center;
-    color: greenyellow;
-}
-
+/** question container **/
 .question-container {
     height: auto;
     width: 90%;
@@ -296,10 +281,16 @@ footer {
     flex-direction: column;
     font-size: 30px;
 }
+/** question **/
+.quest {
+    font-size: 18px;
+    margin: 20px auto;
+    width: 90%;
+    text-align: center;
+    color: greenyellow;
+}
 
 /** created btns from script.js**/
-
-
 .answ-btn {
     margin: 10px auto;
     height: 60px;
@@ -314,11 +305,8 @@ footer {
     z-index: 2;
 }
 
-
-
-
-
-
+/** images triggered when answering**/
+/** general (thumb up)**/
 .feedback-img {
     width: 250px;
     height: 300px;
@@ -330,14 +318,14 @@ footer {
     background-color: rgba(2, 245, 75, 0.77);
     z-index: 1;
 }
-
+/** thumb down image **/
 #thumb-down {
     background-color: rgba(239, 11, 11, 0.671);
     box-shadow: 0 0 10px 10px red;
 }
 
 
-
+/** container for end of quiz result **/
 #result-container {
     border: 10px greenyellow double;
     max-width: 90%;
@@ -351,26 +339,26 @@ footer {
     justify-content: center;
     font-size: 30px;
 }
-
+/** heading **/
 #result-container h2 {
     margin: 20px auto;
     font-size: 30px;
 }
-
+/** paragraph **/
 #result-container p {
     margin: 20px auto;
     line-height: 30px;
 }
-
+/** style for score and time results **/
 #score-result,
 #time-used {
     color: greenyellow;
 }
-
+/** spacing **/
 #time-used {
     margin-bottom: 30px;
 }
-
+/** home button **/
 #comeback {
     font-size: 30px;
     font-family: "Dangrek", sans-serif;
@@ -382,7 +370,7 @@ footer {
     border-radius: 10px;
 }
 
-
+/** general class used to hide elements **/
 .hide {
     visibility: hidden;
 }
@@ -392,117 +380,140 @@ footer {
 
 /**media query for screen wider than 700px **/
 @media screen and (min-width: 700px) {
+    /** larger font for the entire body **/
     body {
         font-size: 50px;
     }
 
-    header {
-        padding: 0;
-    }
-
+    /** reducind font size for footer**/
     footer {
         font-size: 10px;
     }
-
+    /** redimension logo **/
     #image {
-        width: 400px;
+        width: auto;
         max-width: 700px;
         margin: 0 auto;
     }
-
+    /** popup **/
+    /** more space for popup **/
     .content-home-pop {
-        height: 500px
+        height: 700px
     }
-
+    /** increse font size for paragraph and bottom space **/
     .content-home-pop p {
-        font-size: 30px;
+        font-size: 40px;
+        margin-bottom: 60px;
     }
-
+    /** larger button **/
     #button-div button {
         height: 50px;
         font-size: 25px;
     }
-
-    .timer-container {
-        margin-top: 20px;
-    }
-
+    
+    /** second popup **/
     .content-pop {
-        height: 400px;
+        height: 500px;
         font-size: 35px;
     }
-
+    /** paragrph font and space increase **/
     .content-pop p {
         margin: 20px;
         font-size: 35px;
     }
-
+    /** start button **/
     #continueBtn {
         height: 40px;
         font-size: 25px;
+        width: 130px;
+        margin-top: 60px;
     }
-
+/** space for timer container **/
+    .timer-container {
+        margin-top: 20px;
+    }
+    /** question container **/
     #question-box {
         font-size: 35px;
     }
-
+    /** answer buttons spacing **/
     .answ-btn {
         margin: 20px auto;
     }
-
+    /**  quit button **/
     .quit {
         border-radius: 10px;
         width: 160px;
-        margin-top: 150px;
+        margin-top: 110px;
         height: 70px;
         padding: 5px;
     }
+    /** counters **/
+    #correct-answers, #wrong-answers {
+        margin: auto 2em;
+        color: greenyellow;
+        box-shadow: 0 0 10px 5px greenyellow;
+        padding: 1px;
+        border-radius: 50%;
+        border: 2px dashed;
+        width: 60px;
+        height: 60px;
+    }
+    /** wrong counter colors **/
+    #wrong-answers {
+        box-shadow: 0 0 10px 5px red;
+        border: 2px dashed red;
+        color: red;
+    }
 
+    /** images triggered from wrong or correct answer **/
     .feedback-img {
         width: 300px;
         height: 300px;
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         box-shadow: 0 0 10px 10px green;
         background-color: rgba(2, 245, 75, 0.77);
     }
-
+    /** end of quiz **/
+    /** result container **/
     #result-container {
-        border: 15px white double;
+        border: 15px greenyellow double;
         max-width: 95%;
         margin: 30px auto;
         padding: 10px;
-        box-shadow: 0 0 10px 5px white;
+        box-shadow: 0 0 10px 5px greenyellow;
         height: 90vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        font-size: 20px;
+    }
+    /** heading **/
+    #result-container h2 {
+        margin-top: 30px;
+        font-size: 40px;
+    }
+    /** paragraph **/
+    #result-container p {
+        margin: 20px auto;
+        line-height: 45px;
         font-size: 30px;
     }
-
-    #result-container h2 {
-        margin: 40px auto;
-        font-size: 60px;
-    }
-
-    #result-container p {
-        margin: 50px auto;
-        line-height: 65px;
-    }
-
+/** score and time result text **/
     #score-result,
     #time-used {
         color: greenyellow;
     }
-
+    /** home button **/
     #comeback {
-        margin-top: 150px;
+        margin: 60px auto;
         font-size: 25px;
     }
-
+    /**home button when hovered **/
     #comeback:hover {
         background-color: white;
         color: black;
@@ -510,52 +521,78 @@ footer {
     }
 
 }
+/** media query for larger screens over or equal width 1600px **/
+@media screen and (min-width: 1600px)  {
+    /** massive logo **/
+    #image {
+        width: 1000px;
+        margin: -60px auto;
+    }
+    /** container with paragraph and input field**/
+    #welcome-container {
+        margin-top: -20px;
+    }
+    /** label over input field **/
+    #welcome-container label {
+        font-size: 60px;
+    }
+    /** input field **/
+    #welcome-container input {
+        width: 300px;
+        margin: 20px auto;
+        border-radius: 5px;
+    }
 
-@media screen and (min-width: 1600px) {
+    /** level links inside popup **/
+    .level-links {
+        margin: 30px auto;
+        height: 90px;
+        font-size: 50px;
+    }
+
+    .level-links:hover {
+        background-color: rgb(32, 32, 32);
+    }
+
+    .content-pop {
+        font-size: 40px;
+    }
+
+    #continueBtn {
+        width: 200px;
+        height: 100px;
+        cursor: pointer;
+    }
+
+    #continueBtn:hover {
+        background-color: white;
+        color: black;
+        box-shadow: 0 0 10px 5px white;
+    }
+
+    /** quiz style **/
+    /** answer buttons **/
     .answ-btn {
         margin: 40px;
         width: 600px;
     }
 
-    .result-btn {
-        background-color: black;
-        color: greenyellow;
-        width: 150px;
-        height: 100px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px 10px;
-        margin: 20px auto;
-
-    }
-
-    .result-btn {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: black;
-        color: greenyellow;
-        border-radius: 5px;
-        text-decoration: none !important;
-        /* Add !important */
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .result-btn:hover {
-        /* Change here */
-        background-color: green;
-        color: white;
-    }
-
-    result-container {
-        border: 15px white double;
+    #result-container {
+        border: 10px greenyellow double;
         max-width: 95%;
         margin: 30px auto;
         padding: 10px;
-        box-shadow: 0 0 10px 5px white;
+        box-shadow: 0 0 10px 5px greenyellow;
         height: 90vh;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         font-size: 30px;
+    }
+
+    #comeback {
+        width: 250px;
+        height: 100px;
     }
 }
