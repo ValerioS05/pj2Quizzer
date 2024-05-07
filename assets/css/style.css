@@ -576,7 +576,7 @@ footer {
         margin: 40px;
         width: 600px;
     }
-
+    /** container after quiz finishes**/
     #result-container {
         border: 10px greenyellow double;
         max-width: 95%;
@@ -590,7 +590,7 @@ footer {
         justify-content: center;
         font-size: 30px;
     }
-
+    /** home button **/
     #comeback {
         width: 250px;
         height: 100px;
