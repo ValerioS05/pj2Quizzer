@@ -167,24 +167,37 @@ function randomQuest(level) {
 function checkCorrectAnswer(clicked) {
     let thumbUp = document.getElementById("thumb-up");
     let thumbDown = document.getElementById("thumb-down");
-    
     let score = parseInt(document.getElementById("score").innerHTML);       // sets the score to a number
+    let correctNumber = parseInt(document.getElementById("correct-answers").innerHTML);
+    let wrongNumber = parseInt(document.getElementById("wrong-answers").innerHTML);
     const answerButtons = document.getElementsByClassName("answ-btn");      // getting answer buttons
     const answGrid = document.getElementById("answ-grid");                  // getting answer container
     //checking the right answer, if answer right increase score giving feedbacks in any case
-    if (clicked.dataset.correct === "true") {                               // if answer correct checks boolean
-                                         
+    if (clicked.dataset.correct === "true") {                               // if answer correct checks boolean                            
         score += 100;                                                       // increase score by 100
         thumbUp.classList.remove("hide");                                   // shows relative img
-    } else {
-                                           
+        correctNumber +=1;
+    } else {                                    
         thumbDown.classList.remove("hide");                                 // shows relative image
+        wrongNumber +=1;
     }
-    document.getElementById("score").innerHTML = score;                     // setting the score
 
+    document.getElementById("score").innerHTML = score;                     // setting the score
+    document.getElementById("correct-answers").innerHTML = correctNumber;
+    document.getElementById("wrong-answers").innerHTML = wrongNumber;
     for (let i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].disabled = true;                                   // disable answer buttons so cant increase score.
-    }
+        if (answerButtons[i] === clicked)
+            if(clicked.dataset.correct === "true"){
+                clicked.style.backgroundColor = "green";
+            } else {
+                clicked.style.backgroundColor = "red";
+                
+            } 
+           
+            answerButtons[i].disabled = true;                               // disable answer buttons so cant increase score
+        }
+                                          
+    
     setTimeout(function () {                                                
         answGrid.innerHTML = "";                                            // clear the answer buttons
                                                
@@ -192,14 +205,30 @@ function checkCorrectAnswer(clicked) {
         thumbUp.classList.add("hide");                                      
         randomQuest(levels());                                              // restart function
     }, 1000);                                                               // interval of 1 sec between user answering and next question
-}
 
+}
 
 //creare una funzione per la fine del quiz dando il risultato e un pulsante per tornare indietro.
 //create contenitore sotto il popup nella pagina easy
 function quizResult() {
     const resultContainer = document.getElementById("result-container");       // result container
-    resultContainer.style.display = "block";                                   // gives visibility to the container that was set to display "none"
+    resultContainer.style.display = "flex";                                   // gives visibility to the container that was set to display "none"
+    const correctNumber = parseInt(document.getElementById("correct-answers").innerHTML);
+    const wrongNumber = parseInt(document.getElementById("wrong-answers").innerHTML);
+    const totalNumber = correctNumber + wrongNumber;
+    const correctPercentage = ((correctNumber / totalNumber) * 100).toFixed(2);
+    let resultParagraph = document.getElementById("result-p");
+    if(correctPercentage >= 40) {
+        resultParagraph.innerText = `Well done you answered correctly ${correctNumber} questions!`
+    } else {
+        resultParagraph.innerText = `Go back to study!!! you answered ${wrongNumber} times wrong!!`  
+    }
+    
+    console.log(correctPercentage);
+
+
+
+
     const score = document.getElementById("score");                            // get the element where the score is stored 
     const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
     scoreResult.innerText = score.innerText;                                   // sets the same text to the element
@@ -210,10 +239,10 @@ function quizResult() {
     const timeResult = document.getElementById("time-used");                   // get the element where to store the time result
     const time = document.getElementById("timer").innerText;                   // get the timer text
     timeResult.innerText = initialCount - parseInt(time);                      // set the calculate value of the initial time minus the time left
-    let comeback = document.getElementById("comeback");                        // get the button in the result container
-    let quizBox = document.getElementById("quiz-container");                   // get quiz container
+    const comeback = document.getElementById("comeback");                        // get the button in the result container
+    const quizBox = document.getElementById("quiz-container");                   // get quiz container
     quizBox.style.display ="none";
-    let header = document.getElementById("header");
+    const header = document.getElementById("header");
     header.style.display = "none";                                            // clear the container from view
     comeback.addEventListener("click", function () {                           // adding click listener to the button 
         window.location.href = "index.html";                                   // relocating to home page when button is clicked

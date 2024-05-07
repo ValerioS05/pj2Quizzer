@@ -2,41 +2,43 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-/**general style for all pages**/    
+    /**general style for all pages**/
 }
+
 body {
     width: 100vw;
-    height:100vh;
+    height: 100vh;
     background-color: #000000;
     color: white;
-    overflow-x:hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     font-family: "Dangrek", sans-serif;
 }
 
 header {
-    padding: 20px 0;
+    padding: 5px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-header h1{
+header h1 {
     color: greenyellow;
-    font-size:  42px;
+    font-size: 42px;
     text-shadow: 0px 5px 10px rgb(0, 255, 47);
-    margin:auto;
+    margin: auto;
 }
 
 main {
-    
+
     align-items: center;
     flex-direction: column;
     text-align: center;
     flex-grow: 1;
-    
+
 }
+
 /**logo in index page**/
 #image {
     margin-top: 40px;
@@ -71,7 +73,7 @@ main {
 
 #get-username {
     width: 100px;
-    height:30px;
+    height: 30px;
     margin: 10px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px 5px greenyellow;
@@ -81,8 +83,8 @@ main {
 
 /** quiz popup style**/
 .popup {
-    
-    position:fixed;
+
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 1;
@@ -92,30 +94,30 @@ main {
     display: hide;
 }
 
-.overlay-pop{
+.overlay-pop {
     position: absolute;
     text-align: center;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     width: 100%;
     height: auto;
     z-index: 2;
 }
 
 .content-home-pop {
-    
+
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-    background-color:black;
-    width:75%;
-    height:300px;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: 75%;
+    height: 500px;
     z-index: 2;
     border-radius: 10px;
-    box-shadow:  0 0 30px rgba(2, 245, 75, 0.97);
-    color:greenyellow;
+    box-shadow: 0 0 30px rgba(2, 245, 75, 0.97);
+    color: greenyellow;
     font-size: 20px;
     font-family: "Dangrek", sans-serif;
 }
@@ -132,7 +134,7 @@ main {
     background-color: black;
     color: greenyellow;
     border-radius: 10px;
-    box-shadow:  0 0 10px 5px greenyellow;
+    box-shadow: 0 0 10px 5px greenyellow;
 }
 
 #quit-popup:hover {
@@ -148,20 +150,20 @@ main {
     text-align: center;
     left: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
-    background-color:black;
-    width:75%;
-    height:auto;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    width: 75%;
+    height: auto;
     z-index: 2;
     border-radius: 10px;
-    box-shadow:  0 0 30px rgba(2, 245, 75, 0.97);
-    color:greenyellow;
+    box-shadow: 0 0 30px rgba(2, 245, 75, 0.97);
+    color: greenyellow;
     font-size: 20px;
-    
+
 }
 
 .content-pop h2 {
-    padding:10px;
+    padding: 10px;
     margin: 20px auto;
 }
 
@@ -171,7 +173,7 @@ main {
 
 .content-pop button {
     width: 100px;
-    height:30px;
+    height: 30px;
     margin: 40px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px 5px greenyellow;
@@ -184,7 +186,10 @@ main {
 
 /**buttons style with hover pseudo class **/
 /** change pointer and colors when hovered **/
-
+#levels-container {
+    display: flex;
+    flex-direction: column;
+}
 
 .level-links {
     text-decoration: none;
@@ -194,23 +199,28 @@ main {
     background-color: #000000;
     color: greenyellow;
     box-shadow: 0 0 10px 5px greenyellow;
-    
+    width: 40%;
+    margin: 10px auto;
+
 }
 
 
 
 
 
-.quit-btn {
-    width: 100px;
-    height:30px;
-    margin: 20px;
+.quit {
+    text-decoration: none;
+    border: 2px solid white;
     border-radius: 10px;
-    box-shadow: 0 0 10px 5px greenyellow;
-    background-color: black;
+    background-color: #000000;
     color: greenyellow;
-    cursor: pointer;
+    box-shadow: 0 0 10px 5px greenyellow;
+    width: 60px;
+    margin: 20px auto;
+    height: 30px;
+    padding: 5px;
 }
+
 .quit-btn:hover {
     background-color: red;
     color: black;
@@ -229,17 +239,29 @@ footer {
 }
 
 /** easy page style**/
-.quiz-box{
+.quiz-box {
     border-top: 2px solid greenyellow;
     display: flex;
     flex-direction: column;
     padding: 10px 0;
 }
 
+#top-container {
+    display: flex;
+    align-items: center;
+}
+
+#correct-answers, #wrong-answers {
+    margin: auto 2em;
+}
+
 .timer-container {
-    width: 50%;
+    width: 125px;
+    height: 125px;
+    border-radius: 60px;
+    padding: 30px 0;
     margin: 0 auto;
-    font-size: 30px;
+    font-size: 40px;
     border: 5px solid greenyellow;
     box-shadow: 0 0 10px 5px greenyellow;
     color: greenyellow;
@@ -266,6 +288,8 @@ footer {
 }
 
 /** created btns from script.js**/
+
+
 .answ-btn {
     margin: 10px auto;
     height: 60px;
@@ -276,24 +300,25 @@ footer {
     color: greenyellow;
     background-color: black;
     font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
 }
 
-.answ-btn:hover {
-    background-color: rgb(30, 29, 29) ;
-    box-shadow: 0px 0px 20px;
-    cursor: pointer;
-    border: 2px solid white;
-}
+
+
+
+
 
 .feedback-img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 300px;
     position: absolute;
     top: 70%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     box-shadow: 0 0 10px 10px green;
     background-color: rgba(2, 245, 75, 0.77);
+    z-index: 1;
 }
 
 #thumb-down {
@@ -307,7 +332,7 @@ footer {
     border: 10px white double;
     max-width: 90%;
     margin: 30px auto;
-    padding:10px;
+    padding: 10px;
     box-shadow: 0 0 10px white;
     height: auto;
     display: flex;
@@ -327,7 +352,8 @@ footer {
     line-height: 30px;
 }
 
-#score-result, #time-used {
+#score-result,
+#time-used {
     color: greenyellow;
 }
 
@@ -356,15 +382,18 @@ footer {
 
 /**media query for screen wider than 700px **/
 @media screen and (min-width: 700px) {
-    body{
+    body {
         font-size: 50px;
     }
+
     header {
         padding: 0;
     }
-    footer{
+
+    footer {
         font-size: 10px;
     }
+
     #image {
         width: 400px;
         max-width: 700px;
@@ -380,7 +409,7 @@ footer {
     }
 
     #button-div button {
-        height:50px;
+        height: 50px;
         font-size: 25px;
     }
 
@@ -400,7 +429,7 @@ footer {
 
     #continueBtn {
         height: 40px;
-        font-size: 25px ;
+        font-size: 25px;
     }
 
     #question-box {
@@ -411,22 +440,30 @@ footer {
         margin: 20px auto;
     }
 
+    .quit {
+        border-radius: 10px;
+        width: 160px;
+        margin-top: 150px;
+        height: 70px;
+        padding: 5px;
+    }
+
     .feedback-img {
         width: 300px;
         height: 300px;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         box-shadow: 0 0 10px 10px green;
         background-color: rgba(2, 245, 75, 0.77);
     }
-    
+
     #result-container {
         border: 15px white double;
         max-width: 95%;
         margin: 30px auto;
-        padding:10px;
+        padding: 10px;
         box-shadow: 0 0 10px 5px white;
         height: 90vh;
         display: flex;
@@ -435,18 +472,19 @@ footer {
         justify-content: center;
         font-size: 30px;
     }
-    
+
     #result-container h2 {
         margin: 40px auto;
         font-size: 60px;
     }
-    
+
     #result-container p {
         margin: 50px auto;
         line-height: 65px;
     }
-    
-    #score-result, #time-used {
+
+    #score-result,
+    #time-used {
         color: greenyellow;
     }
 
@@ -468,6 +506,7 @@ footer {
         margin: 40px;
         width: 600px;
     }
+
     .result-btn {
         background-color: black;
         color: greenyellow;
@@ -476,21 +515,37 @@ footer {
         border-radius: 10px;
         box-shadow: 0 0 10px 10px;
         margin: 20px auto;
-    
+
     }
-    
-    .result-btn  {
+
+    .result-btn {
         display: inline-block;
         padding: 10px 20px;
         background-color: black;
         color: greenyellow;
         border-radius: 5px;
-        text-decoration: none !important; /* Add !important */
+        text-decoration: none !important;
+        /* Add !important */
         transition: background-color 0.3s, color 0.3s;
     }
-    
-    .result-btn:hover  { /* Change here */
+
+    .result-btn:hover {
+        /* Change here */
         background-color: green;
         color: white;
+    }
+
+    result-container {
+        border: 15px white double;
+        max-width: 95%;
+        margin: 30px auto;
+        padding: 10px;
+        box-shadow: 0 0 10px 5px white;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
     }
 }

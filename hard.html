@@ -11,30 +11,38 @@
 <body>
     <header id="header">
         <h1>Hard Mode</h1>
-        <a href="index.html" ><button class="quit-btn">Quit</button></a>
+
     </header>
     <main>
         <!-- quiz container-->
         <div class="quiz-box" id="quiz-container">
-            <div class="timer-container">
-                <span id="timer">Start!</span>
+            <div id="top-container">
+                <span id="correct-answers">0</span>
+                <div class="timer-container">
+
+                    <span id="timer">Start!</span>
+
+                </div>
+                <span id="wrong-answers">0</span>
             </div>
+            
             <!--score section-->
             <div class="question-container">
                 <div id="score-container">
-                <span> Score:</span>
-                <span id="score">0</span>
-            </div>
-            <span id="question-box" class="quest"></span>
+                    <span> Score:</span>
+                    <span id="score">0</span>
+                </div>
+                <span id="question-box" class="quest"></span>
                 <div id="answ-grid">
                 </div>
-                
+
             </div>
+            <a href="index.html" class="quit">Quit</a>
         </div>
-        
+
         <div id="image-div">
-            <img src="assets/images/thumbDown.png" alt="thumb down picture" id="thumb-down"class="feedback-img hide">
-                
+            <img src="assets/images/thumbDown.png" alt="thumb down picture" id="thumb-down" class="feedback-img hide">
+
             <img src="assets/images/thumbUp.png" alt="thumb up picture" id="thumb-up" class="feedback-img hide">
             <span id="answ-feedback"></span>
         </div>
@@ -43,7 +51,7 @@
                 <div class="content-pop">
                     <h2>Are you ready <span id="got-name"></span>?</h2>
                     <p>
-                        
+
                         You have 2 minutes to answer the questions!
                         <br>
                         Do your best!
@@ -56,13 +64,15 @@
         <!-- result container -->
         <div id="result-container">
             <h2>Hey <span id="got-name-result"></span>!</h2>
-            <p>Well done on reaching the end!
+            <p id="result-p"></p>
+            <p>
                 <br>
                 You scored: <span id="score-result"></span>!
                 <br>
                 Within <span id="time-used"></span> seconds!
-                <button id="comeback">Home</button>
+
             </p>
+            <button id="comeback">Home</button>
         </div>
     </main>
     <script src="assets/js/quiz.js"></script>
