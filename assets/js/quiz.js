@@ -218,17 +218,11 @@ function quizResult() {
     const totalNumber = correctNumber + wrongNumber;
     const correctPercentage = ((correctNumber / totalNumber) * 100).toFixed(2);
     let resultParagraph = document.getElementById("result-p");
-    if(correctPercentage >= 40) {
+    if(correctPercentage > 40) {
         resultParagraph.innerText = `Well done you answered correctly ${correctNumber} questions!`
     } else {
         resultParagraph.innerText = `Go back to study!!! you answered ${wrongNumber} times wrong!!`  
     }
-    
-    console.log(correctPercentage);
-
-
-
-
     const score = document.getElementById("score");                            // get the element where the score is stored 
     const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
     scoreResult.innerText = score.innerText;                                   // sets the same text to the element
