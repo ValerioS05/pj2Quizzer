@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzer</title>
-    <!-- css -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
@@ -20,7 +19,8 @@
     <meta name="keywords" content="quiz,questions,answers,challenge,game,fun,play,quiz page, quiz game, trivia">
     <!--description-->
     <meta name="description" content="Test your knowledge with Quizzer! fun and challenging with three different game modes!">
-
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -32,13 +32,13 @@
         <!-- quiz container-->
         <div class="quiz-box" id="quiz-container">
             <div id="top-container">
-                <span id="correct-answers">0</span>
+                <span id="correct-answers" class="counters">0</span>
                 <div class="timer-container">
 
                     <span id="timer">Start!</span>
 
                 </div>
-                <span id="wrong-answers">0</span>
+                <span id="wrong-answers" class="counters">0</span>
             </div>
             
             <!--score section-->

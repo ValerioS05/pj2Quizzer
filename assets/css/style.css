@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
 }
+
 /**body general **/
 body {
     width: 100vw;
@@ -15,6 +16,7 @@ body {
     flex-direction: column;
     font-family: "Dangrek", sans-serif;
 }
+
 /** header general **/
 header {
     padding: 5px 0;
@@ -29,6 +31,7 @@ header h1 {
     text-shadow: 0px 5px 10px rgb(0, 255, 47);
     margin: auto;
 }
+
 /** main general **/
 main {
 
@@ -37,6 +40,10 @@ main {
     text-align: center;
     flex-grow: 1;
 
+}
+
+a {
+    font-family: sans-serif;
 }
 
 /**footer**/
@@ -70,12 +77,12 @@ footer {
 }
 
 /** input field**/
-#welcome-container input {
+.input-name {
     margin: 20px auto;
     height: 45px;
     text-align: center;
     font-size: 35px;
-    max-width: 300px;
+    width: 300px;
     background-color: #000000;
     color: greenyellow;
     border: 2px solid greenyellow;
@@ -107,7 +114,6 @@ footer {
     width: 100vw;
     height: 100vh;
     background: rgba(5, 0, 0, 0.85);
-    display: hide;
 }
 
 /** over layer **/
@@ -155,7 +161,7 @@ footer {
 .level-links {
     text-decoration: none;
     border: 2px solid white;
-    padding: 0 10px;
+    padding: 10px 10px;
     border-radius: 10px;
     background-color: #000000;
     color: greenyellow;
@@ -164,6 +170,7 @@ footer {
     margin: 10px auto;
 
 }
+
 /** level pages style **/
 
 
@@ -218,9 +225,11 @@ footer {
     box-shadow: 0 0 10px 5px greenyellow;
     width: 60px;
     margin: 20px auto;
-    height: 30px;
-    padding: 5px;
+    height: 40px;
+    padding: 10px;
+
 }
+
 /** button hovered **/
 .quit-btn:hover {
     background-color: red;
@@ -237,54 +246,64 @@ footer {
     flex-direction: column;
     padding: 10px 0;
 }
+
 /** first container contains timer and answers counters **/
 #top-container {
     display: flex;
     align-items: center;
+    margin: 20px;
 }
+
+/** timer **/
+.timer-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
+    padding: 12px;
+    margin: 0 auto;
+    font-size: 20px;
+    border: 5px solid greenyellow;
+    box-shadow: 0 0 5px 2px greenyellow;
+    color: greenyellow;
+}
+
 /** counters **/
-#correct-answers, #wrong-answers {
+#correct-answers,
+#wrong-answers {
     margin: auto 2em;
     color: greenyellow;
     box-shadow: 0 0 10px 5px greenyellow;
     padding: 10px;
     border-radius: 50%;
     border: 2px dashed;
+    width: 55px;
+    height: 55px;
+    font-size: 20px;
 }
 
 #wrong-answers {
     color: red;
     box-shadow: 0 0 10px 5px red;
 }
-/** timer **/
-.timer-container {
-    width: 125px;
-    height: 125px;
-    border-radius: 60px;
-    padding: 30px 0;
-    margin: 0 auto;
-    font-size: 40px;
-    border: 5px solid greenyellow;
-    box-shadow: 0 0 10px 5px greenyellow;
-    color: greenyellow;
-}
+
 
 
 /** question container **/
 .question-container {
     height: auto;
     width: 90%;
-    margin: 10px auto;
+    margin: 5px auto;
     color: greenyellow;
-    padding: 10px 0;
+    padding: 5px 0;
     display: flex;
     flex-direction: column;
     font-size: 30px;
 }
+
 /** question **/
 .quest {
     font-size: 18px;
-    margin: 20px auto;
+    margin: 10px auto;
     width: 90%;
     text-align: center;
     color: greenyellow;
@@ -318,6 +337,7 @@ footer {
     background-color: rgba(2, 245, 75, 0.77);
     z-index: 1;
 }
+
 /** thumb down image **/
 #thumb-down {
     background-color: rgba(239, 11, 11, 0.671);
@@ -339,25 +359,30 @@ footer {
     justify-content: center;
     font-size: 30px;
 }
+
 /** heading **/
 #result-container h2 {
     margin: 20px auto;
     font-size: 30px;
 }
+
 /** paragraph **/
 #result-container p {
     margin: 20px auto;
     line-height: 30px;
 }
+
 /** style for score and time results **/
 #score-result,
 #time-used {
     color: greenyellow;
 }
+
 /** spacing **/
 #time-used {
     margin-bottom: 30px;
 }
+
 /** home button **/
 #comeback {
     font-size: 30px;
@@ -380,6 +405,7 @@ footer {
 
 /**media query for screen wider than 700px **/
 @media screen and (min-width: 700px) {
+
     /** larger font for the entire body **/
     body {
         font-size: 50px;
@@ -389,38 +415,60 @@ footer {
     footer {
         font-size: 10px;
     }
+
     /** redimension logo **/
     #image {
-        width: auto;
-        max-width: 700px;
+        width: 600px;
+        max-width: 800px;
         margin: 0 auto;
     }
+
+    /** welcome container **/
+    #welcome-container {
+        font-size: 70px;
+        width: 100%;
+
+    }
+
+    .input-name {
+        margin-top: 50px;
+        width: 500px;
+        border-radius: 10px;
+        height: 100px;
+    }
+
     /** popup **/
     /** more space for popup **/
     .content-home-pop {
         height: 700px
     }
+
     /** increse font size for paragraph and bottom space **/
     .content-home-pop p {
         font-size: 40px;
         margin-bottom: 60px;
     }
+
     /** larger button **/
-    #button-div button {
-        height: 50px;
-        font-size: 25px;
+    .level-links {
+        height: 60px;
+        font-size: 30px;
+        margin: 40px auto;
+
     }
-    
+
     /** second popup **/
     .content-pop {
         height: 500px;
         font-size: 35px;
     }
+
     /** paragrph font and space increase **/
     .content-pop p {
         margin: 20px;
         font-size: 35px;
     }
+
     /** start button **/
     #continueBtn {
         height: 40px;
@@ -428,18 +476,63 @@ footer {
         width: 130px;
         margin-top: 60px;
     }
-/** space for timer container **/
+
+    /** space for timer container **/
     .timer-container {
         margin-top: 20px;
+        width: 200px;
+        height: 200px;
+        font-size: 50px;
+        padding: 30px;
+        border-radius: 50%;
     }
+
+   
+
+    /** counters **/
+    /* Adjust the position of the counters */
+    
+
+
+    .counters {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 200px;
+    }
+
+    #correct-answers,
+    #wrong-answers {
+        color: greenyellow;
+        box-shadow: 0 0 10px 5px greenyellow;
+        border-radius: 50%;
+        border: 2px dashed;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+    }
+
+    /** wrong counter colors **/
+    #wrong-answers {
+        box-shadow: 0 0 10px 5px red;
+        border: 2px dashed red;
+        color: red;
+    }
+
     /** question container **/
     #question-box {
         font-size: 35px;
     }
+
     /** answer buttons spacing **/
     .answ-btn {
         margin: 20px auto;
     }
+
     /**  quit button **/
     .quit {
         border-radius: 10px;
@@ -448,23 +541,9 @@ footer {
         height: 70px;
         padding: 5px;
     }
-    /** counters **/
-    #correct-answers, #wrong-answers {
-        margin: auto 2em;
-        color: greenyellow;
-        box-shadow: 0 0 10px 5px greenyellow;
-        padding: 1px;
-        border-radius: 50%;
-        border: 2px dashed;
-        width: 60px;
-        height: 60px;
-    }
-    /** wrong counter colors **/
-    #wrong-answers {
-        box-shadow: 0 0 10px 5px red;
-        border: 2px dashed red;
-        color: red;
-    }
+
+
+
 
     /** images triggered from wrong or correct answer **/
     .feedback-img {
@@ -477,6 +556,7 @@ footer {
         box-shadow: 0 0 10px 10px green;
         background-color: rgba(2, 245, 75, 0.77);
     }
+
     /** end of quiz **/
     /** result container **/
     #result-container {
@@ -492,27 +572,32 @@ footer {
         justify-content: center;
         font-size: 20px;
     }
+
     /** heading **/
     #result-container h2 {
         margin-top: 30px;
         font-size: 40px;
     }
+
     /** paragraph **/
     #result-container p {
         margin: 20px auto;
         line-height: 45px;
         font-size: 30px;
     }
-/** score and time result text **/
+
+    /** score and time result text **/
     #score-result,
     #time-used {
         color: greenyellow;
     }
+
     /** home button **/
     #comeback {
         margin: 60px auto;
         font-size: 25px;
     }
+
     /**home button when hovered **/
     #comeback:hover {
         background-color: white;
@@ -521,26 +606,32 @@ footer {
     }
 
 }
+
 /** media query for larger screens over or equal width 1600px **/
-@media screen and (min-width: 1600px)  {
+@media screen and (min-width: 1200px) {
+
     /** massive logo **/
     #image {
-        width: 1000px;
+        width: 700px;
         margin: -60px auto;
     }
+
     /** container with paragraph and input field**/
     #welcome-container {
-        margin-top: -20px;
+        margin-top: -40px;
     }
+
     /** label over input field **/
     #welcome-container label {
         font-size: 60px;
     }
+
     /** input field **/
     #welcome-container input {
-        width: 300px;
+        width: 200px;
         margin: 20px auto;
-        border-radius: 5px;
+        border-radius: 10px;
+        height: 50px;
     }
 
     /** level links inside popup **/
@@ -556,6 +647,30 @@ footer {
 
     .content-pop {
         font-size: 40px;
+    }
+    
+    #correct-answers,
+    #wrong-answers {
+        color: greenyellow;
+        box-shadow: 0 0 10px 5px greenyellow;
+        border-radius: 50%;
+        border: 2px dashed;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 150px;
+        font-size: 60px;
+        margin: 70px auto;
+
+    }
+
+    /** wrong counter colors **/
+    #wrong-answers {
+        box-shadow: 0 0 10px 5px red;
+        border: 2px dashed red;
+        color: red;
     }
 
     #continueBtn {
@@ -576,6 +691,7 @@ footer {
         margin: 40px;
         width: 600px;
     }
+
     /** container after quiz finishes**/
     #result-container {
         border: 10px greenyellow double;
@@ -590,6 +706,7 @@ footer {
         justify-content: center;
         font-size: 30px;
     }
+
     /** home button **/
     #comeback {
         width: 250px;

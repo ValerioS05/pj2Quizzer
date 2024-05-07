@@ -5,17 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzer</title>
-    <!-- css -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <!-- keywords -->
+    <meta name="keywords" content="quiz,questions,answers,challenge,game,fun,play,quiz page, quiz game, trivia">
+    <!--description-->
+    <meta name="description" content="Test your knowledge with Quizzer! fun and challenging with three different game modes!">
+    <!-- css -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -23,10 +28,10 @@
         <div id="logo-container"><img src="assets/images/logo.png" alt="" id="image"></div>
         <div id="welcome-container">
             <label for="username">Choose a Name to start!</label>
-            <input type="text" name="username" placeholder="Name..." id="username" maxlength="15" autocomplete="off">
+            <input type="text" name="username" placeholder="Name..." id="username" maxlength="15" autocomplete="off" class="input-name">
             <button id="get-username">Let's Go!</button>
         </div>
-        <div id="popup" class="popup">
+        <div id="popup" class="popup hide">
             <div class="overlay-pop">
                 <div class="content-home-pop">
                     <p>Hey <span id="got-name"></span>! <br>Which level would you like to play?</p>
