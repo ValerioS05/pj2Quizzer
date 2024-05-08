@@ -1,46 +1,70 @@
-[quizzer](https://valerios05.github.io/pj2Quizzer/)
+# [QUIZZER](https://valerios05.github.io/pj2Quizzer/)
+
+![Quizzer logo](/assets/images/logo.png)
+
+## Welcome to Quizzer readme! Quizzer is a simple quiz game with 3 different difficulties.
+
+I was aiming to provide a easy to play quiz game, simple to understand and straight forward to some fun.
+
+## Getting started
+
+- ### First things first..Exploring Quizzer
+    - #### Index.html it`s the landing page
+      - We got 3 More pages reachable from the landing page
+      - Easy.html
+      - Normal.html
+      - Hard.html
+    - #### 1 assets directory
+      - The assets contains:
+        - CSS containing the style.css file
+        - js containing 2 javascript files
+          - home.js used for landing page
+          - quiz.js used for the actual quiz 
+        - images 
+          - images contains 3 folders 
+          - a folder for favicon
+          - a folder for the readme file
+          - a folder for the images used for the pages
+    - #### readme.md 
+      - The readme file is for guidance and presentation
+
+##  Features
+
+### 1. Favicon
+    - Favicon created from [favicon.io](https://favicon.io/favicon-generator/)
+### 2. Logo
+    - The page has a logo representing an identifier for the website.
+### 3 Personalization
+    - The user can insert a personal username, facilitating personalization
+### 4 Popups
+    - The site uses Popups to direct the user through the quiz making easier the navigation
+### 5 Game modes
+    - Three different levels 
+### 6 Countdown timer
+    - Used to enhance the user experience and give a sense of urgency or deadline
+### 7 Visual Feedbacks
+    - Provided the user with visual feedbacks when answering the question. Mainly color feedback where correct is green and wrong is red. 
+    - Provided counters tha dinamically updates the user on their progress in real time.
+    - Provided a score counter, real-time feedback over the user performance through the quiz
+### 8 Results
+    - Once quiz is completed the users receive detailed results including a feedback over the perfomance
+    - the total score 
+    - the time used to complete the quiz
+
+## Scope
+
+### Audience 
+    - The quiz is suited for general audience, depending on the difficulty
+    - The easy mode is open to everyone looking for a quiz game
+    - The Normal and Hard mode requires more knowledge but are still open to whoever wants a bit more challenging questions
+### Objective
+  - The purpose of Quizzer is to entertain the user , with a pinch of educational purpose.
+### Questions and Answers 
+  - 
 
 
 
 
 
 
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome,
-
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
-
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
-
-## Codeanywhere Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
-
-`python3 -m http.server`
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
