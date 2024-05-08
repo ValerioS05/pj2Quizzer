@@ -19,7 +19,7 @@ body {
 
 /** header general **/
 header {
-    padding: 5px 0;
+    padding: 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,9 +27,8 @@ header {
 
 header h1 {
     color: greenyellow;
-    font-size: 42px;
+    font-size: 35px;
     text-shadow: 0px 5px 10px rgb(0, 255, 47);
-    margin: auto;
 }
 
 /** main general **/
@@ -225,7 +224,7 @@ footer {
     color: greenyellow;
     box-shadow: 0 0 10px 5px greenyellow;
     width: 60px;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
     height: 40px;
     padding: 10px;
 
@@ -252,7 +251,7 @@ footer {
 #top-container {
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 0 auto;
 }
 
 /** timer **/
@@ -315,11 +314,11 @@ footer {
 
 /** created btns from script.js**/
 .answ-btn {
-    margin: 10px auto;
+    margin: 5px auto;
     height: 60px;
     width: 90%;
     border-radius: 7px;
-    box-shadow: 0 0 10px 5px white;
+    box-shadow: 0 0 10px 2px white;
     max-width: 800px;
     color: greenyellow;
     background-color: black;
@@ -334,8 +333,8 @@ footer {
     width: 50px;
     height: 50px;
     position: absolute;
-    top: 37%;
-    left: 20%;
+    top: 29%;
+    left: 22%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px 10px green;
     background-color: rgba(2, 245, 75, 0.77);
@@ -357,12 +356,12 @@ footer {
     margin: 30px auto;
     padding: 10px;
     box-shadow: 0 0 10px greenyellow;
-    height: 700px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 /** heading **/
@@ -483,27 +482,28 @@ footer {
     }
 
     /** space for timer container **/
+
     .timer-container {
-        margin-top: 20px;
-        width: 200px;
-        height: 200px;
-        font-size: 50px;
+        width: 120px;
+        height: 120px;
         padding: 30px;
-        border-radius: 50%;
+        font-size: 25px;
+        line-height: 25px;
+        margin: 40px;
     }
 
-   
+
+
 
     /** counters **/
     /* Adjust the position of the counters */
-    
+
 
 
     .counters {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 10px;
         padding: 200px;
     }
 
@@ -517,8 +517,9 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+
     }
 
     /** wrong counter colors **/
@@ -552,10 +553,10 @@ footer {
 
     /** images triggered from wrong or correct answer **/
     .feedback-img {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         position: absolute;
-        top: 42%;
+        top: 30%;
         left: 30%;
         transform: translate(-50%, -50%);
         box-shadow: 0 0 10px 10px green;
@@ -653,7 +654,7 @@ footer {
     .content-pop {
         font-size: 40px;
     }
-    
+
     #correct-answers,
     #wrong-answers {
         color: greenyellow;
@@ -664,10 +665,10 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 150px;
-        height: 150px;
-        font-size: 60px;
-        margin: 70px auto;
+        width: 100px;
+        height: 100px;
+        font-size: 40px;
+        margin: 70px 50px;
 
     }
 
@@ -691,9 +692,18 @@ footer {
     }
 
     /** quiz style **/
+    .timer-container {
+        width: 120px;
+        height: 120px;
+        padding: 30px;
+        font-size: 25px;
+        line-height: 25px;
+
+    }
+
     /** answer buttons **/
     .answ-btn {
-        margin: 40px;
+        margin: 10px 30px;
         width: 600px;
     }
 

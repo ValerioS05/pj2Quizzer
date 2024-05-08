@@ -31,13 +31,18 @@ function getName() {
     }
 
     // Event listener for the input event on the username input field
-    username.addEventListener("input", function () {
+    username.addEventListener("input", function (event) {
         validateInput();
     });
+    
+    // Event listener for the Enter key press on the username input field
     username.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            letSGo.click(); // Trigger the "Let's Go" button click
+            validateInput(); // Call the validateInput function
+            if (!letSGo.classList.contains("hide") && username.value.trim() !== "") {
+                letSGo.click(); // Trigger the "Let's Go" button click if validation succeeds
+            }
         }
     });
     // Event listener for the "Let's Go" button click
