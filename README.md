@@ -64,6 +64,8 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - The quiz is suited for general audience, depending on the difficulty
 - The easy mode is open to everyone looking for a quiz game
 - The Normal and Hard mode requires more knowledge but are still open to whoever wants a bit more challenging questions
+#### User stories
+- As a
 ### Objective
 - The purpose of Quizzer is to entertain the user , with a pinch of educational purpose.
 ### Difficulty , Questions Answers 
@@ -136,4 +138,17 @@ I used a green counter for correct answers and a red counter for wrong answers.
   - The result is structured with almost plain text displaying greetings a feedback with score and timing with a home button.
 ---
 ![Quiz result](/assets/images/readme-images/result.png)
+
 ---
+
+## Usage
+
+- At first we have the landing page where we can insert our `username`.  
+- Once the username is inserted we can confirm it pressing the `enter` key or the `let's go` button.  
+- A pop up will appear giving `3 level options`.  
+After clicking on one of the options we are redirected by hyperlink to the page chosen.
+- When redirected we are presented with a `get ready` popup containing a `start` button.  
+- Once pressed the start button will trigger the quiz starting the `countdown`, and the only thing left is to answer the questions presented to you.  
+- During the quiz there is always a `quit` button present so you can stop the quiz anytime.
+- Only after the quiz is completed we are presented with the `results` of our performance with a `home` button redirecting us to the home page to start again.
+
