@@ -25,6 +25,9 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
           - quiz.js used for the actual quiz 
     - #### readme.md 
       - The readme file is for guidance and presentation
+      - [Click this link to jump at the end of the readme](#usage) 
+  
+  
 
 ##  Features
 
@@ -65,7 +68,12 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - The easy mode is open to everyone looking for a quiz game
 - The Normal and Hard mode requires more knowledge but are still open to whoever wants a bit more challenging questions
 #### User stories
-- As a
+- As a quiz lover
+  - I would like a quiz easy to play and have some fun testing my knowledge
+- Casual gamer
+  - I want to play a quiz game during my free time to have some fun and chill
+- As a parent
+  - I can introduce my child to education , with a quiz game that is entertaining and informative.
 ### Objective
 - The purpose of Quizzer is to entertain the user , with a pinch of educational purpose.
 ### Difficulty , Questions Answers 
@@ -152,3 +160,39 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - During the quiz there is always a `quit` button present so you can stop the quiz anytime.
 - Only after the quiz is completed we are presented with the `results` of our performance with a `home` button redirecting us to the home page to start again.
 
+## Future Feature
+- `Progress tracking`
+  -  Implement a feature that tracks the user progress(performance, highest scores,faster 100% correct).
+-  `Multiple languages`
+     -  Making the  quiz game accessible to a bigger audience using different languages.
+     -  
+- `Multiplayer` 
+  - Where users can challenge themselves in real-time (live score, synchro gameplay,).
+- `Specific Quizzes`
+  - Different quizzes with one topic each (one for history, one for science etc..).
+- `Gaming rewards and rankings`
+  - Levels for overtime players, rewards ,badges ,titles for top scores.
+
+## Bugs and Fixes
+- 1  The user could just press "enter" in the username input and jump the validation (required, and only numbers and letters).
+    - `solution` Modified the script to trigger the validation over the keypress
+- 2 When answering a question the user could still press the button during the 1 second interval, adding points to the score
+  - `solution` Added a disabler to eventlistener on click for the answer buttons and set a color to correct or wrong answer clicked to confirm selection and stop other buttons to be functional for that second.
+- 3 Answer buttons were added instead of being replaced due to mistake in the script (I was getting the element by class name getting only the first element)
+  - `solution` Created a function that iterates trough each answer button to make sure answer buttons were cleared before displaying the new answers(append child buttons).
+- 4 Not really a bug , but something to be fixed was the way how the questions and answers were displayed (always on the same position same as how the array of object is written) making it easy to remember where the answer was.
+  - `solution` I created a function to make question and relative answers to be displayed always at random using fisher-yates algorithm and math.random().
+
+## Validation
+- For CSS I used https://jigsaw.w3.org/css-validator/validator
+- For HTML I used https://validator.w3.org/
+- For JS  I used https://jshint.com/
+
+## Credits
+    - Favicon created with favicon.io
+    - Fonts are taken from GoogleFonts (fonts.google.com)
+    - Images taken from Unsplash.com
+    - Logo created from Freelogodesign.org
+    - Some of the question/answers were taken from Opinionstage.com
+---
+[comeback to top](#welcome-to-quizzer-readme-quizzer-is-a-simple-quiz-game-with-3-different-difficulties)

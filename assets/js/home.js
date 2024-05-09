@@ -10,7 +10,7 @@ function loadContent() {
 function getName() {
     let letSGo = document.getElementById("get-username");                           // get the lets go button
     let username = document.getElementById("username");                             // input field 
-    const levelButton = document.getElementById("button-div");                      // level buttons
+    
 
     // hiding the level buttons
     letSGo.classList.add("hide");                                                   // hiding the lets go button
