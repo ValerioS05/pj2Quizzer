@@ -1,10 +1,13 @@
 # Welcome to Quizzer readme! Quizzer is a simple quiz game with 3 different difficulties.
 
-I aim to provide a easy to play quiz game, simple to understand and straight forward to some fun.
+I aim to provide a easy to play quiz game, simple to understand and straight forward to some fun, a nice eye-cathing layout with radiant colors over a dark background.
+
+## Link to landing page
+[QUIZZER](https://valerios05.github.io/pj2Quizzer/)
 
 ## Getting started
 
-- ### First things first..Exploring Quizzer
+- ### First things first...Exploring Quizzer
     - #### Index.html it`s the landing page
       - We got 3 More pages reachable from the landing page
       - Easy.html
@@ -45,7 +48,7 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - Used to enhance the user experience and give a sense of urgency or deadline
 ### 7 Visual Feedbacks
 - Provided the user with visual feedbacks when answering the question. Mainly color feedback where correct is green and wrong is red. 
-- Provided counters tha dinamically updates the user on their progress in real time.
+- Provided counters tha dynamically updates the user on their progress in real time.
 - Provided a score counter, real-time feedback over the user performance through the quiz
 ### 8 Results
 - Once quiz is completed the users receive detailed results including a feedback over the perfomance
@@ -59,8 +62,6 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ---
 
  ![Quizzer Devices Mockup](/assets/images/readme-images/mockupquiz.png)
-
----
 ## Scope
 
 ### Audience 
@@ -187,7 +188,9 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - For CSS I used https://jigsaw.w3.org/css-validator/validator
 - For HTML I used https://validator.w3.org/
 - For JS  I used https://jshint.com/
+- Lighthouse check
 
+![light house scores](/assets/images/readme-images/lighthouse.png)
 ## Credits
     - Favicon created with favicon.io
     - Fonts are taken from GoogleFonts (fonts.google.com)
