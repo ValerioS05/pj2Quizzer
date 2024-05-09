@@ -80,18 +80,24 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ### Logo
 - The logo is visible in the landing page and as a favicon. The colors of the logo are a linear gradient going from Green to blue,red and Yellow. Represented as a game device with a pair of mustaches that resemble a "face".
 ---
-![Quizzer logo](/assets/images/logo.png)
+![Quizzer logo](/assets/images/readme-images/rmdLogo.png)
 ### Popups
 -The popups are similar regarding colors and fonts diverging only content wise and sizes. I used a transparent overlay and box shadows to let the user understand what are we focusing in that specifing moment giving a smoother experience. 
 
 ### Images
-- I used images containing the usual thumb up for positive answers and thumb down for negative answers. Diverging also in color , green when positive and red when negative 
-![thumb down](/assets/images/thumbDown.png){ width=200 }
+- I used images containing the usual thumb up for positive answers and thumb down for negative answers. Diverging also in color , green when positive and red when negative
+---
+![Thumb up](/assets/images/readme-images/redmeThumbUp.png)
+![Thumb down](/assets/images/readme-images/redmeThumnDown.png)
+---
 ### Color Feedbacks
 - As mentioned in images , i tried to give the user a meaning to the colors used during the quiz, red means wrong ("negative") green means well done! ("positive").
 We have these two colors on repeat , i used them for the answer buttons, where correct answer button changes to a green button or changes red otherwise.
 I used a green counter for correct answers and a red counter for wrong answers.
 
+![Correct answer](/assets/images/readme-images/correct.png/)
+---
+![Wrong answer](/assets/images/readme-images/wrong.png)
 
 ## Structure
 
@@ -99,20 +105,35 @@ I used a green counter for correct answers and a red counter for wrong answers.
 - The home page of Quizzer has a simple structure
   - At first impact we have the logo as hero image smaller in size for mobiles and larger for larger screens
   - Under the logo we have a label for the username input.
+  ---
+  ![Home page](/assets/images/readme-images/homepage.png)
+  ---
   - `Hidden` in the home page we have a popup triggered when the user submit the chosen username
     - The popup contains greetings to the user and puts you to choose the game mode.
     - The difficulties are displayed with styled links in a column going from easy to hard respectively.
+  ---
+  ![Home page popup](/assets/images/readme-images/firstpop.png)
+  ---
   - Ending with a footer containing copyright.
 ### Easy/Normal/Hard
 - The levels pages have same html structure and style, diverging only in some details that help identify in which page we find ourselves in.
 - The first thing we see is a popup triggered from the complete load of the document.
   - The popup consist in 2 brief sentences, getting ready the user and a simple explanation of what the user can expect.
   - At the bottom of the popup there is a start button created to trigger the timer, once clicked the actual quiz starts.
+---
+![Start popup](/assets/images/readme-images/startpop.png)
+---
 - At the top of the page we have a header with a simple heading displaying in which page we are at the moment
 - Under it we have 2 counters (they keep track of correct/wrong answers) surrounding the timer.
 - Going down we have the score 
 - Under the score we see displayed the question with a number of answers depending on the difficulty chosen.
+---
+![Quiz page](/assets/images/readme-images/quiz.png)
+---
 - Ending the page we have the quit button.
   - `Hidden` in the page we have 2 images (thumb up/down) that we can see only when a question is answered
   - `hidden` also we have the results triggered that the end of the quiz.
   - The result is structured with almost plain text displaying greetings a feedback with score and timing with a home button.
+---
+![Quiz result](/assets/images/readme-images/result.png)
+---
