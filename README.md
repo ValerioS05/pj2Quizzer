@@ -173,7 +173,8 @@ After clicking on one of the options we are redirected by hyperlink to the page 
   - Different quizzes with one topic each (one for history, one for science etc..).
 - `Gaming rewards and rankings`
   - Levels for overtime players, rewards ,badges ,titles for top scores.
-
+- `Identification`
+  - User will be recognized when returning to play Quizzer.  
 ## Bugs and Fixes
 - 1  The user could just press "enter" in the username input and jump the validation (required, and only numbers and letters).
     - `solution` Modified the script to trigger the validation over the keypress

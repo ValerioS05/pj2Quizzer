@@ -295,7 +295,7 @@ footer {
 .question-container {
     height: auto;
     width: 90%;
-    margin: 0 auto;
+    margin: 30px auto;
     color: greenyellow;
     padding: 5px 0;
     display: flex;
@@ -333,8 +333,8 @@ footer {
     width: 50px;
     height: 50px;
     position: absolute;
-    top: 29%;
-    left: 22%;
+    top: 200px;
+    left: 30%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 10px 10px green;
     background-color: rgba(2, 245, 75, 0.77);
@@ -344,7 +344,7 @@ footer {
 
 /** thumb down image **/
 #thumb-down {
-    background-color: rgba(239, 11, 11, 0.671);
+    background-color: rgba(239, 11, 11, 0.77);
     box-shadow: 0 0 10px 10px red;
 }
 
@@ -556,7 +556,7 @@ footer {
         width: 80px;
         height: 80px;
         position: absolute;
-        top: 30%;
+        top: 320px;
         left: 30%;
         transform: translate(-50%, -50%);
         box-shadow: 0 0 10px 10px green;
