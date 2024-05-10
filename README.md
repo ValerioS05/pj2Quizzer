@@ -126,6 +126,10 @@ I used a green counter for correct answers and a red counter for wrong answers.
   ![Home page popup](/assets/images/readme-images/firstpop.png)
   ---
   - Ending with a footer containing copyright.
+  - `Scripts`
+    - The home.js file handles the scripts in the index.html
+    - Mainly handles the username input, making sure the user uses only letters and numbers. If the username is viable the script will show the button to continue, or listening if the user uses the Enter key.
+    - Also we have the script that handles the popup (display settings and insterting the username in the greetings) and the levels links.
 ### Easy/Normal/Hard
 - The levels pages have same html structure and style, diverging only in some details that help identify in which page we find ourselves in.
 - The first thing we see is a popup triggered from the complete load of the document.
@@ -149,7 +153,15 @@ I used a green counter for correct answers and a red counter for wrong answers.
 ![Quiz result](/assets/images/readme-images/result.png)
 
 ---
-
+- `Scripts`
+  - The script quiz.js handles the level pages
+    - We have a total of 19 functions that handle step by step the user journey.  
+    - The main functions are :
+      - Waiting the page to be fully loaded before starting.
+      - Timer function 
+      - The quiz function , that handles most of the quiz (Checking which array will be used , displaying a relative random question and answers and the end of the quiz)
+      - Correct or wrong answers function, checking the answers and reeacting accordingly
+      - To end with the results function, displaying the overall performance.
 ## Usage
 
 - At first we have the landing page where we can insert our `username`.  
