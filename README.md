@@ -59,6 +59,8 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - Mobile first layout,going to tablets and larger screens like laptops.
 - Differences in layout are for screens with width of 600px or larger 
 - Changes again with 1200px or larger
+### 10 Accessibility
+- The quiz can be played without using a mouse, (I played the game several times using only Tab and Enter keys.)
 ---
 
  ![Quizzer Devices Mockup](/assets/images/readme-images/mockupquiz.png)
