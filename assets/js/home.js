@@ -10,7 +10,7 @@ function loadContent() {
 function getName() {
     let letSGo = document.getElementById("get-username");                           // get the lets go button
     let username = document.getElementById("username");                             // input field 
-    
+
 
     // hiding the level buttons
     letSGo.classList.add("hide");                                                   // hiding the lets go button
@@ -34,7 +34,7 @@ function getName() {
     username.addEventListener("input", function (event) {
         validateInput();
     });
-    
+
     // Event listener for the Enter key press on the username input field
     username.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {

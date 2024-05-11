@@ -28,9 +28,9 @@ function contentLoaded() {
         popup.style.display = "none";
 
         //calling functions to operate the quiz
-        removeAndCreateChild();                                         
-        startCount();                                                   
-        randomQuest(levels());                                          
+        removeAndCreateChild();
+        startCount();
+        randomQuest(levels());
     });
 }
 
@@ -40,7 +40,7 @@ function contentLoaded() {
 
 //count down function
 function startCount() {
-    let countFunction;                                                  // empty container for the function
+    let countFunction;                                                  
     let initialCount = 120;
     function startCount() {
         let timer = document.getElementById("timer");                   // select the timer box
@@ -158,7 +158,7 @@ function randomQuest(level) {
     } else {
         let questionBox = document.getElementById("question-box");          // gets the question container
         questionBox.innerText = "";                                         // clears the question box
-        stopCount();                                                        //timer stops when questions are finished
+        stopCount();                                                        // timer stops when questions are finished
 
         quizResult();                                                       // show results of the quiz
     }
@@ -176,33 +176,33 @@ function checkCorrectAnswer(clicked) {
     if (clicked.dataset.correct === "true") {                               // if answer correct checks boolean                            
         score += 100;                                                       // increase score by 100
         thumbUp.classList.remove("hide");                                   // shows relative img
-        correctNumber +=1;
-    } else {                                    
+        correctNumber += 1;                                                 // green counter increase by 1
+    } else {
         thumbDown.classList.remove("hide");                                 // shows relative image
-        wrongNumber +=1;
+        wrongNumber += 1;                                                   // wrong counter increase by 1
     }
 
     document.getElementById("score").innerHTML = score;                     // setting the score
-    document.getElementById("correct-answers").innerHTML = correctNumber;
+    document.getElementById("correct-answers").innerHTML = correctNumber;   
     document.getElementById("wrong-answers").innerHTML = wrongNumber;
-    for (let i = 0; i < answerButtons.length; i++) {
+    for (let i = 0; i < answerButtons.length; i++) {                        // iterate through each answer
         if (answerButtons[i] === clicked)
-            if(clicked.dataset.correct === "true"){
-                clicked.style.backgroundColor = "green";
+            if (clicked.dataset.correct === "true") {                       // checks if answer is correct
+                clicked.style.backgroundColor = "green";                    // sets correct answer green
             } else {
-                clicked.style.backgroundColor = "red";
-                
-            } 
-           
-            answerButtons[i].disabled = true;                               // disable answer buttons so cant increase score
-        }
-                                          
-    
-    setTimeout(function () {                                                
+                clicked.style.backgroundColor = "red";                      // sets wrong answer to red
+
+            }
+
+        answerButtons[i].disabled = true;                               // disable answer buttons so cant increase score
+    }
+
+
+    setTimeout(function () {
         answGrid.innerHTML = "";                                            // clear the answer buttons
-                                               
+
         thumbDown.classList.add("hide");                                    // hide the img relative to correct or wrong answer
-        thumbUp.classList.add("hide");                                      
+        thumbUp.classList.add("hide");
         randomQuest(levels());                                              // restart function
     }, 1000);                                                               // interval of 1 sec between user answering and next question
 
@@ -213,15 +213,15 @@ function checkCorrectAnswer(clicked) {
 function quizResult() {
     const resultContainer = document.getElementById("result-container");       // result container
     resultContainer.style.display = "flex";                                   // gives visibility to the container that was set to display "none"
-    const correctNumber = parseInt(document.getElementById("correct-answers").innerHTML);
-    const wrongNumber = parseInt(document.getElementById("wrong-answers").innerHTML);
-    const totalNumber = correctNumber + wrongNumber;
-    const correctPercentage = ((correctNumber / totalNumber) * 100).toFixed(2);
-    let resultParagraph = document.getElementById("result-p");
-    if(correctPercentage > 40) {
-        resultParagraph.innerText = `Well done you answered correctly ${correctNumber} questions!`
+    const correctNumber = parseInt(document.getElementById("correct-answers").innerHTML);  // gets the number of correct answers
+    const wrongNumber = parseInt(document.getElementById("wrong-answers").innerHTML);      // gets the number of wrong answers
+    const totalNumber = correctNumber + wrongNumber;                                       // total answers
+    const correctPercentage = ((correctNumber / totalNumber) * 100).toFixed(2);            // percentage of correct answers over total
+    let resultParagraph = document.getElementById("result-p");                             // gets result paragraph
+    if (correctPercentage > 40) {                                                          // if percentage is greater than 40 over 10 total question
+        resultParagraph.innerText = `Well done you answered correctly ${correctNumber} questions!`// gives positive feedback
     } else {
-        resultParagraph.innerText = `Go back to study!!! you answered ${wrongNumber} times wrong!!`  
+        resultParagraph.innerText = `Go back to study!!! you answered ${wrongNumber} times wrong!!` // gives negative feedback
     }
     const score = document.getElementById("score");                            // get the element where the score is stored 
     const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
@@ -233,11 +233,11 @@ function quizResult() {
     const timeResult = document.getElementById("time-used");                   // get the element where to store the time result
     const time = document.getElementById("timer").innerText;                   // get the timer text
     timeResult.innerText = initialCount - parseInt(time);                      // set the calculate value of the initial time minus the time left
-    const comeback = document.getElementById("comeback");                        // get the button in the result container
-    const quizBox = document.getElementById("quiz-container");                   // get quiz container
-    quizBox.style.display ="none";
-    const header = document.getElementById("header");
-    header.style.display = "none";                                            // clear the container from view
+    const comeback = document.getElementById("comeback");                      // get the button in the result container
+    const quizBox = document.getElementById("quiz-container");                 // get quiz container
+    quizBox.style.display = "none";                                            // changes display settings to quiz container
+    const header = document.getElementById("header");                          // get header
+    header.style.display = "none";                                             // clear the container from view
     comeback.addEventListener("click", function () {                           // adding click listener to the button 
         window.location.href = "index.html";                                   // relocating to home page when button is clicked
     })
@@ -445,7 +445,7 @@ const questionNormal = [
     }
 
 
-    
+
 ];
 
 
@@ -519,40 +519,40 @@ const questionHard = [
     {
         question: "Which chemical element has the highest melting point?",
         answers: [
-            {text: "Carbon", correct: false},
-            {text: "Tungsten", correct: true},
-            {text: "Titanium", correct: false},
-            {text: "Platinum", correct: false}
+            { text: "Carbon", correct: false },
+            { text: "Tungsten", correct: true },
+            { text: "Titanium", correct: false },
+            { text: "Platinum", correct: false }
         ],
         displayed: false
     },
     {
         question: "Which country is known as the Land of the Rising Sun?",
         answers: [
-            {text: "China", correct: false},
-            {text: "Japan", correct: true},
-            {text: "South Korea", correct: false},
-            {text: "Vietnam", correct: false}
+            { text: "China", correct: false },
+            { text: "Japan", correct: true },
+            { text: "South Korea", correct: false },
+            { text: "Vietnam", correct: false }
         ],
         displayed: false
     },
     {
         question: "What is the largest organ in the human body?",
         answers: [
-            {text: "Brain", correct: false},
-            {text: "Skin", correct: true},
-            {text: "Liver", correct: false},
-            {text: "Heart", correct: false}
+            { text: "Brain", correct: false },
+            { text: "Skin", correct: true },
+            { text: "Liver", correct: false },
+            { text: "Heart", correct: false }
         ],
         displayed: false
     },
     {
         question: "What is the smallest bone in the human body?",
         answers: [
-            {text: "Stapes", correct: true},
-            {text: "Cochlea", correct: false},
-            {text: "Femur", correct: false},
-            {text: "Metacarpal", correct: false}
+            { text: "Stapes", correct: true },
+            { text: "Cochlea", correct: false },
+            { text: "Femur", correct: false },
+            { text: "Metacarpal", correct: false }
         ],
         displayed: false
     }

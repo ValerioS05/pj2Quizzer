@@ -197,8 +197,9 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - 3 Answer buttons were added instead of being replaced due to mistake in the script (I was getting the element by class name getting only the first element)
   - `solution` Created a function that iterates trough each answer button to make sure answer buttons were cleared before displaying the new answers(append child buttons).
 - 4 Not really a bug , but something to be fixed was the way how the questions and answers were displayed (always on the same position same as how the array of object is written) making it easy to remember where the answer was.
-  - `solution` I created a function to make question and relative answers to be displayed always at random using fisher-yates algorithm and math.random().
-
+  - `fix` I created a function to make question and relative answers to be displayed always at random using fisher-yates algorithm and math.random().
+-5 Fixed quiz.js During the initial creation of the quiz.js I recognized that the structure of my scripts was getting me nowhere and was confusing for me
+  - `fix` I saved my file to be able to reuse some of the code already written. I reformatted the script diving a huge function in smaller blocks. This made the file more readable and understandable for me and for everyone else.
 ## Validation
 - For CSS I used https://jigsaw.w3.org/css-validator/validator
 - For HTML I used https://validator.w3.org/
@@ -209,7 +210,8 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 ## Credits
     - Favicon created with favicon.io
     - Fonts are taken from GoogleFonts (fonts.google.com)
-    - Images taken from Unsplash.com
+    - Image thumb up taken from [Pixabay.com](https://pixabay.com/vectors/thumb-up-thumb-yes-okay-up-vote-297078/)
+    - Image thumb down taken also from [Pixabay](https://pixabay.com/vectors/icon-pictogram-pictograph-2027661/)
     - Logo created from Freelogodesign.org
     - Some of the question/answers were taken from Opinionstage.com
 ---
