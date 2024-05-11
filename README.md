@@ -28,7 +28,7 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
           - quiz.js used for the actual quiz 
     - #### readme.md 
       - The readme file is for guidance and presentation
-      - [Click this link to jump at the end of the readme](#usage) 
+      - [Click this link to jump Usage/Validation/Credits](#usage) 
   
   
 
@@ -36,6 +36,7 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 
 ### 1. Favicon
 - Favicon created from [favicon.io](https://favicon.io/favicon-generator/)
+- ![Favicon](/assets/images/readme-images/favicon.png)
 ### 2. Logo
 - The page has a logo representing an identifier for the website.
 ### 3 Personalization
@@ -213,11 +214,17 @@ After clicking on one of the options we are redirected by hyperlink to the page 
   - `solution` Created a function that iterates trough each answer button to make sure answer buttons were cleared before displaying the new answers(append child buttons).
 - 4 Not really a bug , but something to be fixed was the way how the questions and answers were displayed (always on the same position same as how the array of object is written) making it easy to remember where the answer was.
   - `fix` I created a function to make question and relative answers to be displayed always at random using fisher-yates algorithm and math.random().
--5 Fixed quiz.js During the initial creation of the quiz.js I recognized that the structure of my scripts was getting me nowhere and was confusing for me
+- 5 Fixed quiz.js During the initial creation of the quiz.js I recognized that the structure of my scripts was getting me nowhere and was confusing for me
   - `fix` I saved my file to be able to reuse some of the code already written. I reformatted the script diving a huge function in smaller blocks. This made the file more readable and understandable for me and for everyone else.
+- 6 During the construction and testing of the site I used a header displaying quizzer but it looked very bland and repeated
+  - `fix` I opted to keep only the logo that contains the name functioning as a heading giving clear identification to the page. 
 ## Validation
 - For CSS I used https://jigsaw.w3.org/css-validator/validator
+
+![Css validation](/assets/images/readme-images/Screenshot%202024-05-11%20172039.png)
 - For HTML I used https://validator.w3.org/
+
+![HTML validation](/assets/images/readme-images/Screenshot%202024-05-11%20172227.png)
 - For JS  I used https://jshint.com/
 - Lighthouse check
 
@@ -243,8 +250,28 @@ After clicking on one of the options we are redirected by hyperlink to the page 
     - Mainly used Chrome for testing with dev tools
 
 ### Testing screenshots 
+- The screenshots used in precedence throught this readme are taken from mobile device
+- Landing page on different devices (this is how the actual landing page is shown in different devicees)
+   
 ![Quizzer Devices Mockup](/assets/images/readme-images/mockupquiz.png)
+
+- Developer tools responsive test, all the listed devices have been checked.
+
 ![Tesing from DevTools](/assets/images/readme-images/testingdevices.png)
+
+- Results from tablet prospective. The result page is consistent in all the devices with no major changes. The same can be said for the popups , used consistend structure and style with no major changes.
+
+![Tablet test](/assets/images/readme-images/resulttablet.png)
+
+- Tesst on 24' monitor. As we can see the page doesn`t follow anymore a complete column display. In larger screens the answers are adapted to wrap and take more horizontal space.
+
+![large monitor test](/assets/images/readme-images/large.png) 
+
+- Contrast test with [Wave.webaim](https://wave.webaim.org/)
+
+![Contrast test](/assets/images/readme-images/contrast.png)
+
+
 
 
 ## Credits
