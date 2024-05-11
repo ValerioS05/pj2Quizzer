@@ -61,9 +61,9 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - Changes again with 1200px or larger
 ### 10 Accessibility
 - The quiz can be played without using a mouse, (I played the game several times using only Tab and Enter keys.)
----
-
- ![Quizzer Devices Mockup](/assets/images/readme-images/mockupquiz.png)
+- It follow the layout of the pages, the source code is made using clear and understandable text, label preced the username input, links have a clear destination and added aria-labels.
+- Images have alternative text.
+- Good contrast between emelents, dark backgrounds with bright text or revese.
 ## Scope
 
 ### Audience 
@@ -78,7 +78,22 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - As a parent
   - I can introduce my child to education , with a quiz game that is entertaining and informative.
 ### Objective
-- The purpose of Quizzer is to entertain the user , with a pinch of educational purpose.
+- The purpose of Quizzer is to offer an experience designed to challenge the user knowledge across three different difficulty levels.
+Doesn't matter if the user is a learner, a trivia seeker or a persone only looking for fun. Quizzer has it for everyone.
+  - Level Easy
+    - To start the journey ,easy level is the perfect one for a relaxed experience,
+with a mix questions covering different topics that most people have knowleadge of.
+Can say it is pretty accessible to anyone
+  - Level Normal
+    - The Normal level it's a step up. the questions become a bit more difficult to answer ,requiring a deeper understanding of various topics.
+The normal level is still accessible to anyone that want to challenge a thougher trivia
+  - Level Hard 
+    - This level is more for seasoned user with a larger knowledge of various topics.
+  Anyone can play the quiz but not everyone can get a positive result!
+  - Learning when you play.
+    - Quizzer is not just a game, it offers entertainment and education.
+  It broads your knowledge in a friendly and light enviroment wheter you play for fun,learning or competition.
+
 ### Difficulty , Questions Answers 
 - The questions don`t follow a singular topic but more of general knowledge
 - One question at a time with a number of answers
@@ -95,7 +110,7 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ---
 ![Quizzer logo](/assets/images/readme-images/rmdLogo.png)
 ### Popups
--The popups are similar regarding colors and fonts diverging only content wise and sizes. I used a transparent overlay and box shadows to let the user understand what are we focusing in that specifing moment giving a smoother experience. 
+- The popups are similar regarding colors and fonts diverging only content wise and sizes. I used a transparent overlay and box shadows to let the user understand what are we focusing in that specifing moment giving a smoother experience. 
 
 ### Images
 - I used images containing the usual thumb up for positive answers and thumb down for negative answers. Diverging also in color , green when positive and red when negative
@@ -207,12 +222,40 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - Lighthouse check
 
 ![light house scores](/assets/images/readme-images/lighthouse.png)
+
+## Testing 
+- The site has been tested on different devices.
+  - Devices  
+    - Iphone 11 pro max
+    - Ipad mini
+    - Ipad air
+    - Samsung s8+
+    - Samsung 22+
+    - Samsung tablet a5
+    - 44' Tv monitor
+    - 24' Tv monitor
+    - ROG STRIX G16
+    - In any davice the proportion are well mantained due to media query use, smaller sizes for smaller screens and bigger sizes for larger screens.
+  - Browsers
+    - Google Chrome 
+    - Microsoft Edge
+    - Mozilla Firefox
+    - Mainly used Chrome for testing with dev tools
+
+### Testing screenshots 
+![Quizzer Devices Mockup](/assets/images/readme-images/mockupquiz.png)
+![Tesing from DevTools](/assets/images/readme-images/testingdevices.png)
+
+
 ## Credits
     - Favicon created with favicon.io
     - Fonts are taken from GoogleFonts (fonts.google.com)
-    - Image thumb up taken from [Pixabay.com](https://pixabay.com/vectors/thumb-up-thumb-yes-okay-up-vote-297078/)
-    - Image thumb down taken also from [Pixabay](https://pixabay.com/vectors/icon-pictogram-pictograph-2027661/)
+    - Image thumb up/down taken from Pixabay.com
     - Logo created from Freelogodesign.org
     - Some of the question/answers were taken from Opinionstage.com
+[Pixabay thumb up](https://pixabay.com/vectors/thumb-up-thumb-yes-okay-up-vote-297078/)
+
+[Pixabay thumb down](https://pixabay.com/vectors/icon-pictogram-pictograph-2027661/)
+
 ---
 [comeback to top](#welcome-to-quizzer-readme-quizzer-is-a-simple-quiz-game-with-3-different-difficulties)
