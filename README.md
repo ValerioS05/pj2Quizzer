@@ -30,7 +30,29 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
       - The readme file is for guidance and presentation
       - [Click this link to jump Usage/Validation/Credits](#usage) 
   
-  
+## Skeleton
+- In this section I will show what was my idea starting to build the project
+### Wireframe of landing page.
+  - Structure doesn`t change for different screens only sizes are different.
+  - The first thing is the title with a favicon
+  - We can see the logo position at the centre of the page
+    - The landing page doesn't provide a heading because it's a very simple page
+  - Next we have a label and relative input field used to get the user name
+  - At the end of the frame , a simple copyright footer
+#### Final result
+  - The landing page is exactly how was pictured in the frame.
+  - The only difference is the added "submit" button that is hidden , available only if the user inserted a valid username. 
+  It's very simple but straight forward to an easy understand.
+![Skeleton of landing page](/assets/images/readme-images/frame.png)
+---
+### First pop up
+- The first pop up appears once the user inserted username
+- The pop up is presented with an overlay, mantaining the landing page in the background with less visibility, giving the popup a sense of priority
+- At first we have greeting to user(with username inserted).
+- Second we have multiple buttons (3) used to select the level
+#### Final Result
+  - 
+![First popup skeleton](/assets/images/readme-images/firstpop.png)
 
 ##  Features
 
