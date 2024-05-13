@@ -158,8 +158,6 @@ function randomQuest(level) {
     } else {
         let questionBox = document.getElementById("question-box");          // gets the question container
         questionBox.innerText = "";                                         // clears the question box
-                                                                // timer stops when questions are finished
-
         quizResult();                                                       // show results of the quiz
     }
 }
