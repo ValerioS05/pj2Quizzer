@@ -91,7 +91,7 @@ function levels() {
     } else if (page.includes("hard.html")) {
         return "hard";
     } else {
-        alert("Page non reconized!!")                                   // if path is not recognized
+        alert("Page non reconized!!");                                   // if path is not recognized
     }
 }
 
@@ -152,13 +152,13 @@ function randomQuest(level) {
             newButtons.addEventListener("click", function () {
                 checkCorrectAnswer(this);                                   // this new buttons
 
-            })
-        })
+            });
+        });
 
     } else {
         let questionBox = document.getElementById("question-box");          // gets the question container
         questionBox.innerText = "";                                         // clears the question box
-        stopCount();                                                        // timer stops when questions are finished
+                                                                // timer stops when questions are finished
 
         quizResult();                                                       // show results of the quiz
     }
@@ -219,12 +219,12 @@ function quizResult() {
     const correctPercentage = ((correctNumber / totalNumber) * 100).toFixed(2);            // percentage of correct answers over total
     let resultParagraph = document.getElementById("result-p");                             // gets result paragraph
     if (correctPercentage > 40) {                                                          // if percentage is greater than 40 over 10 total question
-        resultParagraph.innerText = `Well done you answered correctly ${correctNumber} questions!`// gives positive feedback
+        resultParagraph.innerText = `Well done you answered correctly ${correctNumber} questions!`;// gives positive feedback
     } else {
-        resultParagraph.innerText = `Go back to study!!! you answered ${wrongNumber} times wrong!!` // gives negative feedback
+        resultParagraph.innerText = `Go back to study!!! you answered ${wrongNumber} times wrong!!`; // gives negative feedback
     }
     const score = document.getElementById("score");                            // get the element where the score is stored 
-    const scoreResult = document.getElementById("score-result")                // get the empty element where to store the score
+    const scoreResult = document.getElementById("score-result");                // get the empty element where to store the score
     scoreResult.innerText = score.innerText;                                   // sets the same text to the element
     const name = document.getElementById("got-name");                          // element where name is stored
     const nameResult = document.getElementById("got-name-result");             // empty element to store the name
@@ -240,7 +240,7 @@ function quizResult() {
     header.style.display = "none";                                             // clear the container from view
     comeback.addEventListener("click", function () {                           // adding click listener to the button 
         window.location.href = "index.html";                                   // relocating to home page when button is clicked
-    })
+    });
 
 }
 

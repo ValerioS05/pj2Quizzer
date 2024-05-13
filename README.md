@@ -1,5 +1,7 @@
-# Welcome to Quizzer readme! Quizzer is a simple quiz game with 3 different difficulties.
 
+
+# Quizzer readme!
+Quizzer is a simple quiz game with 3 different difficulties.
 I aim to provide a easy to play quiz game, simple to understand and straight forward to some fun, a nice eye-cathing layout with radiant colors over a dark background.
 
 ## Link to landing page
