@@ -487,8 +487,8 @@ footer {
     .timer-container {
         width: 120px;
         height: 120px;
-        padding: 30px;
-        font-size: 25px;
+        padding: 40px 0;
+        font-size: 60px;
         line-height: 25px;
         margin: 40px;
     }
@@ -514,7 +514,7 @@ footer {
         box-shadow: 0 0 10px 5px greenyellow;
         border-radius: 50%;
         border: 2px dashed;
-        font-size: 20px;
+        font-size: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -543,10 +543,11 @@ footer {
     /**  quit button **/
     .quit {
         border-radius: 10px;
-        width: 160px;
+        width: 120px;
         margin-top: 110px;
-        height: 70px;
-        padding: 5px;
+        height: 60px;
+        padding: auto;
+        font-size: 30px;
     }
 
 
@@ -630,7 +631,7 @@ footer {
 
     /** label over input field **/
     #welcome-container label {
-        font-size: 60px;
+        font-size: 40px;
     }
 
     /** input field **/
@@ -696,8 +697,8 @@ footer {
     .timer-container {
         width: 120px;
         height: 120px;
-        padding: 30px;
-        font-size: 25px;
+        padding: 40px 0;
+        font-size: 60px;
         line-height: 25px;
 
     }
