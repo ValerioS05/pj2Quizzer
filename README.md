@@ -419,6 +419,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
     - Logo created from Freelogodesign.org
     - Some of the question/answers were taken from Opinionstage.com
     - Wireframes created with Wireframe.cc
+    - VScode has been used to develop Quizzer.
 [Pixabay thumb up](https://pixabay.com/vectors/thumb-up-thumb-yes-okay-up-vote-297078/)
 
 [Pixabay thumb down](https://pixabay.com/vectors/icon-pictogram-pictograph-2027661/)
