@@ -2,6 +2,7 @@
 
 # Quizzer readme!
 Quizzer is a simple quiz game with 3 different difficulties.
+
 I aim to provide a easy to play quiz game, simple to understand and straight forward to some fun, a nice eye-cathing layout with radiant colors over a dark background.
 
 ## Link to landing page
@@ -125,11 +126,18 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - The Normal and Hard mode requires more knowledge but are still open to whoever wants a bit more challenging questions
 #### User stories
 - As a quiz lover
-  - I would like a quiz easy to play and have some fun testing my knowledge
+  - I would like a quiz easy to play and have some fun testing my knowledge.
+  - I want to challenge myself with diffent levels
+  - I want to get the highest score
+    - Quizzer offer an easy and quick way to play a quiz game, and offers different difficulties.
 - Casual gamer
-  - I want to play a quiz game during my free time to have some fun and chill
+  - I want to play a quiz game during my free time to have some fun and chill.
+  - I want to quickly change the level Im in.
+    - Quizzer offer a quick quiz game easy to go through , in pages level we find a quit button the bring us back to home page to start again to play.
 - As a parent
   - I can introduce my child to education , with a quiz game that is entertaining and informative.
+  - I want a quiz that is easy for a kid to play and interactive.
+    - Quizzer offers easy question that are kid friendly and feedback images to help understand of what is going on during the quiz.
 ### Objective
 - The purpose of Quizzer is to offer an experience designed to challenge the user knowledge across three different difficulty levels.
 Doesn't matter if the user is a learner, a trivia seeker or a persone only looking for fun. Quizzer has it for everyone.
@@ -181,7 +189,7 @@ I used a green counter for correct answers and a red counter for wrong answers.
 ![Wrong answer](/assets/images/readme-images/wrong.png)
 
 ## Structure
-
+![Quizzer structure](/assets/images/readme-images/structure.png)
 ### Index.html (Landing page)
 - The home page of Quizzer has a simple structure
   - At first impact we have the logo as hero image smaller in size for mobiles and larger for larger screens
@@ -232,6 +240,9 @@ I used a green counter for correct answers and a red counter for wrong answers.
       - The quiz function , that handles most of the quiz (Checking which array will be used , displaying a relative random question and answers and the end of the quiz)
       - Correct or wrong answers function, checking the answers and reeacting accordingly
       - To end with the results function, displaying the overall performance.
+#### Regardin Scripts
+- Both pages are heavily commented , the script is presented with a general comment if a function.
+- All the content of functions or others small bites of code are followed by comment on the right hand side of the page. This made the development of my project stable and help me to keep track and understand what the script was created for and how it`s purpose. 
 ## Usage
 
 - At first we have the landing page where we can insert our `username`.  
@@ -258,18 +269,19 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - `Identification`
   - User will be recognized when returning to play Quizzer.  
 ## Bugs and Fixes
-- 1  The user could just press "enter" in the username input and jump the validation (required, and only numbers and letters).
+- 1  `bug` The user could just press "enter" in the username input and jump the validation (required, and only numbers and letters).
     - `solution` Modified the script to trigger the validation over the keypress
-- 2 When answering a question the user could still press the button during the 1 second interval, adding points to the score
+- 2 `bug` When answering a question the user could still press the button during the 1 second interval, adding points to the score
   - `solution` Added a disabler to eventlistener on click for the answer buttons and set a color to correct or wrong answer clicked to confirm selection and stop other buttons to be functional for that second.
-- 3 Answer buttons were added instead of being replaced due to mistake in the script (I was getting the element by class name getting only the first element)
+- 3 `bug` Answer buttons were added instead of being replaced due to mistake in the script (I was getting the element by class name getting only the first element)
   - `solution` Created a function that iterates trough each answer button to make sure answer buttons were cleared before displaying the new answers(append child buttons).
-- 4 Not really a bug , but something to be fixed was the way how the questions and answers were displayed (always on the same position same as how the array of object is written) making it easy to remember where the answer was.
-  - `fix` I created a function to make question and relative answers to be displayed always at random using fisher-yates algorithm and math.random().
-- 5 Fixed quiz.js During the initial creation of the quiz.js I recognized that the structure of my scripts was getting me nowhere and was confusing for me
-  - `fix` I saved my file to be able to reuse some of the code already written. I reformatted the script diving a huge function in smaller blocks. This made the file more readable and understandable for me and for everyone else.
-- 6 During the construction and testing of the site I used a header displaying quizzer but it looked very bland and repeated
-  - `fix` I opted to keep only the logo that contains the name functioning as a heading giving clear identification to the page. 
+- 4 `fix` The questions and answers were displayed always on the same position (same as how the array of object is written) making it easy to remember where the answer was.
+  - `solution` I created a function to make question and relative answers to be displayed always at random using fisher-yates algorithm and math.random().
+- 5 `fix` quiz.js During the initial creation of the quiz.js I recognized that the structure of my scripts was getting me nowhere and was confusing for me
+  - `solution` I saved my file to be able to reuse some of the code already written. I reformatted the script diving a huge function in smaller blocks. This made the file more readable and understandable for me and for everyone else.
+- 6 `fix`During the construction and testing of the site I used a header displaying quizzer but it looked very bland and repeated
+  - `solution` I opted to keep only the logo that contains the name functioning as a heading giving clear identification to the page. 
+
 ## Validation
 - For CSS I used https://jigsaw.w3.org/css-validator/validator
 
@@ -307,6 +319,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
     - Google Chrome 
     - Microsoft Edge
     - Mozilla Firefox
+    - Opera
     - Mainly used Chrome for testing with dev tools
 
 ### Testing screenshots 
@@ -391,7 +404,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
   | ls | list of contents in current directory|
   | mkdir| Create new directory |
   | touch | Create new file |
-  - You can refer to `man` command for the manual 
+  - You can refer to bash manual to get more info about commands. 
 ---
 - Use `git clone` with the HTTPS seen on previous steps.
 - Once you run the command you will see `example`: Cloning into `My-repo`...
