@@ -240,7 +240,7 @@ I used a green counter for correct answers and a red counter for wrong answers.
       - The quiz function , that handles most of the quiz (Checking which array will be used , displaying a relative random question and answers and the end of the quiz)
       - Correct or wrong answers function, checking the answers and reeacting accordingly
       - To end with the results function, displaying the overall performance.
-#### Regardin Scripts
+#### Scripts note
 - Both pages are heavily commented , the script is presented with a general comment if a function.
 - All the content of functions or others small bites of code are followed by comment on the right hand side of the page. This made the development of my project stable and help me to keep track and understand what the script was created for and how it`s purpose. 
 ## Usage
@@ -296,11 +296,11 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 ![jshint test 2](/assets/images/readme-images/jshint2.png)
 - Lighthouse check for landing page
   
-
 ![light house scores](/assets/images/readme-images/lighthouse.png)
 
 - Lightouse check for level pages
 
+![lighthouse score level pages](/assets/images/readme-images/lighthouselevels.png)
 
 ## Testing 
 - The site has been tested on different devices.
@@ -424,4 +424,4 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 [Pixabay thumb down](https://pixabay.com/vectors/icon-pictogram-pictograph-2027661/)
 
 ---
-[comeback to top](#welcome-to-quizzer-readme-quizzer-is-a-simple-quiz-game-with-3-different-difficulties)
+[comeback to top](#quizzer-readme)
