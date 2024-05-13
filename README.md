@@ -21,10 +21,10 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
         - CSS containing the style.css file 
         - [user interface](#ui)
         - images 
-          - images contains 3 folders 
+          - images contains 2 folders 
           - a folder for favicon
           - a folder for the readme file
-          - a folder for the images used for the pages
+          - images for the page are found inside the image folder
          - js containing 2 javascript files
           - home.js used for landing page
           - quiz.js used for the actual quiz 
@@ -76,8 +76,14 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ![Larger screen sizes quiz](/assets/images/readme-images/quizlarge.png)
 
 - Wireframe for smaller screens
-![Smaller screen sizes quiz](/assets/images/readme-images/quizmobile.png)
 
+
+![Smaller screen sizes quiz](/assets/images/readme-images/quizmobile.png)
+#### Final Result 
+- The level pages at the end of the deployment are very similar to what the idea was when wireframes were made
+- The main difference is that we have a new element added , the `header` tha displays the level of the page giving a clue to the user where his position is at the moment.
+- The other difference is where the `Quit` button is, in the wireframes we can see it on top between the timer and the score. In the final result we will have it at the bottom of the quiz.
+  - I opted for the bottom just to follow a natural structure, it was just out of place in the middle of the quiz display.  
 ##  Features
 
 ### 1. Favicon
@@ -272,9 +278,9 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 
 ![HTML validation](/assets/images/readme-images/Screenshot%202024-05-11%20172227.png)
 - For JS  I used https://jshint.com/
-- Test on home.js 
+  - Test on home.js 
 ![jshint test 1](/assets/images/readme-images/jshint1.png)
-- Test on quiz.js
+  - Test on quiz.js
 ![jshint test 2](/assets/images/readme-images/jshint2.png)
 - Lighthouse check for landing page
   
@@ -349,8 +355,48 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 | Quit | ok | Redirect correctly to home page |
 | Result | ok  | Appears when user answered all questions, Username displayed correctly, Correct feedback based on performance displayed correctly, Correct score, Correct time used to conclude the quiz |
 | Home | ok  | Displayed correctly, redirect user to homepage |
+---  
 
 
+## Deployment  
+### Github
+- The site is hosted and deployed with Github.
+#### How to deploy
+- Step by step deployment
+  - Get into `Github`
+  - Access the Github `Repository`
+  - Select `Settings`
+  - On the left side we need to get into `Pages`
+  - We will see `Build and deployment`.
+  - Under the `Branch` select `main`
+  - Click `save`
+  - If correctly executed the page will indicate the succesful `deployment` and the link related.
+
+#### Git
+- Quizzer has been built via Git commands
+- Git `add/commit/push`
+
+#### Clone to your local machine
+- From repository on Github click the green button `Code` 
+- After clicking you will see `Clone`
+- You can `download Zip` and extract files to run locally via browser.
+- Or cloning via `Git` with `HTTPS`
+- To clone via Git make sure you select the directory where you want to hold your repository using for example Bash commands in the terminal to navigate.
+  - `Bash commands`
+   
+  | Command | Note |
+  |---|---|
+  | pwd | Display current working directory |
+  | cd | change directory |
+  | ls | list of contents in current directory|
+  | mkdir| Create new directory |
+  | touch | Create new file |
+  - You can refer to `man` command for the manual 
+---
+- Use `git clone` with the HTTPS seen on previous steps.
+- Once you run the command you will see `example`: Cloning into `My-repo`...
+- To verify if succesful you can use in the terminal the command `ls`.
+- This will show you the list of folders and files in the directory. 
 
 
 ## Credits
