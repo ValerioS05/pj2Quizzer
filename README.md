@@ -64,7 +64,19 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
   - The actual structure of the popup is exactly as the frame shows.
   - The only difference stands on the level buttons, I used links to redirect the user to the selected page.
 
+### Level pages
+- The level pages contains all that the actual quiz needed:
+  - We have two counters and a timer at the top.
+  - Going under we can see the quit button and the score.
+  - A question is displayed under the score with the related answers
+  - Differences between screen sizes are how the answers are displayed, as columns for mobile and small tablets or displayed horizontally as two rows for larger screens.
+- Wireframe for larger screens.
 
+
+![Larger screen sizes quiz](/assets/images/readme-images/quizlarge.png)
+
+- Wireframe for smaller screens
+![Smaller screen sizes quiz](/assets/images/readme-images/quizmobile.png)
 
 ##  Features
 
@@ -141,7 +153,7 @@ The normal level is still accessible to anyone that want to challenge a thougher
 ### Palette
 - The color scheme is centered on black backgrounds, with some greenyellow and red as highlighters creating contrasts and visually striking design.
 ### Logo
-- The logo is visible in the landing page and as a favicon. The colors of the logo are a linear gradient going from Green to blue,red and Yellow. Represented as a game device with a pair of mustaches that resemble a "face".
+- The logo is visible in the landing page and as a favicon. The colors of the logo are a linear gradient going from Green to blue,red and Yellow. Represented as a game device with a pair of "mustaches" that resemble a "face".
 ---
 ![Quizzer logo](/assets/images/readme-images/rmdLogo.png)
 ### Popups
@@ -315,12 +327,29 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 
 ## Manual testing
 
-| Landing Page  | test |
-| --- | --- |
-| Responsiveness | ok |
-| Input field  |   |
-| Landing page |   |
-| Landing page |   |
+| Landing Page  | test | Notes |
+| --- | :---: | :---: |
+| Responsiveness | ok | No errors from scripts or issues displaying the page  |
+| Input field  | ok | Place holder works, User can input only Alphanumerical, Username is stored|
+| Let`s go Btn | ok | Appears only when user input alphanumerical characters, interact with following popup correctly|
+| Choosing levels popup | ok  | Popup appers correctly, overlay cover partially background, Text and links are displayed correctly |
+| Level links | ok | User gets redirected correctly when pressing on one of the choises |
+
+
+| Level pages | test | Notes |
+| --- | :---: | :---: |
+| Responsiveness| ok| Page loads correctly with no errors, if page not recognized user will have feedback |
+| Rules popup | ok | Appears correctly after user got redirected and page is loaded |
+| Start button | ok | Popup dissapear when button is pressed, Quiz displayed correctly |
+| Counters | ok | Displayed correctly and set to 0 |
+| Timer | ok | Displayed text and running correctly a countdown |
+| Score | ok | Set to 0 initially|
+| Question | ok | A random question is displayed , correct question based on level chosen |
+| Answers | ok | Number of answers depending on level are correct for every page, answers are correctly related to question displayed. When user answer the question background changes color (red/wrong green/correct), answer disabled after user choise, score increment after user choise, next round displayed correctly|
+| Quit | ok | Redirect correctly to home page |
+| Result | ok  | Appears when user answered all questions, Username displayed correctly, Correct feedback based on performance displayed correctly, Correct score, Correct time used to conclude the quiz |
+| Home | ok  | Displayed correctly, redirect user to homepage |
+
 
 
 
