@@ -1,4 +1,4 @@
-
+![Quizzer Devices Mockup](/assets/images/readme-images/mockupquiz.png)
 
 # Quizzer readme!
 Quizzer is a simple quiz game with 3 different difficulties.
@@ -260,9 +260,17 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 
 ![HTML validation](/assets/images/readme-images/Screenshot%202024-05-11%20172227.png)
 - For JS  I used https://jshint.com/
-- Lighthouse check
+- Test on home.js 
+![jshint test 1](/assets/images/readme-images/jshint1.png)
+- Test on quiz.js
+![jshint test 2](/assets/images/readme-images/jshint2.png)
+- Lighthouse check for landing page
+  
 
 ![light house scores](/assets/images/readme-images/lighthouse.png)
+
+- Lightouse check for level pages
+
 
 ## Testing 
 - The site has been tested on different devices.
@@ -287,7 +295,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - The screenshots used in precedence throught this readme are taken from mobile device
 - Landing page on different devices (this is how the actual landing page is shown in different devicees)
    
-![Quizzer Devices Mockup](/assets/images/readme-images/mockupquiz.png)
+
 
 - Developer tools responsive test, all the listed devices have been checked.
 
@@ -305,6 +313,14 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 
 ![Contrast test](/assets/images/readme-images/contrast.png)
 
+## Manual testing
+
+| Landing Page  | test |
+| --- | --- |
+| Responsiveness | ok |
+| Input field  |   |
+| Landing page |   |
+| Landing page |   |
 
 
 
