@@ -46,13 +46,18 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
   - The only difference is the added "submit" button that is hidden , available only if the user inserted a valid username. 
   It's very simple but straight forward to an easy understand.
 
-### First pop up
-- The first pop up appears once the user inserted username
+### First popup
+- The first popup appears once the user inserted username
 - The pop up is presented with an overlay, mantaining the landing page in the background with less visibility, giving the popup a sense of priority
 - At first we have greeting to user(with username inserted).
 - Second we have multiple buttons (3) used to select the level
-- ![First](/assets/images/readme-images/levelpop.png)
+![First popup](/assets/images/readme-images/levelpop.png)
 
+### Second popup
+- The second popup appears once the user gets redirected to level pages.
+- In this popup I gave to the user a clue of how the quiz will work(rules)
+- Under the rules we'll see a "start" button that will let the quiz start (countdown on, question and answers displayed)
+![Second popup](/assets/images/readme-images/getready.png)
 #### Final Result
   - The actual structure of the popup is exactly as the frame shows.
   - The only difference stands on the level buttons, I used links to redirect the user to the selected page.
