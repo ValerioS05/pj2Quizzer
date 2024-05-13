@@ -464,7 +464,7 @@ footer {
 
     /** second popup **/
     .content-pop {
-        height: 500px;
+        height: auto;
         font-size: 35px;
     }
 

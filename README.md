@@ -39,20 +39,25 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
     - The landing page doesn't provide a heading because it's a very simple page
   - Next we have a label and relative input field used to get the user name
   - At the end of the frame , a simple copyright footer
+![Skeleton of landing page](/assets/images/readme-images/frame.png)
+---
 #### Final result
   - The landing page is exactly how was pictured in the frame.
   - The only difference is the added "submit" button that is hidden , available only if the user inserted a valid username. 
   It's very simple but straight forward to an easy understand.
-![Skeleton of landing page](/assets/images/readme-images/frame.png)
----
+
 ### First pop up
 - The first pop up appears once the user inserted username
 - The pop up is presented with an overlay, mantaining the landing page in the background with less visibility, giving the popup a sense of priority
 - At first we have greeting to user(with username inserted).
 - Second we have multiple buttons (3) used to select the level
+- ![First](/assets/images/readme-images/levelpop.png)
+
 #### Final Result
-  - 
-![First popup skeleton](/assets/images/readme-images/firstpop.png)
+  - The actual structure of the popup is exactly as the frame shows.
+  - The only difference stands on the level buttons, I used links to redirect the user to the selected page.
+
+
 
 ##  Features
 
@@ -285,7 +290,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 
 ![Tablet test](/assets/images/readme-images/resulttablet.png)
 
-- Tesst on 24' monitor. As we can see the page doesn`t follow anymore a complete column display. In larger screens the answers are adapted to wrap and take more horizontal space.
+- Test on 24' monitor. As we can see the page doesn`t follow anymore a complete column display. In larger screens the answers are adapted to wrap and take more horizontal space.
 
 ![large monitor test](/assets/images/readme-images/large.png) 
 
@@ -302,6 +307,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
     - Image thumb up/down taken from Pixabay.com
     - Logo created from Freelogodesign.org
     - Some of the question/answers were taken from Opinionstage.com
+    - Wireframes created with Wireframe.cc
 [Pixabay thumb up](https://pixabay.com/vectors/thumb-up-thumb-yes-okay-up-vote-297078/)
 
 [Pixabay thumb down](https://pixabay.com/vectors/icon-pictogram-pictograph-2027661/)
