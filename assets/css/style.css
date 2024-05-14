@@ -40,6 +40,7 @@ main {
     flex-grow: 1;
 
 }
+
 /** links font **/
 a {
     font-family: sans-serif;
@@ -283,6 +284,7 @@ footer {
     height: 45px;
     font-size: 20px;
 }
+
 /** wrong answer counter**/
 #wrong-answers {
     color: red;
@@ -493,14 +495,8 @@ footer {
         margin: 40px;
     }
 
-
-
-
     /** counters **/
     /* Adjust the position of the counters */
-
-
-
     .counters {
         display: flex;
         align-items: center;
@@ -648,14 +644,17 @@ footer {
         height: 90px;
         font-size: 50px;
     }
+
     /** hover links **/
     .level-links:hover {
         background-color: rgb(32, 32, 32);
     }
+
     /** font size popup **/
     .content-pop {
         font-size: 40px;
     }
+
     /** counters **/
     #correct-answers,
     #wrong-answers {
@@ -680,6 +679,7 @@ footer {
         border: 2px dashed red;
         color: red;
     }
+
     /** lets go button **/
     #continueBtn {
         width: 200px;

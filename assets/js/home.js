@@ -46,12 +46,12 @@ function getName() {
         }
     });
     // Event listener for the "Let's Go" button click
-    letSGo.addEventListener("click", function () {
-        const popup = document.getElementById("popup");
-        popup.classList.remove("hide");
-        let gotName = document.getElementById("got-name");
-        gotName.innerText = username.value.trim();
-        localStorage.setItem("name", username.value.trim());
+    letSGo.addEventListener("click", function () {              
+        const popup = document.getElementById("popup");                             // get popup element
+        popup.classList.remove("hide");                                             // remove class hide
+        let gotName = document.getElementById("got-name");                          // get got-name element
+        gotName.innerText = username.value.trim();                                  // gets username value
+        localStorage.setItem("name", username.value.trim());                        // sets name to local storage
     });
 }
 

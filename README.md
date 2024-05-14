@@ -11,23 +11,23 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ## Getting started
 
 - ### First things first...Exploring Quizzer
-    - Index.html it`s the landing page
-    - We got 3 More [pages](#easynormalhard) reachable from the landing page
+    - Index.html it`s the landing page.
+    - We got 3 More pages reachable from the landing page.
     - Easy.html
     - Normal.html
     - Hard.html
     - ### Assets folder
       - The assets contains:
-        - CSS folder containing the style.css file 
+        - CSS folder containing the style.css file.
         
         - #### images 
           - images contains 2 folders 
-          - a folder for favicon
-          - a folder for the readme file
-          - images for the page are found inside the image folder
+          - a folder for favicon.
+          - a folder for the readme file.
+          - images for the page are found inside the image folder.
         - #### js containing 2 javascript files
-            - home.js used for landing page
-            - quiz.js used for the actual quiz 
+            - home.js used for landing page.
+            - quiz.js used for the actual quiz.
     - ### Readme.md 
     - #### The readme file is for guidance and presentation.
       - [Skeleton](#skeleton)
@@ -44,15 +44,15 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
       - [Credits](#credits) 
   
 ## Skeleton
-- In this section I will show what was my idea starting the project
+- In this section I will show what was my idea starting the project before development.
 
 ### Wireframe of landing page.
   - Structure doesn`t change for different screens only sizes are different.
-  - The first thing is the title with a favicon
-  - We can see the logo position at the centre of the page
-    - The landing page doesn't provide a heading because it's a very simple page
-  - Next we have a label and relative input field used to get the user name
-  - At the end of the frame , a simple copyright footer
+  - The first thing is the title with a favicon.
+  - We can see the logo position at the centre of the page.
+    - The landing page doesn't provide a heading because it's a very simple page.
+  - Next we have a label and relative input field used to get the user name.
+  - At the end of the frame , a simple copyright footer.
 
 | Screenshot | Note | Final Result|
 |---|---|---|
@@ -70,26 +70,26 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ### 2. Logo
 - The page has a logo representing an identifier for the website.
 ### 3 Personalization
-- The user can insert a personal username, facilitating personalization
+- The user can insert a personal username, facilitating personalization.
 ### 4 Popups
-- The site uses Popups to direct the user through the quiz making easier the navigation
+- The site uses Popups to direct the user through the quiz making easier the navigation.
 ### 5 Game modes
-- Three different levels 
+- Three different difficulties. 
 ### 6 Countdown timer
-- Used to enhance the user experience and give a sense of urgency or deadline
+- Used to enhance the user experience and give a sense of urgency or deadline.
 ### 7 Visual Feedbacks
 - Provided the user with visual feedbacks when answering the question. Mainly color feedback where correct is green and wrong is red. 
 - Provided counters tha dynamically updates the user on their progress in real time.
 - Provided a score counter, real-time feedback over the user performance through the quiz
 ### 8 Results
-- Once quiz is completed the users receive detailed results including a feedback over the perfomance
-- the total score 
-- the time used to complete the quiz
+- Once quiz is completed the users receive detailed results including a feedback over the perfomance.
+- the total score.
+- the time used to complete the quiz.
 ### 9 Responsive Design
 - Quizzer is designed to be responsive, contains 3 different way of layout depending on the devices width.
 - Mobile first layout,going to tablets and larger screens like laptops.
-- Differences in layout are for screens with width of 600px or larger 
-- Changes again with 1200px or larger
+- Differences in layout are for screens with width of 600px or larger.
+- Changes again with 1200px or larger.
 ### 10 Accessibility
 - The quiz can be played without using a mouse, (I played the game several times using only Tab and Enter keys.)
 - It follow the layout of the pages, the source code is made using clear and understandable text, label preced the username input, links have a clear destination and added aria-labels.
@@ -98,20 +98,20 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ## Scope
 
 ### Audience 
-- The quiz is suited for general audience, depending on the difficulty
-- The easy mode is open to everyone looking for a quiz game
-- The Normal and Hard mode requires more knowledge but are still open to whoever wants a bit more challenging questions
+- The quiz is suited for general audience, depending on the difficulty.
+- The easy mode is open to everyone looking for a quiz game.
+- The Normal and Hard mode requires more knowledge but are still open to whoever wants a bit more challenging questions.
 #### User stories
-- As a quiz lover
+- As a quiz lover :
   - I would like a quiz easy to play and have some fun testing my knowledge.
-  - I want to challenge myself with diffent levels
-  - I want to get the highest score
+  - I want to challenge myself with diffent levels.
+  - I want to get the highest score.
     - Quizzer offer an easy and quick way to play a quiz game, and offers different difficulties.
-- Casual gamer
+- Casual gamer :
   - I want to play a quiz game during my free time to have some fun and chill.
   - I want to quickly change the level Im in.
     - Quizzer offer a quick quiz game easy to go through , in pages level we find a quit button the bring us back to home page to start again to play.
-- As a parent
+- As a parent :
   - I can introduce my child to education , with a quiz game that is entertaining and informative.
   - I want a quiz that is easy for a kid to play and interactive.
     - Quizzer offers easy question that are kid friendly and feedback images to help understand of what is going on during the quiz.
@@ -119,14 +119,14 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ### Objective
 - The purpose of Quizzer is to offer an experience designed to challenge the user knowledge across three different difficulty levels.
 Doesn't matter if the user is a learner, a trivia seeker or a persone only looking for fun. Quizzer has it for everyone.
-  - Level Easy
+  - Level Easy:
     - To start the journey ,easy level is the perfect one for a relaxed experience,
 with a mix questions covering different topics that most people have knowleadge of.
-Can say it is pretty accessible to anyone
-  - Level Normal
+Can say it is pretty accessible to anyone.
+  - Level Normal:
     - The Normal level it's a step up. the questions become a bit more difficult to answer ,requiring a deeper understanding of various topics.
-The normal level is still accessible to anyone that want to challenge a thougher trivia
-  - Level Hard 
+The normal level is still accessible to anyone that want to challenge a thougher trivia.
+  - Level Hard: 
     - This level is more for seasoned user with a larger knowledge of various topics.
   Anyone can play the quiz but not everyone can get a positive result!
   - Learning when you play.
@@ -134,11 +134,11 @@ The normal level is still accessible to anyone that want to challenge a thougher
   It broads your knowledge in a friendly and light enviroment wheter you play for fun,learning or competition.
 
 ### Difficulty , Questions Answers 
-- The questions don`t follow a singular topic but more of general knowledge
-- One question at a time with a number of answers
-- 2 answers for easy mode ( very easy question)
-- 3 answers for normal mode (simple questions)
-- 4 answers for hard mode (tougher questions)
+- The questions don`t follow a singular topic but more of general knowledge.
+- One question at a time with a number of answers.
+- 2 answers for easy mode ( very easy question).
+- 3 answers for normal mode (simple questions).
+- 4 answers for hard mode (tougher questions).
 ---
 ## UI
 
@@ -152,7 +152,7 @@ The normal level is still accessible to anyone that want to challenge a thougher
 - The popups are similar regarding colors and fonts diverging only content wise and sizes. I used a transparent overlay and box shadows to let the user understand what are we focusing in that specifing moment giving a smoother experience. 
 
 ### Images
-- I used images containing the usual thumb up for positive answers and thumb down for negative answers. Diverging also in color , green when positive and red when negative
+- I used images containing the usual thumb up for positive answers and thumb down for negative answers. Diverging also in color , green when positive and red when negative.
 ---
 ![Thumb up](/assets/images/readme-images/redmeThumbUp.png)
 ![Thumb down](/assets/images/readme-images/redmeThumnDown.png)
@@ -171,12 +171,12 @@ I used a green counter for correct answers and a red counter for wrong answers.
 ![Quizzer structure](/assets/images/readme-images/structure.png)
 ### Index.html (Landing page)
 - The home page of Quizzer has a simple structure
-  - At first impact we have the logo as hero image smaller in size for mobiles and larger for larger screens
+  - At first impact we have the logo as hero image smaller in size for mobiles and larger for larger screens.
   - Under the logo we have a label for the username input.
   ---
   ![Home page](/assets/images/readme-images/homepage.png)
   ---
-  - `Hidden` in the home page we have a popup triggered when the user submit the chosen username
+  - `Hidden` in the home page we have a popup triggered when the user submit the chosen username.
     - The popup contains greetings to the user and puts you to choose the game mode.
     - The difficulties are displayed with styled links in a column going from easy to hard respectively.
   ---
@@ -196,16 +196,16 @@ I used a green counter for correct answers and a red counter for wrong answers.
 ![Start popup](/assets/images/readme-images/startpop.png)
 
 ---
-- At the top of the page we have a header with a simple heading displaying in which page we are at the moment
+- At the top of the page we have a header with a simple heading displaying in which page we are at the moment.
 - Under it we have 2 counters (they keep track of correct/wrong answers) surrounding the timer.
-- Going down we have the score 
+- Going down we have the score. 
 - Under the score we see displayed the question with a number of answers depending on the difficulty chosen.
 ---
 ![Quiz page](/assets/images/readme-images/quiz.png)
 
 ---
 - Ending the page we have the quit button.
-  - `Hidden` in the page we have 2 images (thumb up/down) that we can see only when a question is answered
+  - `Hidden` in the page we have 2 images (thumb up/down) that we can see only when a question is answered.
   - `hidden` also we have the results triggered that the end of the quiz.
   - The result is structured with almost plain text displaying greetings a feedback with score and timing with a home button.
 ---
@@ -213,13 +213,13 @@ I used a green counter for correct answers and a red counter for wrong answers.
 
 ---
 - `Scripts`
-  - The script quiz.js handles the level pages
+  - The script quiz.js handles the level pages.
     - We have a total of 19 functions that handle step by step the user journey.  
     - The main functions are :
       - Waiting the page to be fully loaded before starting.
-      - Timer function 
-      - The quiz function , that handles most of the quiz (Checking which array will be used , displaying a relative random question and answers and the end of the quiz)
-      - Correct or wrong answers function, checking the answers and reeacting accordingly
+      - Timer function. 
+      - The quiz function , that handles most of the quiz (Checking which array will be used , displaying a relative random question and answers and the end of the quiz).
+      - Correct or wrong answers function, checking the answers and reeacting accordingly.
       - To end with the results function, displaying the overall performance.
 #### Scripts note
 - Both pages are heavily commented , the script is presented with a general comment if a function.
@@ -240,8 +240,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - `Progress tracking`
   -  Implement a feature that tracks the user progress(performance, highest scores,faster 100% correct).
 -  `Multiple languages`
-     -  Making the  quiz game accessible to a bigger audience using different languages.
-     -  
+     -  Making the  quiz game accessible to a bigger audience using different languages. 
 - `Multiplayer` 
   - Where users can challenge themselves in real-time (live score, synchro gameplay,).
 - `Specific Quizzes`
@@ -253,16 +252,16 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 ---
 ## Bugs and Fixes
 - 1  `bug` The user could just press "enter" in the username input and jump the validation (required, and only numbers and letters).
-    - `solution` Modified the script to trigger the validation over the keypress
-- 2 `bug` When answering a question the user could still press the button during the 1 second interval, adding points to the score
+    - `solution` Modified the script to trigger the validation over the keypress.
+- 2 `bug` When answering a question the user could still press the button during the 1 second interval, adding points to the score.
   - `solution` Added a disabler to eventlistener on click for the answer buttons and set a color to correct or wrong answer clicked to confirm selection and stop other buttons to be functional for that second.
-- 3 `bug` Answer buttons were added instead of being replaced due to mistake in the script (I was getting the element by class name getting only the first element)
+- 3 `bug` Answer buttons were added instead of being replaced due to mistake in the script (I was getting the element by class name getting only the first element).
   - `solution` Created a function that iterates trough each answer button to make sure answer buttons were cleared before displaying the new answers(append child buttons).
 - 4 `fix` The questions and answers were displayed always on the same position (same as how the array of object is written) making it easy to remember where the answer was.
   - `solution` I created a function to make question and relative answers to be displayed always at random using fisher-yates algorithm and math.random().
-- 5 `fix` quiz.js During the initial creation of the quiz.js I recognized that the structure of my scripts was getting me nowhere and was confusing for me
+- 5 `fix` quiz.js During the initial creation of the quiz.js I recognized that the structure of my scripts was getting me nowhere and was confusing for me.
   - `solution` I saved my file to be able to reuse some of the code already written. I reformatted the script diving a huge function in smaller blocks. This made the file more readable and understandable for me and for everyone else.
-- 6 `fix`During the construction and testing of the site I used a header displaying quizzer but it looked very bland and repeated
+- 6 `fix`During the construction and testing of the site I used a header displaying quizzer but it looked very bland and repeated.
   - `solution` I opted to keep only the logo that contains the name functioning as a heading giving clear identification to the page. 
 ---
 ## Validation
@@ -295,7 +294,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 
 ## Testing 
 - The site has been tested on different devices.
-  - Devices  
+  - Devices :  
     - Iphone 11 pro max
     - Ipad mini
     - Ipad air
@@ -306,7 +305,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
     - 24' Tv monitor
     - ROG STRIX G16
     - In any davice the proportion are well mantained due to media query use, smaller sizes for smaller screens and bigger sizes for larger screens.
-  - Browsers
+  - Browsers :
     - Google Chrome 
     - Microsoft Edge
     - Mozilla Firefox
@@ -314,8 +313,8 @@ After clicking on one of the options we are redirected by hyperlink to the page 
     - Mainly used Chrome for testing with dev tools
 
 ### Testing screenshots 
-- The screenshots used in precedence throught this readme are taken from mobile device
-- Landing page on different devices (this is how the actual landing page is shown in different devicees)
+- The screenshots used in precedence throught this readme are taken from mobile device.
+- Landing page on different devices (this is how the actual landing page is shown in different devices).
    
 
 
@@ -338,7 +337,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 ## Manual testing
 
 | Landing Page  | test | Notes |
-| --- | :---: | :---: |
+| :---: | :---: | :---: |
 | Responsiveness | ok | No errors from scripts or issues displaying the page  |
 | Input field  | ok | Place holder works, User can input only Alphanumerical, Username is stored|
 | Let`s go Btn | ok | Appears only when user input alphanumerical characters, interact with following popup correctly|
@@ -347,7 +346,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 
 
 | Level pages | test | Notes |
-| --- | :---: | :---: |
+| :---: | :---: | :---: |
 | Responsiveness| ok| Page loads correctly with no errors, if page not recognized user will have feedback |
 | Rules popup | ok | Appears correctly after user got redirected and page is loaded |
 | Start button | ok | Popup dissapear when button is pressed, Quiz displayed correctly |
@@ -381,15 +380,15 @@ After clicking on one of the options we are redirected by hyperlink to the page 
   - If correctly executed the page will indicate the succesful `deployment` and the link related.
 
 #### Git
-- Quizzer has been built via Git commands
+- Quizzer has been built via Git commands.
 - Git `add/commit/push`
 
 #### Clone to your local machine
-- From repository on Github click the green button `Code` 
-- After clicking you will see `Clone`
+- From repository on Github click the green button `Code` .
+- After clicking you will see `Clone`.
 - You can `download Zip` and extract files to run locally via browser.
-- Or cloning via `Git` with `HTTPS`
-- To clone via Git make sure you select the directory where you want to hold your repository (using for example Bash commands in the terminal)
+- Or cloning via `Git` with `HTTPS`.
+- To clone via Git make sure you select the directory where you want to hold your repository (using for example Bash commands in the terminal).
   - `Bash commands`
    
   | Command | Note |
