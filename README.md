@@ -11,30 +11,41 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ## Getting started
 
 - ### First things first...Exploring Quizzer
-    - #### Index.html it`s the landing page
-      - We got 3 More pages reachable from the landing page
-      - Easy.html
-      - Normal.html
-      - Hard.html
-      - [jump to structure](#structure)
-    - #### 1 assets directory
+    - Index.html it`s the landing page
+    - We got 3 More [pages](#easynormalhard) reachable from the landing page
+    - Easy.html
+    - Normal.html
+    - Hard.html
+    - ### Assets folder
       - The assets contains:
-        - CSS containing the style.css file 
-        - [user interface](#ui)
-        - images 
+        - CSS folder containing the style.css file 
+        
+        - #### images 
           - images contains 2 folders 
           - a folder for favicon
           - a folder for the readme file
           - images for the page are found inside the image folder
-         - js containing 2 javascript files
-          - home.js used for landing page
-          - quiz.js used for the actual quiz 
-    - #### readme.md 
-      - The readme file is for guidance and presentation
-      - [Click this link to jump Usage/Validation/Credits](#usage) 
+        - #### js containing 2 javascript files
+            - home.js used for landing page
+            - quiz.js used for the actual quiz 
+    - ### Readme.md 
+    - #### The readme file is for guidance and presentation.
+      - [Skeleton](#skeleton)
+      - [Features](#features)
+      - [Scope](#scope)
+      - [User interface](#ui)
+      - [Structure](#structure)
+      - [Usage](#usage)
+      - [Future Feature](#future-feature)
+      - [Bugs and Fixes](#bugs-and-fixes)
+      - [Validation](#validation)
+      - [Testing](#testing)
+      - [Deployment](#deployment)
+      - [Credits](#credits) 
   
 ## Skeleton
-- In this section I will show what was my idea starting to build the project
+- In this section I will show what was my idea starting the project
+
 ### Wireframe of landing page.
   - Structure doesn`t change for different screens only sizes are different.
   - The first thing is the title with a favicon
@@ -42,54 +53,20 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
     - The landing page doesn't provide a heading because it's a very simple page
   - Next we have a label and relative input field used to get the user name
   - At the end of the frame , a simple copyright footer
-![Skeleton of landing page](/assets/images/readme-images/frame.png)
+
+| Screenshot | Note | Final Result|
+|---|---|---|
+|[Landing Page](/assets/images/readme-images/frame.png) ![Skeleton of landing page](/assets/images/readme-images/frame.png)|The landing page is exactly how was pictured in the frame.|The only difference is the added "submit"It's very simple but straight forward to an easy understand. Button that is hidden, available only if the user inserted a valid username.|
+|[First popup](/assets/images/readme-images/levelpop.png)![First popup](/assets/images/readme-images/levelpop.png)|The first popup appears once the user inserted username.The pop up is presented with an overlay,mantaining the landing page in the background with less visibility, giving the popup a sense of priority. At first we have greeting to user(with username inserted).Second we have multiple buttons (3) used to select the level.|The final result looks exactly the same as was intended at the start of the project|
+|[Second popup](/assets/images/readme-images/getready.png)![Second popup](/assets/images/readme-images/getready.png)|The second popup appears once the user gets redirected to level pages.In this popup I gave to the user a clue of how the quiz will work(rules).Under the rules we'll see a "start" button that will let the quiz start (countdown on, question and answers displayed)|The actual structure of the popup is exactly as the frame shows.The only difference stands on the level buttons, I used links to redirect the user to the selected page.
+|[Level pages large](/assets/images/readme-images/quizlarge.png) / [Level pages small](/assets/images/readme-images/quizmobile.png)![Larger screen sizes quiz](/assets/images/readme-images/quizlarge.png)![Smaller screen sizes quiz](/assets/images/readme-images/quizmobile.png)|The level pages contains all that the actual quiz needed: We have two counters and a timer at the top. Going under we can see the quit button and the score.A question is displayed under the score with the related answers.Differences between screen sizes are how the answers are displayed, as columns for mobile and small tablets or displayed horizontally as two rows for larger screens.(Wireframe for larger screens first screenshot).|The level pages at the end of the deployment are very similar to what the idea was when wireframes were made. The main difference is that we have a new element added , the `header` tha displays the level of the page giving a clue to the user where his position is at the moment. The other difference is where the `Quit` button is, in the wireframes we can see it on top between the timer and the score. In the final result we will have it at the bottom of the quiz. I opted for the bottom just to follow a natural structure, it was just out of place in the middle of the quiz display.  
 ---
-#### Final result
-  - The landing page is exactly how was pictured in the frame.
-  - The only difference is the added "submit" button that is hidden , available only if the user inserted a valid username. 
-  It's very simple but straight forward to an easy understand.
-
-### First popup
-- The first popup appears once the user inserted username
-- The pop up is presented with an overlay, mantaining the landing page in the background with less visibility, giving the popup a sense of priority
-- At first we have greeting to user(with username inserted).
-- Second we have multiple buttons (3) used to select the level
-![First popup](/assets/images/readme-images/levelpop.png)
-
-### Second popup
-- The second popup appears once the user gets redirected to level pages.
-- In this popup I gave to the user a clue of how the quiz will work(rules)
-- Under the rules we'll see a "start" button that will let the quiz start (countdown on, question and answers displayed)
-![Second popup](/assets/images/readme-images/getready.png)
-#### Final Result
-  - The actual structure of the popup is exactly as the frame shows.
-  - The only difference stands on the level buttons, I used links to redirect the user to the selected page.
-
-### Level pages
-- The level pages contains all that the actual quiz needed:
-  - We have two counters and a timer at the top.
-  - Going under we can see the quit button and the score.
-  - A question is displayed under the score with the related answers
-  - Differences between screen sizes are how the answers are displayed, as columns for mobile and small tablets or displayed horizontally as two rows for larger screens.
-- Wireframe for larger screens.
-
-
-![Larger screen sizes quiz](/assets/images/readme-images/quizlarge.png)
-
-- Wireframe for smaller screens
-
-
-![Smaller screen sizes quiz](/assets/images/readme-images/quizmobile.png)
-#### Final Result 
-- The level pages at the end of the deployment are very similar to what the idea was when wireframes were made
-- The main difference is that we have a new element added , the `header` tha displays the level of the page giving a clue to the user where his position is at the moment.
-- The other difference is where the `Quit` button is, in the wireframes we can see it on top between the timer and the score. In the final result we will have it at the bottom of the quiz.
-  - I opted for the bottom just to follow a natural structure, it was just out of place in the middle of the quiz display.  
 ##  Features
 
 ### 1. Favicon
 - Favicon created from [favicon.io](https://favicon.io/favicon-generator/)
-- ![Favicon](/assets/images/readme-images/favicon.png)
+
+![Favicon](/assets/images/readme-images/favicon.png)
 ### 2. Logo
 - The page has a logo representing an identifier for the website.
 ### 3 Personalization
@@ -138,6 +115,7 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
   - I can introduce my child to education , with a quiz game that is entertaining and informative.
   - I want a quiz that is easy for a kid to play and interactive.
     - Quizzer offers easy question that are kid friendly and feedback images to help understand of what is going on during the quiz.
+---
 ### Objective
 - The purpose of Quizzer is to offer an experience designed to challenge the user knowledge across three different difficulty levels.
 Doesn't matter if the user is a learner, a trivia seeker or a persone only looking for fun. Quizzer has it for everyone.
@@ -161,7 +139,7 @@ The normal level is still accessible to anyone that want to challenge a thougher
 - 2 answers for easy mode ( very easy question)
 - 3 answers for normal mode (simple questions)
 - 4 answers for hard mode (tougher questions)
-
+---
 ## UI
 
 ### Palette
@@ -188,6 +166,7 @@ I used a green counter for correct answers and a red counter for wrong answers.
 ---
 ![Wrong answer](/assets/images/readme-images/wrong.png)
 
+---
 ## Structure
 ![Quizzer structure](/assets/images/readme-images/structure.png)
 ### Index.html (Landing page)
@@ -215,6 +194,7 @@ I used a green counter for correct answers and a red counter for wrong answers.
   - At the bottom of the popup there is a start button created to trigger the timer, once clicked the actual quiz starts.
 ---
 ![Start popup](/assets/images/readme-images/startpop.png)
+
 ---
 - At the top of the page we have a header with a simple heading displaying in which page we are at the moment
 - Under it we have 2 counters (they keep track of correct/wrong answers) surrounding the timer.
@@ -222,6 +202,7 @@ I used a green counter for correct answers and a red counter for wrong answers.
 - Under the score we see displayed the question with a number of answers depending on the difficulty chosen.
 ---
 ![Quiz page](/assets/images/readme-images/quiz.png)
+
 ---
 - Ending the page we have the quit button.
   - `Hidden` in the page we have 2 images (thumb up/down) that we can see only when a question is answered
@@ -242,7 +223,8 @@ I used a green counter for correct answers and a red counter for wrong answers.
       - To end with the results function, displaying the overall performance.
 #### Scripts note
 - Both pages are heavily commented , the script is presented with a general comment if a function.
-- All the content of functions or others small bites of code are followed by comment on the right hand side of the page. This made the development of my project stable and help me to keep track and understand what the script was created for and how it`s purpose. 
+- All the content of functions or others small bites of code are followed by comment on the right hand side of the page. This made the development of my project stable and help me to keep track and understand what the script was created for and it`s purpose.
+--- 
 ## Usage
 
 - At first we have the landing page where we can insert our `username`.  
@@ -253,7 +235,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - Once pressed the start button will trigger the quiz starting the `countdown`, and the only thing left is to answer the questions presented to you.  
 - During the quiz there is always a `quit` button present so you can stop the quiz anytime.
 - Only after the quiz is completed we are presented with the `results` of our performance with a `home` button redirecting us to the home page to start again.
-
+---
 ## Future Feature
 - `Progress tracking`
   -  Implement a feature that tracks the user progress(performance, highest scores,faster 100% correct).
@@ -267,7 +249,8 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - `Gaming rewards and rankings`
   - Levels for overtime players, rewards ,badges ,titles for top scores.
 - `Identification`
-  - User will be recognized when returning to play Quizzer.  
+  - User will be recognized when returning to play Quizzer.
+---
 ## Bugs and Fixes
 - 1  `bug` The user could just press "enter" in the username input and jump the validation (required, and only numbers and letters).
     - `solution` Modified the script to trigger the validation over the keypress
@@ -281,26 +264,34 @@ After clicking on one of the options we are redirected by hyperlink to the page 
   - `solution` I saved my file to be able to reuse some of the code already written. I reformatted the script diving a huge function in smaller blocks. This made the file more readable and understandable for me and for everyone else.
 - 6 `fix`During the construction and testing of the site I used a header displaying quizzer but it looked very bland and repeated
   - `solution` I opted to keep only the logo that contains the name functioning as a heading giving clear identification to the page. 
-
+---
 ## Validation
-- For CSS I used https://jigsaw.w3.org/css-validator/validator
+#### For CSS I used 
+[CSS Validator](https://jigsaw.w3.org/css-validator/validator)
 
 ![Css validation](/assets/images/readme-images/Screenshot%202024-05-11%20172039.png)
-- For HTML I used https://validator.w3.org/
+#### For HTML I used
+ [HTML Validator](https://validator.w3.org/)
 
 ![HTML validation](/assets/images/readme-images/Screenshot%202024-05-11%20172227.png)
-- For JS  I used https://jshint.com/
-  - Test on home.js 
-![jshint test 1](/assets/images/readme-images/jshint1.png)
-  - Test on quiz.js
-![jshint test 2](/assets/images/readme-images/jshint2.png)
-- Lighthouse check for landing page
-  
-![light house scores](/assets/images/readme-images/lighthouse.png)
 
-- Lightouse check for level pages
+#### For JS  I used 
+[Jshint](https://jshint.com/)
 
-![lighthouse score level pages](/assets/images/readme-images/lighthouselevels.png)
+| Tested on | Screenshot |
+| :---: | :---: |
+|  home.js |![jshint test 1](/assets/images/readme-images/jshint1.png)|
+|  quiz.js  | ![jshint test 2](/assets/images/readme-images/jshint2.png)  |
+---
+
+
+### Lighthouse checks
+
+| Tested on | Screenshot |
+| :---: | :---: |
+|Lighthouse check for landing page |![light house scores](/assets/images/readme-images/lighthouse.png) | 
+| Lightouse check for level pages |![lighthouse score level pages](/assets/images/readme-images/lighthouselevels.png)  | 
+---
 
 ## Testing 
 - The site has been tested on different devices.
@@ -370,7 +361,11 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 | Home | ok  | Displayed correctly, redirect user to homepage |
 ---  
 
-
+## Languages
+- HTML5
+- CSS3
+- Javascript
+---
 ## Deployment  
 ### Github
 - The site is hosted and deployed with Github.
@@ -394,7 +389,7 @@ After clicking on one of the options we are redirected by hyperlink to the page 
 - After clicking you will see `Clone`
 - You can `download Zip` and extract files to run locally via browser.
 - Or cloning via `Git` with `HTTPS`
-- To clone via Git make sure you select the directory where you want to hold your repository using for example Bash commands in the terminal to navigate.
+- To clone via Git make sure you select the directory where you want to hold your repository (using for example Bash commands in the terminal)
   - `Bash commands`
    
   | Command | Note |
@@ -406,20 +401,23 @@ After clicking on one of the options we are redirected by hyperlink to the page 
   | touch | Create new file |
   - You can refer to bash manual to get more info about commands. 
 ---
-- Use `git clone` with the HTTPS seen on previous steps.
+- Use `git clone` followed by the HTTPS seen on previous steps.
 - Once you run the command you will see `example`: Cloning into `My-repo`...
 - To verify if succesful you can use in the terminal the command `ls`.
 - This will show you the list of folders and files in the directory. 
 
-
+---
 ## Credits
-    - Favicon created with favicon.io
-    - Fonts are taken from GoogleFonts (fonts.google.com)
-    - Image thumb up/down taken from Pixabay.com
-    - Logo created from Freelogodesign.org
-    - Some of the question/answers were taken from Opinionstage.com
-    - Wireframes created with Wireframe.cc
-    - VScode has been used to develop Quizzer.
+| Credit | To | Link|
+|---|---|---|
+|Favicon| Created with Favicon.io|[Favicon.io](Favicon.io)|
+| Fonts | Taken from GoogleFonts |[Google Fonts](fonts.google.com)|
+|Images | Taken from Pixabay.com|[Pixabay](Pixabay.com)|
+|Logo   | Created from Freelogodesign.org| [Freelogodesign](Freelogodesign.org)|
+| Question/Answers| Taken from Opinionstage.com |[Opinionstage](Opinionstage.com)|
+|Wireframes| Created with Wireframe.cc |[Wireframe.cc](Wireframe.cc)
+|VScode  | Used to develop Quizzer|[VScode](https://code.visualstudio.com/)
+
 [Pixabay thumb up](https://pixabay.com/vectors/thumb-up-thumb-yes-okay-up-vote-297078/)
 
 [Pixabay thumb down](https://pixabay.com/vectors/icon-pictogram-pictograph-2027661/)
