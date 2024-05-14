@@ -19,7 +19,7 @@ function getName() {
     function validateInput() {
         let input = username.value.trim();                                          // Get the trimmed value
         let newInput = input.replace(/[^A-Za-z0-9]/g, '');                          // accept only numbers or letters
-        if (input !== newInput) {                                                   //
+        if (input !== newInput) {                                                   
             username.value = newInput;                                              // Update the input value
         }
         // Enable or disable the "Lets Go" button based on input

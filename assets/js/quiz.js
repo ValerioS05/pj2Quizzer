@@ -192,7 +192,7 @@ function checkCorrectAnswer(clicked) {
 
             }
 
-        answerButtons[i].disabled = true;                               // disable answer buttons so cant increase score
+        answerButtons[i].disabled = true;                                   // disable answer buttons so cant increase score
     }
 
 
@@ -210,7 +210,7 @@ function checkCorrectAnswer(clicked) {
 //create contenitore sotto il popup nella pagina easy
 function quizResult() {
     const resultContainer = document.getElementById("result-container");       // result container
-    resultContainer.style.display = "flex";                                   // gives visibility to the container that was set to display "none"
+    resultContainer.style.display = "flex";                                    // gives visibility to the container that was set to display "none"
     const correctNumber = parseInt(document.getElementById("correct-answers").innerHTML);  // gets the number of correct answers
     const wrongNumber = parseInt(document.getElementById("wrong-answers").innerHTML);      // gets the number of wrong answers
     const totalNumber = correctNumber + wrongNumber;                                       // total answers
@@ -222,7 +222,7 @@ function quizResult() {
         resultParagraph.innerText = `Go back to study!!! you answered ${wrongNumber} times wrong!!`; // gives negative feedback
     }
     const score = document.getElementById("score");                            // get the element where the score is stored 
-    const scoreResult = document.getElementById("score-result");                // get the empty element where to store the score
+    const scoreResult = document.getElementById("score-result");               // get the empty element where to store the score
     scoreResult.innerText = score.innerText;                                   // sets the same text to the element
     const name = document.getElementById("got-name");                          // element where name is stored
     const nameResult = document.getElementById("got-name-result");             // empty element to store the name

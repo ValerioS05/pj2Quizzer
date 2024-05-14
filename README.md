@@ -74,7 +74,7 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 ### 4 Popups
 - The site uses Popups to direct the user through the quiz making easier the navigation.
 ### 5 Game modes
-- Three different difficulties. 
+- Three different difficulties, makes Quizzer more interesting and keeps the user entertained. 
 ### 6 Countdown timer
 - Used to enhance the user experience and give a sense of urgency or deadline.
 ### 7 Visual Feedbacks
@@ -94,11 +94,11 @@ I aim to provide a easy to play quiz game, simple to understand and straight for
 - The quiz can be played without using a mouse, (I played the game several times using only Tab and Enter keys.)
 - It follow the layout of the pages, the source code is made using clear and understandable text, label preced the username input, links have a clear destination and added aria-labels.
 - Images have alternative text.
-- Good contrast between emelents, dark backgrounds with bright text or revese.
+- Good contrast between emelents, dark backgrounds with bright text or reverse.
 ## Scope
 
 ### Audience 
-- The quiz is suited for general audience, depending on the difficulty.
+- The quiz is suited for general audience.
 - The easy mode is open to everyone looking for a quiz game.
 - The Normal and Hard mode requires more knowledge but are still open to whoever wants a bit more challenging questions.
 #### User stories
